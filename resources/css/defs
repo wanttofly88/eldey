@@ -1,0 +1,9 @@
+light-blue (links): #85aec0 rgba(133, 174, 192, 1);
+bright-blue (header): #004bdd rgba(0, 75, 221, 1);
+dark-blue (header): #1f3664 rgba(31, 54, 100, 1);
+light-darker-blue (menu) #336699 rgba(72, 102, 150, 1);
+black (p) #363636 rgba(54, 54, 54, 1);
+grey (inactive) #727272 rgba(114, 114, 114, 1);
+light (borders) #e9e9e9 rgba(233, 233, 233, 1);
+box-shadow: 0 7px 20px rgba(51, 102, 153, 0.15);
+red (ast): #dc3664 rgba(220, 54, 100, 1);
