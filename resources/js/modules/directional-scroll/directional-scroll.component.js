@@ -17,20 +17,32 @@ define([
 	elementProto.handleResize = function() {
 		var ww = resizeStore.getData().width;
 		var wh = resizeStore.getData().height;
-		var sw = this._pivotSections[0].clientWidth;
-		this._sw = sw;
-		this._ww = ww;
-		this._sidePadding = (ww - sw)/2;
+		var sw = this._sections[0].element.clientWidth;
+		var self = this;
+
+		if (ww > 1000 && wh > 500) {
+			this.activate();
+		} else {
+			this.deactivate();
+		}
 
 		this._sections.forEach(function(section) {
 			if (section.pivot) {
 				section.wrapper.style.width = ww + 'px';
 				section.wrapper.style.height = wh + 'px';
-				section.fake2.style.height = section.element.clientHeight + 'px';
+				if (self._active) {
+					section.fake.style.height = section.element.clientHeight + 'px';
+				}
 			}
 		});
 
-		this.handleScroll();
+		this._sw = sw;
+		this._ww = ww;
+		this._sidePadding = (ww - sw)/2;
+
+		if (this._active) {
+			this.handleScroll();
+		}
 	}
 
 	elementProto.handleScroll = function() {
@@ -45,6 +57,8 @@ define([
 		var main = this._mainContainer;
 		var direction = 'vertical';
 		var activeXShift = 0;
+
+		if (!this._active) return;
 		// this._offsets = Array.prototype.map.call(this._pivotSections, function(section) {
 		// 	return {
 		// 		section: section,
@@ -85,6 +99,10 @@ define([
 					c = -1;
 				}
 
+				if (section.element.id === 'focus') {
+					c = -c;
+				}
+
 				if (Math.abs(c) < 1) {
 					if (section.mode !== 'fixed') {
 						section.mode = 'fixed';
@@ -113,31 +131,59 @@ define([
 		});
 	}
 
+	elementProto.activate = function() {
+		if (this._active) return;
+		this._active = true;
+		this.handleScroll();
+		scrollStore.subscribe(this.handleScroll);
+	}
+
+	elementProto.deactivate = function() {
+		if (!this._active) return;
+		this._active = false;
+
+		this._sections.forEach(function(section) {
+			if (section.fake) {
+				section.fake.style.height = '0px';
+			}
+			if (section.pivot) {
+				section.wrapper.style.position = 'static';
+				section.wrapper.style.transform = 'translateX(0px) translateY(0px)';
+			} else {
+				section.element.style.transform = 'translateX(0px) translateY(0px)';
+			}
+		});
+
+		scrollStore.unsubscribe(this.handleScroll);
+	}
+
 	elementProto.createdCallback = function() {
 		this.handleResize = this.handleResize.bind(this);
 		this.handleScroll = this.handleScroll.bind(this);
+		this.activate = this.activate.bind(this);
+		this.deactivate = this.deactivate.bind(this);
+		this._active = false;
 	}
 	elementProto.attachedCallback = function() {
-		this._pivotSections = this.getElementsByTagName('section');
-		if (!this._pivotSections) return;
+		var elements = this.getElementsByTagName('section');
+		if (!elements) return;
 
 		this._mainContainer = document.getElementsByTagName('main')[0];
 
-		this._sections = Array.prototype.map.call(this._pivotSections, function(section) {
-			var fake2 = document.createElement('div');
+		this._sections = Array.prototype.map.call(elements, function(section) {
+			var fake = document.createElement('div');
 			var pivot = section.classList.contains('pivot-section');
 
 			// section.parentNode.insertBefore(fake1, section);
 
 			if (pivot) {
-				section.parentNode.insertBefore(fake2, section.nextSibling);
-				fake2.style.height = section.clientHeight + 'px';
+				section.parentNode.insertBefore(fake, section.nextSibling);
 			}
 
 			return {
 				mode: 'staic',
 				element: section,
-				fake2: fake2,
+				fake: fake,
 				bRect: section.getBoundingClientRect(),
 				wrapper: section.getElementsByClassName('transform-wrapper')[0],
 				pivot: pivot
@@ -145,13 +191,11 @@ define([
 		});
 
 		this.handleResize();
-		this.handleScroll();
 		resizeStore.subscribe(this.handleResize);
-		scrollStore.subscribe(this.handleScroll);
 	}
 	elementProto.detachedCallback = function() {
+		this.deactivate();
 		resizeStore.unsubscribe(this.handleResize);
-		scrollStore.unsubscribe(this.handleScroll);
 	}
 
 	Object.setPrototypeOf(elementProto, HTMLElement.prototype);
