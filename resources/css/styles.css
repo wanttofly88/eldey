@@ -803,6 +803,9 @@ p {
 	transform: rotate(10deg);
 }
 @media screen and (min-width: 1000px) {
+	.find {
+		margin-bottom: 400px;
+	}
 	.find .text-box {
 		margin-bottom: 70px;
 	}
@@ -938,6 +941,9 @@ p {
 	transform: rotate(25deg);
 }
 @media screen and (min-width: 1000px) {
+	.consult {
+		margin-bottom: 400px;
+	}
 	.consult .text-box {
 		margin-bottom: 95px;
 	}
@@ -1034,7 +1040,7 @@ tri-slider .next-arrow {
 .result {
 	display: none;
 }
-@media screen and (min-width: 1200px) and (min-height: 600px) {
+@media screen and (min-width: 1200px) {
 	.result {
 		display: block;
 	}
@@ -1045,7 +1051,14 @@ tri-slider .next-arrow {
 .result h2 {
 	margin-bottom: 20px;
 }
-
+.result p {
+	display: none;
+}
+@media screen and (min-height: 780px) {
+	.result p {
+		display: block;
+	}
+}
 .result .p {
 	position: absolute;
 	width: 300px;
@@ -1054,26 +1067,40 @@ tri-slider .next-arrow {
 .result .p-t {
 	left: 0;
 	right: 0;
-	bottom: calc(50% + 120px);
+	bottom: calc(50% + 90px);
 	margin: auto;;
 }
 .result .p-l {
-	top: calc(50% - 65px);
+	top: calc(50% - 55px);
 	right: calc(50% + 260px);
 }
 .result .p-r {
-	top: calc(50% - 65px);
+	top: calc(50% - 55px);
 	left: calc(50% + 260px);
 }
 .result .p-b-l {
-	top: calc(50% + 145px);
+	top: calc(50% + 85px);
 	right: calc(50% + 50px);
 }
 .result .p-b-r {
-	top: calc(50% + 145px);
+	top: calc(50% + 85px);
 	left: calc(50% + 50px);
 }
 
+@media screen and (min-height: 780px) {
+	.result .p-l {
+		top: calc(50% - 65px);
+	}
+	.result .p-r {
+		top: calc(50% - 65px);
+	}
+	.result .p-b-l {
+		top: calc(50% + 145px);
+	}
+	.result .p-b-r {
+		top: calc(50% + 145px);
+	}
+}
 .feedback .h1-wrap {
 	position: relative;
 	max-width: 700px;
@@ -1275,7 +1302,7 @@ curve-container {
 	width: 100%;
 	height: 100%;
 	left: 0;
-	top: -20vh;
+	top: 0;
 }
 curve-container .wrapper {
 	height: 100%;
