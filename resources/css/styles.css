@@ -644,6 +644,7 @@ arc-text {
 	font-weight: 900;
 	font-size: 13px;
 	text-transform: uppercase;
+	text-align: center;
 }
 arc-text span {
 	position: absolute;
@@ -1303,14 +1304,47 @@ curve-container {
 	height: 100%;
 	left: 0;
 	top: 0;
+	display: none;
+}
+curve-container bird-component {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 39px;
+	height: 45px;
+	background: url(../images/bird.svg);
+	transform-origin: 50% 100%;
+}
+@media screen and (min-width: 1200px) and (min-height: 500px) {
+	curve-container {
+		display: block;
+	}
 }
 curve-container .wrapper {
 	height: 100%;
 }
 
+tree-component {
+	display: block;
+	width: 100%;
+	height: 600px;
+}
+tree-component .clickable {
+	cursor: pointer;
+}
+
 footer {
+	margin-top: 230px;
+	padding-top: 125px;
 	position: relative;
 	z-index: 1;
+	background: #f8f9f9;
+}
+footer arc-text {
+	top: -54px;
+	left: 0;
+	right: 0;
+	margin: auto;
 }
 footer .tp {
 	text-align: center;

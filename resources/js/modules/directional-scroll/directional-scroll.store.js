@@ -17,7 +17,7 @@ define([
 	var TOP_SHIFT = 0;
 	var RADIUS = 150;
 	var SECTION_PADDING = 600;
-	var path;
+	var path, visiblePath;
 	var curvePoints;
 	var x, y;
 	var direction = 'vertical';
@@ -25,6 +25,7 @@ define([
 	var _handleEvent = function(e) {
 		if (e.type === 'dScroll:path-change') {
 			path = e.path;
+			visiblePath = e.visiblePath;
 			curvePoints = e.curvePoints;
 			_handleScroll();
 			eventEmitter.dispatch();
@@ -50,6 +51,10 @@ define([
 		eventEmitter.dispatch();
 	}
 
+	var handleResize = function() {
+		
+	}
+
 	var getData = function() {
 		return {
 			LEFT_SHIFT: LEFT_SHIFT,
@@ -59,7 +64,8 @@ define([
 			x: x,
 			y: y,
 			direction: direction,
-			curvePoints: curvePoints
+			curvePoints: curvePoints,
+			visiblePath: visiblePath
 		}
 	}
 

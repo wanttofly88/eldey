@@ -4,6 +4,34 @@
 		"selected_items":
 		[
 			[
+				"for",
+				"for\tfor (…) {…}"
+			],
+			[
+				"re",
+				"return"
+			],
+			[
+				"si",
+				"sin"
+			],
+			[
+				"sv",
+				"svg"
+			],
+			[
+				"ha",
+				"handleResize"
+			],
+			[
+				"cur",
+				"curveTo"
+			],
+			[
+				"bac",
+				"background"
+			],
+			[
 				"se",
 				"self"
 			],
@@ -84,10 +112,6 @@
 				"dScrollStore"
 			],
 			[
-				"ha",
-				"handleScroll"
-			],
-			[
 				"sce",
 				"scrollStore"
 			],
@@ -154,10 +178,6 @@
 			[
 				"fil",
 				"filter"
-			],
-			[
-				"bac",
-				"backface-visibility"
 			],
 			[
 				"bor",
@@ -246,10 +266,6 @@
 			[
 				"rou",
 				"routerStore"
-			],
-			[
-				"re",
-				"return"
 			],
 			[
 				"_c",
@@ -372,10 +388,6 @@
 				"_audioData"
 			],
 			[
-				"for",
-				"for\tfor (…) {…}"
-			],
-			[
 				"wo",
 				"word"
 			],
@@ -456,10 +468,6 @@
 				"_canvasInverted"
 			],
 			[
-				"cur",
-				"cursor"
-			],
-			[
 				"lt",
 				"ltHeight"
 			],
@@ -506,14 +514,6 @@
 			[
 				"sp",
 				"span"
-			],
-			[
-				"cre",
-				"createElement"
-			],
-			[
-				"fi",
-				"function"
 			]
 		]
 	},
@@ -523,7 +523,7 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 12846,
+				"buffer_size": 13002,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -532,16 +532,16 @@
 			"file": "resources/js/app.js",
 			"settings":
 			{
-				"buffer_size": 633,
+				"buffer_size": 658,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "resources/js/modules/directional-scroll/curve.component.js",
+			"file": "resources/js/modules/trees/tree.component.js",
 			"settings":
 			{
-				"buffer_size": 7888,
+				"buffer_size": 3653,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -559,7 +559,7 @@
 			"file": "resources/css/styles.css",
 			"settings":
 			{
-				"buffer_size": 23312,
+				"buffer_size": 23738,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -653,21 +653,23 @@
 		"/D/sites/eldey",
 		"/D/sites/eldey/design",
 		"/D/sites/eldey/resources",
+		"/D/sites/eldey/resources/css",
 		"/D/sites/eldey/resources/images",
 		"/D/sites/eldey/resources/js",
-		"/D/sites/eldey/resources/js/libs",
 		"/D/sites/eldey/resources/js/modules",
 		"/D/sites/eldey/resources/js/modules/directional-scroll",
-		"/D/sites/eldey/resources/js/modules/resize",
 		"/D/sites/eldey/resources/js/modules/router",
 		"/D/sites/eldey/resources/js/modules/scroll",
 		"/D/sites/eldey/resources/js/modules/tabs",
+		"/D/sites/eldey/resources/js/modules/trees",
 		"/D/sites/eldey/tmp"
 	],
 	"file_history":
 	[
-		"/D/sites/eldey/resources/images/arrow-right.svg",
+		"/D/sites/eldey/resources/js/modules/directional-scroll/curve.component.js",
+		"/D/sites/eldey/resources/js/modules/component.dummy.js",
 		"/D/sites/eldey/resources/js/modules/directional-scroll/directional-scroll.store.js",
+		"/D/sites/eldey/resources/images/arrow-right.svg",
 		"/D/sites/eldey/resources/js/modules/scroll/scroll.store.js",
 		"/D/sites/eldey/resources/js/libs/snap.js",
 		"/D/sites/eldey/resources/js/app.js",
@@ -791,9 +793,7 @@
 		"/D/sites/qqb/resources/js/modules/router/router.store.js",
 		"/D/sites/for redcollar/redcollar/resources/js/modules/router/links.view.js",
 		"/D/sites/blog/resources/js/modules/post/post.component.js",
-		"/D/sites/qqb/resources/js/modules/audio/playlist.store.js",
-		"/D/sites/qqb/resources/images/qqb.svg",
-		"/D/sites/for redcollar/Myau/resources/js/modules/dispatcher.js"
+		"/D/sites/qqb/resources/js/modules/audio/playlist.store.js"
 	],
 	"find":
 	{
@@ -812,6 +812,25 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"1",
+			"0",
+			"1",
+			"[0]",
+			"rc[0] - r00*rc[0] - r01*rc[1]",
+			"tree-c",
+			"tree",
+			"\t\t\n",
+			"svg",
+			"trees",
+			"});",
+			"this",
+			"self",
+			"arc-text",
+			"Arc-t",
+			"фкс-еуч",
+			".find",
+			"min-heig",
+			".find",
 			"activete",
 			"fake2",
 			"65px",
@@ -920,26 +939,7 @@
 			"video",
 			"all-",
 			"all-b",
-			"all",
-			"albums",
-			"albusm",
-			"fireResize",
-			"shift",
-			"table",
-			"auto",
-			"1800",
-			"1900",
-			"slide-c",
-			"beat-c",
-			"aside",
-			"фышву",
-			".album",
-			"albums",
-			"scroll-block",
-			"marginRight",
-			"slide-sc",
-			"album-footer",
-			"                    <div class=\"left-wrapper\"></div>"
+			"all"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -958,7 +958,7 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -967,15 +967,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 12846,
+						"buffer_size": 13002,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5891,
-								5891
+								4703,
+								4703
 							]
 						],
 						"settings":
@@ -984,7 +984,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 3380.0,
+						"translation.y": 2520.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 4,
@@ -996,15 +996,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 633,
+						"buffer_size": 658,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								388,
-								388
+								653,
+								653
 							]
 						],
 						"settings":
@@ -1021,19 +1021,19 @@
 				},
 				{
 					"buffer": 2,
-					"file": "resources/js/modules/directional-scroll/curve.component.js",
+					"file": "resources/js/modules/trees/tree.component.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7888,
+						"buffer_size": 3653,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								7346,
-								7347
+								2938,
+								2938
 							]
 						],
 						"settings":
@@ -1042,10 +1042,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 5280.0,
+						"translation.y": 2733.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -1061,8 +1061,8 @@
 						"selection":
 						[
 							[
-								4790,
-								4790
+								484,
+								487
 							]
 						],
 						"settings":
@@ -1071,10 +1071,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 3093.0,
+						"translation.y": 130.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -1083,15 +1083,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 23312,
+						"buffer_size": 23738,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								22194,
-								22194
+								22946,
+								22946
 							]
 						],
 						"settings":
@@ -1100,10 +1100,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 25177.0,
+						"translation.y": 25913.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
