@@ -26,5 +26,7 @@ require([
 	'tabs/tabs-switches.component',
 	'tabs/tabs.component',
 	'directional-scroll/directional-scroll.component',
-	'directional-scroll/curve.component'
+	'directional-scroll/curve.component',
+	'directional-scroll/bird.component',
+	'trees/tree.component'
 ]);

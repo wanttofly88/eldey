@@ -20,7 +20,7 @@ define([
 		var sw = this._sections[0].element.clientWidth;
 		var self = this;
 
-		if (ww > 1000 && wh > 500) {
+		if (ww > 1200 && wh > 500) {
 			this.activate();
 		} else {
 			this.deactivate();

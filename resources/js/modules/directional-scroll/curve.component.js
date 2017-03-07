@@ -19,9 +19,38 @@ define([
 
 	elementProto.handleResize = function() {
 		var pw = document.getElementsByClassName('page-wrapper')[0];
-		this.style.width = resizeStore.getData().width * 8 + 'px';
+		var pathData = this.buildPath();
+		var self = this;
+
+		this.style.width = resizeStore.getData().width * 3 + 'px';
 		this.style.height = pw.clientHeight + 'px';
+
+		clearTimeout(this.resizeTo);
+
+		this.resizeTo = setTimeout(function() {
+			if (self._path) {
+				self._path.attr({
+					d: pathData.string,
+				});
+			}
+
+			if (self._visiblePath) {
+				self._visiblePath.attr({
+					d: self.buildVisiblePath().string,
+				});
+			}
+
+			dispatcher.dispatch({
+				type: 'dScroll:path-change',
+				path: self._path,
+				visiblePath: self._visiblePath,
+				curvePoints: pathData.curvePoints
+			});
+
+			self.handleScroll();
+		}, 50);
 	}
+
 	elementProto.handleScroll = function() {
 		var wh = resizeStore.getData().height;
 		var LEFT_SHIFT = dScrollStore.getData().LEFT_SHIFT;
@@ -33,7 +62,34 @@ define([
 		this.style.transform = 'translateX(' + -(x - LEFT_SHIFT) + 'px) translateY(' + -(y - TOP_SHIFT - wh) + 'px)';
 	}
 
+	elementProto.curveTo = function(points, l, t, w, direction) {
+		var mult = direction === 'right' ? 1 : -1;
+		var t1, t2, l1, l2;
+		var RADIUS = dScrollStore.getData().RADIUS;
 
+		t1 = t + RADIUS;
+		t2 = t1 + RADIUS;
+		l1 = l + mult*RADIUS;
+		l2 = l1 + mult*RADIUS;
+		// top to horisontal
+		points.push('L' + l + ' ' + t);
+		points.push('C' + l + ' ' + t1 + ' ,' + l + ' ' + t2 + ' ,' + l2 + ' ' + t2);
+		l = l + w;
+		points.push('L' + l + ' ' + t2);
+		t = t2;
+		l1 = l + mult*RADIUS;
+		l2 = l1 + mult*RADIUS;
+		t1 = t + RADIUS;
+		t2 = t1 + RADIUS;
+		// horisontal to bottom
+		points.push('C' + l2 + ' ' + t + ' ,' + l2 + ' ' + t1 + ' ,' + l2 + ' ' +  t2);
+
+
+		return {
+			l: l2, 
+			t: t2
+		}
+	}
 
 	elementProto.buildPath = function() {
 		var sec;
@@ -43,6 +99,7 @@ define([
 		var TOP_SHIFT = dScrollStore.getData().TOP_SHIFT;
 		var RADIUS = dScrollStore.getData().RADIUS;
 		var SECTION_PADDING = dScrollStore.getData().SECTION_PADDING;
+		var intermediateResult;
 
 		var l = LEFT_SHIFT;
 		var t;
@@ -51,7 +108,7 @@ define([
 
 		var curvePoints = {};
 		var offs;
-		var magic = wh*2 - RADIUS*2 + 106;
+		var magic = wh*2 - RADIUS*2 + 106; // I'm not sure why 106. So this is some kind of logical duct tape I gusess.
 
 		sec = document.getElementById('analisys');
 		offs = utils.offset(sec).top;
@@ -60,21 +117,7 @@ define([
 		points.push('L' + l + ' ' + offs);
 
 		t = offs;
-		t1 = t + RADIUS;
-		t2 = t1 + RADIUS;
-		l1 = l + RADIUS;
-		l2 = l1 + RADIUS;
-		// top to right
-		points.push('C' + l + ' ' + t1 + ' ,' + l + ' ' + t2 + ' ,' + l2 + ' ' + t2);
-		l = l + sec.clientHeight*2 - RADIUS*2;
-		points.push('L' + l + ' ' + t2);
-		t = t2;
-		l1 = l + RADIUS;
-		l2 = l1 + RADIUS;
-		t1 = t + RADIUS;
-		t2 = t1 + RADIUS;
-		// // left to bottom
-		points.push('C' + l2 + ' ' + t + ' ,' + l2 + ' ' + t1 + ' ,' + l2 + ' ' +  t2);
+		intermediateResult = this.curveTo(points, l, t, sec.clientHeight*2 - RADIUS*2, 'right');
 		curvePoints['analisys'] = {
 			id: 'analisys',
 			p1: offs,
@@ -86,22 +129,9 @@ define([
 		sec = document.getElementById('focus');
 		offs = utils.offset(sec).top - magic;
 
-		l = l2;
+		l = intermediateResult.l;
 		t = offs;
-		t1 = t + RADIUS;
-		t2 = t1 + RADIUS;
-		l1 = l - RADIUS;
-		l2 = l1 - RADIUS;
-		points.push('L' + l + ' ' + offs);
-		points.push('C' + l + ' ' + t1 + ' ,' + l + ' ' + t2 + ' ,' + l2 + ' ' + t2);
-		l = l - sec.clientHeight*2 + RADIUS*2;
-		points.push('L' + l + ' ' + t2);
-		t = t2;
-		l1 = l - RADIUS;
-		l2 = l1 - RADIUS;
-		t1 = t + RADIUS;
-		t2 = t1 + RADIUS;
-		points.push('C' + l2 + ' ' + t + ' ,' + l2 + ' ' + t1 + ' ,' + l2 + ' ' +  t2);
+		intermediateResult = this.curveTo(points, l, t, - sec.clientHeight*2 + RADIUS*2, 'left');
 		curvePoints['focus'] = {
 			id: 'focus',
 			p1: offs,
@@ -112,22 +142,10 @@ define([
 
 		sec = document.getElementById('result');
 		offs = utils.offset(sec).top - magic*2;
-		l = l2;
+
+		l = intermediateResult.l;
 		t = offs;
-		t1 = t + RADIUS;
-		t2 = t1 + RADIUS;
-		l1 = l + RADIUS;
-		l2 = l1 + RADIUS;
-		points.push('L' + l + ' ' + offs);
-		points.push('C' + l + ' ' + t1 + ' ,' + l + ' ' + t2 + ' ,' + l2 + ' ' + t2);
-		l = l + sec.clientHeight*2 - RADIUS*2;
-		points.push('L' + l + ' ' + t2);
-		t = t2;
-		l1 = l + RADIUS;
-		l2 = l1 + RADIUS;
-		t1 = t + RADIUS;
-		t2 = t1 + RADIUS;
-		points.push('C' + l2 + ' ' + t + ' ,' + l2 + ' ' + t1 + ' ,' + l2 + ' ' +  t2);
+		intermediateResult = this.curveTo(points, l, t, sec.clientHeight*2 - RADIUS*2, 'right');
 		curvePoints['result'] = {
 			id: 'result',
 			p1: offs,
@@ -138,7 +156,7 @@ define([
 
 		sec = document.getElementsByClassName('page-wrapper')[0];
 		offs = sec.clientHeight;
-		l = l2;
+		l = l = intermediateResult.l;
 		points.push('L' + l + ' ' + offs);
 
 		return {
@@ -155,6 +173,7 @@ define([
 		var TOP_SHIFT = dScrollStore.getData().TOP_SHIFT;
 		var RADIUS = dScrollStore.getData().RADIUS;
 		var SECTION_PADDING = dScrollStore.getData().SECTION_PADDING;
+		var intermediateResult;
 
 		var l = ww/2;
 		var t = wh/2;
@@ -183,80 +202,54 @@ define([
 		sec = document.getElementById('analisys');
 		offs = utils.offset(sec).top;
 		l = LEFT_SHIFT;
-		l1 = l + RADIUS;
-		l2 = l1 + RADIUS;
-		t = offs - wh/2 + fromCenter;
-		t1 = t + RADIUS;
-		t2 = t1 + RADIUS;
-		points.push('L' + l + ' ' + t);
-		points.push('C' + l + ' ' + t1 + ', ' + l +  ' ' + t2 + ', ' + l2 + ' ' + t2);
 
-		l = l + sec.clientHeight*2 - RADIUS*2;
-		t = t2;
-		l1 = l + RADIUS;
-		l2 = l1 + RADIUS;
-		t1 = t + RADIUS;
-		t2 = t1 + RADIUS;
-		points.push('L' + l + ' ' + t);
-		points.push('C' + l2 + ' ' + t + ', ' + l2 +  ' ' + t2 + ', ' + l2 + ' ' + t2);
+		t = offs - wh/2 + fromCenter;
+
+		intermediateResult = this.curveTo(points, l, t, sec.clientHeight*2 - RADIUS*2, 'right');
 
 		sec = document.getElementById('gain-point');
 		offs = utils.offset(sec).top - magic - 100;
 		t = offs - RADIUS*2;
-		l = l2;
-		l1 = l + RADIUS;
-		l2 = l1 + RADIUS;
-		t1 =  t + RADIUS;
-		t2 = t1 + RADIUS;
-		points.push('L' + l + ' ' + t);
-		points.push('C' + l + ' ' + t1 + ', ' + l +  ' ' + t2 + ', ' + l2 + ' ' + t2);
+		l = intermediateResult.l;
 
-		l = l2 + ww - (LEFT_SHIFT + 2*RADIUS)*2;
-		t = t2;
-		l1 = l + RADIUS;
-		l2 = l1 + RADIUS;
-		t1 = t + RADIUS;
-		t2 = t1 + RADIUS;
-		points.push('L' + l + ' ' + t);
-		points.push('C' + l2 + ' ' + t + ', ' + l2 +  ' ' + t1 + ', ' + l2 + ' ' + t2);
+		intermediateResult = this.curveTo(points, l, t, ww - 2*LEFT_SHIFT - 2*RADIUS, 'right');
 
 		sec = document.getElementById('focus');
 		offs = utils.offset(sec).top - magic - wh/2 + fromCenter;
-		l = l2;
+		l = intermediateResult.l;
 		t = offs;
-		l1 = l - RADIUS;
-		l2 = l1 - RADIUS;
-		t1 = t + RADIUS;
-		t2 = t1 + RADIUS;
-		points.push('L' + l + ' ' + t);
-		points.push('C' + l + ' ' + t1 + ', ' + l +  ' ' + t2 + ', ' + l2 + ' ' + t2);
-		l = l - (sec.clientHeight*2 + RADIUS*2) - (ww - (LEFT_SHIFT + 2*RADIUS)*2);
-		t = t2;
-		l1 = l - RADIUS;
-		l2 = l1 - RADIUS;
-		t1 = t + RADIUS;
-		t2 = t1 + RADIUS;
-		points.push('L' + l + ' ' + t);
-		points.push('C' + l2 + ' ' + t + ', ' + l2 +  ' ' + t1 + ', ' + l2 + ' ' + t2);
+
+		intermediateResult = this.curveTo(points, l, t, - (sec.clientHeight*2 + RADIUS*2) - (ww - (LEFT_SHIFT + 2*RADIUS)*2), 'left');
 
 		sec = document.getElementById('result');
 		offs = utils.offset(sec).top - magic*2;
 		l = LEFT_SHIFT;
-		l1 = l + RADIUS;
-		l2 = l1 + RADIUS;
 		t = offs - 100;
+
+		intermediateResult = this.curveTo(points, l, t, sec.clientHeight*2 - RADIUS*2, 'right');
+
+		sec = document.getElementsByTagName('footer')[0];
+		offs = utils.offset(sec).top - magic*3;
+		l = intermediateResult.l;
+		t = offs - RADIUS*2 - 100;
+		l1 = l + RADIUS/2;
+		l2 = l1 + ww/10;
 		t1 = t + RADIUS;
-		t2 = t1 + RADIUS;
+		t2 = t1 + ww/10;
 		points.push('L' + l + ' ' + t);
 		points.push('C' + l + ' ' + t1 + ', ' + l +  ' ' + t2 + ', ' + l2 + ' ' + t2);
-		l = l + sec.clientHeight*2 - RADIUS*2;
+		l = l2 - ww/10 + RADIUS/2;
+		l1 = l + ww/3 - RADIUS - LEFT_SHIFT;
+		l2 = l + ww/2 - 100 - RADIUS - LEFT_SHIFT;
 		t = t2;
-		l1 = l + RADIUS;
-		l2 = l1 + RADIUS;
-		t1 = t + RADIUS;
-		t2 = t1 + RADIUS;
-		points.push('L' + l + ' ' + t);
-		points.push('C' + l2 + ' ' + t + ', ' + l2 +  ' ' + t2 + ', ' + l2 + ' ' + t2);
+		t1 = t - ww/10 + 90;
+		points.push('C' + l1 + ' ' + t + ', ' + l1 +  ' ' + t1 + ', ' + l2 + ' ' + t1);
+		l = l2;
+		t = t1;
+		l1 = l;
+		l2 = l + 90;
+		t1 = t + 90;
+		points.push('C' + l1 + ' ' + t + ', ' + (l2 - 10) +  ' ' + t + ', ' + l2 + ' ' + t1);
 
 		return {
 			string: points.join(' ')
@@ -266,6 +259,7 @@ define([
 	elementProto.createdCallback = function() {
 		this.handleScroll = this.handleScroll.bind(this);
 		this.handleResize = this.handleResize.bind(this);
+		this.resizeTo;
 	}
 	elementProto.attachedCallback = function() {
 		var svg = Snap("#svg");
@@ -275,17 +269,16 @@ define([
 		this._svg = svg;
 		this._lines = [];
 
+		this.handleResize();
 
-		self.handleResize();
-
-		self._path = svg.path(pathData.string);
-		self._path.attr({
+		this._path = svg.path(pathData.string);
+		this._path.attr({
 			stroke: 'none',
 			fill: 'none'
 		});
 
-		self._visiblePath = svg.path(self.buildVisiblePath().string);
-		self._visiblePath.attr({
+		this._visiblePath = svg.path(this.buildVisiblePath().string);
+		this._visiblePath.attr({
 			stroke: '#929191',
 			strokeWidth: 1.5,
 			strokeDasharray: '1.5, 3.5',
@@ -297,13 +290,14 @@ define([
 			path: self._path,
 			curvePoints: pathData.curvePoints
 		});
-		dScrollStore.subscribe(self.handleScroll);
 
-
-		
+		dScrollStore.subscribe(this.handleScroll);
+		resizeStore.subscribe(this.handleResize);
 	}
+
 	elementProto.detachedCallback = function() {
 		dScrollStore.unsubscribe(this.handleScroll);
+		resizeStore.unsubscribe(this.handleResize);
 	}
 
 	Object.setPrototypeOf(elementProto, HTMLElement.prototype);
