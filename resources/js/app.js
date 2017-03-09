@@ -28,5 +28,6 @@ require([
 	'directional-scroll/directional-scroll.component',
 	'directional-scroll/curve.component',
 	'directional-scroll/bird.component',
-	'trees/tree.component'
+	'trees/tree.component',
+	'blog/post-preview.component'
 ]);
