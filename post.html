@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="resources-path" content="resources/">
+	<title>Document</title>
+	<meta name="viewport" content="initial-scale=1, minimal-ui"/>
+	<link rel="stylesheet" href="resources/css/styles.css">
+	<script src="resources/js/libs/modernizr.js"></script>
+<!--     <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script> -->
+    <script src="resources/js/libs/webcomponents-lite.js"></script>
+    <script data-main="resources/js/app" src="resources/js/require.js"></script>
+</head>
+<body>
+	<div class="page-wrapper">
+		<header>
+			<div class="wrapper">
+				<div class="logo">
+					<div class="i"></div>
+					<div class="t">раскрывая потенциал бизнеса</div>
+				</div>
+				<nav>
+					<div class="item">
+						<a href="#" class="btn white">Отличия</a>
+					</div>
+					<div class="item">
+						<a href="#" class="btn white">Наш подход</a>
+					</div>
+					<div class="item">
+						<a href="#" class="btn white">Контакты</a>
+					</div>
+				</nav>
+				<div class="menu-btn round-btn">
+					<div class="cn">
+						<div class="fr">
+							<div class="b b1"></div>
+							<div class="b b2"></div>
+							<div class="b b3"></div>
+						</div>
+						<div class="bc">
+							<div class="b b4"></div>
+							<div class="b b5"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<main>
+			<section class="post">
+				<div class="wrapper">
+					<div class="tp">
+						<div class="img">
+							<img src="tmp/post-inner.jpg" alt="">
+						</div>
+					</div>
+					<div class="post-content">
+						<article>
+							<div class="date">15 фефраля</div>
+							<h1>Как мы делали интерактивный квест для RailsClub</h1>
+							<div class="tags"><a href="#">Ruby on Rails</a>,<a href="#">Ruby</a></div>
+
+							<p>RailsClub — конференция, которую AT Consulting посещает практически с момента ее основания. В этом году мы стали ее золотым партнером и решили придумать для участников что-то более интересное, чем розыгрыш призов, и написали интерактивный квест, включающий 15 заданий. Большая часть из них — на знание Ruby и несколько творческих. Опыт получился интересный, так как это был наш первый квест для мероприятий. По итогам проведения квеста мы собрали много отзывов и вопросов по отдельным заданиям. В этой статье мы расскажем о том, как создавали квест, и разберем ответы.</p>
+							<p>Команда состояла из одного front-end, двух back-end разработчиков и дизайнера.</p>
+							<h2>Что внутри?</h2>
+							<p>Писали проект, конечно же, на Ruby on Rails. На чём ещё может быть написана программа для RailsClub? Поскольку времени было мало, решили сделать все без излишеств, просто, но при этом непробиваемо: стандартная MVC-архитектура Ruby on Rails (руки так и чесались добавить Trailblazer, но быстро стало ясно, что лишние слои абстракции только запутают и не дадут выигрыша в небольшом проекте), да пачка проверенных временем гемов. На сервер же встал веб-сервер Nginx с SSL-сертификатом от Let’s Encrypt (в 2016-м году запускать любой проект без HTTPS просто стыдно) и сервер баз данных PostgreSQL — в общем, всё, что необходимо приложению для работы. Сервером, кстати, стала одна из виртуальных машин, которые мы обычно используем для прогона тестов (gitlab-ci-runner’ы) других проектов компании. Поскольку конференция была в выходной день, мы решили, что мощности все равно простаивают, и использовали ее, остановив все лишние процессы )</p>
+							<blockquote>С деплоем тоже всё было просто — это знакомый каждому «рельсовику» Capistrano. Для достаточно простого проекта ничего более навороченного и не требуется. </blockquote>
+							<h2>Линия фронта</h2>
+							<p>Изначально на фронтненде хотели использовать React и redux, однако, поняв суть задачи, мы решили, что в квесте не должно быть динамического UI, поэтому сделали все максимально просто.  Front-end на Turbolinks, Jquery, jquery-ujs.</p>
+							<p>Изначально на фронтненде хотели использовать React и redux, однако, поняв суть задачи, мы решили, что в квесте не должно быть динамического UI, поэтому сделали все максимально просто.  Front-end на Turbolinks, Jquery, jquery-ujs.</p>
+						</article>
+						<aside>
+							<post-preview class="post-preview">
+								<a href="#" class="img">
+									<span class="note">Самое читаемое</span>
+									<img src="tmp/b1.jpg" alt="">
+								</a>
+								<div class="text">
+									<div class="date">12 фефраля</div>
+									<a href="#" class="hd">Eldey Consulting Group</a>
+									<div class="p">
+										<p>RailsClub — конференция, которую AT Consulting посещает практически с момента ее основания. В этом году мы стали ее золотым партнером и решили придумать для участников что-то более интересное, чем розыгрыш призов.</p>
+									</div>
+								</div>
+							</post-preview>
+							<post-preview class="post-preview">
+								<a href="#" class="img">
+									<span class="note">Самое читаемое</span>
+									<img src="tmp/b1.jpg" alt="">
+								</a>
+								<div class="text">
+									<div class="date">12 фефраля</div>
+									<a href="#" class="hd">Eldey Consulting Group</a>
+									<div class="p">
+										<p>RailsClub — конференция, которую AT Consulting посещает практически с момента ее основания. В этом году мы стали ее золотым партнером и решили придумать для участников что-то более интересное, чем розыгрыш призов.</p>
+									</div>
+								</div>
+							</post-preview>
+
+							<div class="popular">
+								<h3>Популярные темы</h3>
+								<div class="tag-list">
+									<a href="#" class="btn deep small">Ruby on Rails</a>
+									<a href="#" class="btn deep small">Ruby</a>
+									<a href="#" class="btn deep small">Клиентоориентированность</a>
+									<a href="#" class="btn deep small">Продающие заголовки</a>
+									<a href="#" class="btn deep small">Лидогенерация</a>
+									<a href="#" class="btn deep small">Привлечение клиентов</a>
+									<a href="#" class="btn deep small">Аналитика лидов</a>
+									<a href="#" class="btn deep small">A/B тестирование</a>
+									<a href="#" class="btn deep small">Призыв к действию</a>
+								</div>
+							</div>
+						</aside>
+						<div class="clear"></div>	
+					</div>
+				</div>
+			</section>
+
+			<section class="simple posts-alike">
+				<div class="wrapper">
+					<h1>Похожие статьи</h1>
+					<div class="container col-3">
+						<post-preview class="item post-preview">
+							<a href="#" class="img">
+								<img src="tmp/b1.jpg" alt="">
+							</a>
+							<div class="text">
+								<div class="date">12 фефраля</div>
+								<a href="#" class="hd">Eldey Consulting Group</a>
+								<div class="p">
+									<p>RailsClub — конференция, которую AT Consulting посещает практически с момента ее основания. В этом году мы стали ее золотым партнером и решили придумать для участников что-то более интересное, чем розыгрыш призов.</p>
+								</div>
+							</div>
+						</post-preview>
+						<post-preview class="item post-preview">
+							<a href="#" class="img">
+								<img src="tmp/b2.jpg" alt="">
+							</a>
+							<div class="text">
+								<div class="date">12 фефраля</div>
+								<a href="#" class="hd">Eldey Consulting Group</a>
+								<div class="p">
+									<p>RailsClub — конференция, которую AT Consulting посещает практически с момента ее основания. В этом году мы стали ее золотым партнером и решили придумать для участников что-то более интересное, чем розыгрыш призов.</p>
+								</div>
+							</div>
+						</post-preview>
+						<div class="clear show640"></div>
+						<post-preview class="item post-preview show1000">
+							<a href="#" class="img">
+								<img src="tmp/b3.jpg" alt="">
+							</a>
+							<div class="text">
+								<div class="date">12 фефраля</div>
+								<a href="#" class="hd">Eldey Consulting Group</a>
+								<div class="p">
+									<p>RailsClub — конференция, которую AT Consulting посещает практически с момента ее основания. В этом году мы стали ее золотым партнером и решили придумать для участников что-то более интересное, чем розыгрыш призов.</p>
+								</div>
+							</div>
+						</post-preview>
+						<div class="clear show1000"></div>
+						<div class="clear"></div>
+					</div>
+				</div>
+			</section>
+
+			<section class="simple posts-last">
+				<div class="wrapper">
+					<h1>Последние статьи</h1>
+					<div class="container col-4">
+						<post-preview class="item post-preview">
+							<a href="#" class="img">
+								<img src="tmp/b1.jpg" alt="">
+							</a>
+							<div class="text">
+								<div class="date">12 фефраля</div>
+								<a href="#" class="hd">Eldey Consulting Group</a>
+							</div>
+						</post-preview>
+						<post-preview class="item post-preview">
+							<a href="#" class="img">
+								<img src="tmp/b2.jpg" alt="">
+							</a>
+							<div class="text">
+								<div class="date">12 фефраля</div>
+								<a href="#" class="hd">Eldey Consulting Group</a>
+							</div>
+						</post-preview>
+						<div class="clear show640"></div>
+						<post-preview class="item post-preview">
+							<a href="#" class="img">
+								<img src="tmp/b3.jpg" alt="">
+							</a>
+							<div class="text">
+								<div class="date">12 фефраля</div>
+								<a href="#" class="hd">Eldey Consulting Group</a>
+							</div>
+						</post-preview>
+						<post-preview class="item post-preview">
+							<a href="#" class="img">
+								<img src="tmp/b1.jpg" alt="">
+							</a>
+							<div class="text">
+								<div class="date">12 фефраля</div>
+								<a href="#" class="hd">Eldey Consulting Group</a>
+							</div>
+						</post-preview>
+						<div class="clear show640"></div>
+						<div class="clear show1000"></div>
+
+						<post-preview class="item post-preview">
+							<a href="#" class="img">
+								<img src="tmp/b2.jpg" alt="">
+							</a>
+							<div class="text">
+								<div class="date">12 фефраля</div>
+								<a href="#" class="hd">Eldey Consulting Group</a>
+							</div>
+						</post-preview>
+						<post-preview class="item post-preview">
+							<a href="#" class="img">
+								<img src="tmp/b3.jpg" alt="">
+							</a>
+							<div class="text">
+								<div class="date">12 фефраля</div>
+								<a href="#" class="hd">Eldey Consulting Group</a>
+							</div>
+						</post-preview>
+						<div class="clear show640"></div>
+						<post-preview class="item post-preview">
+							<a href="#" class="img">
+								<img src="tmp/b1.jpg" alt="">
+							</a>
+							<div class="text">
+								<div class="date">12 фефраля</div>
+								<a href="#" class="hd">Eldey Consulting Group</a>
+							</div>
+						</post-preview>
+						<post-preview class="item post-preview">
+							<a href="#" class="img">
+								<img src="tmp/b2.jpg" alt="">
+							</a>
+							<div class="text">
+								<div class="date">12 фефраля</div>
+								<a href="#" class="hd">Eldey Consulting Group</a>
+							</div>
+						</post-preview>
+						<div class="clear show640"></div>
+						<div class="clear show1000"></div>
+						<div class="clear"></div>
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer>
+			<arc-text>Свяжитесь</arc-text>
+			<div class="wrapper">
+				<div class="tp">
+					<div class="l">
+						<div class="tx">Напишите нам</div>
+						<div><a href="mailto:hello@eldey.ru">hello@eldey.ru</a></div>
+					</div>
+					<div class="r">
+						<div class="tx">Позвоните нам</div>
+						<div><a href="tel:+74996769000">+7 (499) 676-90-00</a></div>
+					</div>
+					<div class="clear"></div>
+					<button class="btn wide blue">Заказать обратный звонок</button>
+				</div>
+				<div class="bt">
+					<div class="l">
+						<nav>
+							<div class="item">
+								<a href="#">Миссия</a>
+							</div>
+							<div class="item">
+								<a href="#">Блог</a>
+							</div>
+							<div class="item">
+								<a href="#">Идеи в хорошие руки</a>
+							</div>
+						</nav>
+					</div>
+					<div class="r">
+						<div class="social">
+							<div class="item vk">
+								<i></i>
+							</div>
+							<div class="item ig">
+								<i></i>
+							</div>
+							<div class="item fb">
+								<i></i>
+							</div>
+							<div class="item tw">
+								<i></i>
+							</div>
+						</div>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+		</footer>
+	</div>
+</body>
+</html>
