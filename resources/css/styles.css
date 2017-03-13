@@ -1383,8 +1383,9 @@ ul > li:before {
 	background: none;
 	font-size: 14px;
 	font-family: 'Geometria', sans-serif;
-	color: #363636;
+	color: #ababab;
 }
+
 .form-wrapper .checkbox-wrapper {
 	display: block;
 	position: relative;
@@ -1447,6 +1448,23 @@ ul > li:before {
 		font-size: 14px;
 	}
 }
+
+.form-wrapper .input-wrapper,
+.form-wrapper input.tx {
+	color: #ababab;
+	transition: color 0.2s;
+}
+.form-wrapper .input-wrapper.focus,
+.form-wrapper .checkbox-wrapper.focus,
+.form-wrapper .input-wrapper.focus input.tx {
+	color: #363636;
+}
+.form-wrapper .input-wrapper.error,
+.form-wrapper .checkbox-wrapper.error,
+.form-wrapper .input-wrapper.error input.tx {
+	color: #dc3664;
+}
+
 main {
 	position: relative;
 }
@@ -2356,6 +2374,33 @@ footer nav .item:last-child {
 	transform: translateY(0px);
 	opacity: 1;
 }
+
+
+.csstransitions .appear-textbox {
+	transition: all 0.8s;
+	transform: translateY(10px);
+	opacity: 0;
+	box-shadow: 0px 5px 10px rgba(158, 174, 180, 0.5);
+}
+.csstransitions .appear-textbox.triggered-once {
+	opacity: 1;
+	transform: translateY(0px);
+	box-shadow: 0px 20px 50px rgba(158, 174, 180, 0.5);
+}
+.csstransitions .appear-textbox arc-text {
+	transform: rotate(-20deg);
+	transition: transform 0.8s;
+}
+.csstransitions .appear-textbox.triggered-once arc-text {
+	transform: rotate(0deg);
+}
+.csstransitions .find .appear-textbox.triggered-once arc-text {
+	transform: rotate(10deg);
+}
+.csstransitions .consult .appear-textbox.triggered-once arc-text {
+	transform: rotate(25deg);
+}
+
 
 .csstransitions .result .s-rs {
 	opacity: 0;

@@ -36,9 +36,17 @@ define(['dispatcher', 'form/form.store', 'utils'], function(dispatcher, formStor
 		data = new FormData(this);
 
 		dispatcher.dispatch({
+			type: 'form-validate',
+			id: this._id
+		});
+
+		if (!this._valid) return;
+
+		dispatcher.dispatch({
 			type: 'form-send',
 			id: this._id
 		});
+
 
 		utils.http.post(data).then(function(response) {
 			var json = JSON.parse(response);
@@ -72,7 +80,7 @@ define(['dispatcher', 'form/form.store', 'utils'], function(dispatcher, formStor
 		this._valid = true;
 	}
 	elementProto.invalidate = function() {
-		this._valid = true;
+		this._valid = false;
 	}
 
 	elementProto.createdCallback = function() {
