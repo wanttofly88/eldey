@@ -29,5 +29,14 @@ require([
 	'directional-scroll/curve.component',
 	'directional-scroll/bird.component',
 	'trees/tree.component',
-	'blog/post-preview.component'
+	'blog/post-preview.component',
+	'img/img.component',
+	'img/div.component',
+	'preloader/preloader-helper.component',
+	'trigger/scroll-trigger.component',
+	'trigger/timer-trigger.component',
+	'trigger/simple-trigger.component',
+	'form/form.component',
+	'form/response.component',
+	'form/input-wrapper.component'
 ]);

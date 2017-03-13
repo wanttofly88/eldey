@@ -28,6 +28,10 @@ define([
 
 		if (!path) return;
 
+		if (!this._active) {
+			this._active = true;
+			this.classList.add('active');
+		}
 
 		length = path.getTotalLength();
 
@@ -49,17 +53,18 @@ define([
 		angle = Math.atan2(dy, dx);
 
 		this.style.transform = 'translateX(' + (p.x - w/2) + 'px) translateY(' + (p.y - h) + 'px) rotate(' + angle + 'rad)';
-		console.log(coef);
 	}
 	elementProto.handleResize = function() {
 		var pw = document.getElementsByClassName('page-wrapper')[0];
 		var wh = resizeStore.getData().height;
 		this._total = pw.clientHeight - wh;
+		this.handleScroll();
 	}
 
 	elementProto.createdCallback = function() {
 		this.handleScroll = this.handleScroll.bind(this);
 		this.handleResize = this.handleResize.bind(this);
+		this._active = false;
 	}
 	elementProto.attachedCallback = function() {
 		this._w = this.clientWidth;
@@ -74,7 +79,6 @@ define([
 		dScrollStore.unsubscribe(this.handleScroll);
 	}
 
-	Object.setPrototypeOf(elementProto, HTMLElement.prototype);
 	document.registerElement('bird-component', {
 		prototype: elementProto
 	});

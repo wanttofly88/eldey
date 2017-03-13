@@ -26,7 +26,6 @@ define(['dispatcher'], function(dispatcher) {
 	elementProto.detachedCallback = function() {
 	}
 
-	Object.setPrototypeOf(elementProto, HTMLElement.prototype);
 	document.registerElement('arc-text', {
 		prototype: elementProto
 	});

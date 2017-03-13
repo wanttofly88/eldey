@@ -111,47 +111,56 @@ define([
 		var magic = wh*2 - RADIUS*2 + 106; // I'm not sure why 106. So this is some kind of logical duct tape I gusess.
 
 		sec = document.getElementById('analisys');
-		offs = utils.offset(sec).top;
 
-		points.push('M' + l + ' ' + 0);
-		points.push('L' + l + ' ' + offs);
+		if (sec) {
+			offs = utils.offset(sec).top;
 
-		t = offs;
-		intermediateResult = this.curveTo(points, l, t, sec.clientHeight*2 - RADIUS*2, 'right');
-		curvePoints['analisys'] = {
-			id: 'analisys',
-			p1: offs,
-			p2: offs + RADIUS*2,
-			p3: offs + RADIUS*4,
-			x: 0
+			points.push('M' + l + ' ' + 0);
+			points.push('L' + l + ' ' + offs);
+
+			t = offs;
+			intermediateResult = this.curveTo(points, l, t, sec.clientHeight*2 - RADIUS*2, 'right');
+			curvePoints['analisys'] = {
+				id: 'analisys',
+				p1: offs,
+				p2: offs + RADIUS*2,
+				p3: offs + RADIUS*4,
+				x: 0
+			}
 		}
 
 		sec = document.getElementById('focus');
-		offs = utils.offset(sec).top - magic;
 
-		l = intermediateResult.l;
-		t = offs;
-		intermediateResult = this.curveTo(points, l, t, - sec.clientHeight*2 + RADIUS*2, 'left');
-		curvePoints['focus'] = {
-			id: 'focus',
-			p1: offs,
-			p2: offs + RADIUS*2,
-			p3: offs + RADIUS*4,
-			x: wh*2
+		if (sec) {
+			offs = utils.offset(sec).top - magic;
+
+			l = intermediateResult.l;
+			t = offs;
+			intermediateResult = this.curveTo(points, l, t, - sec.clientHeight*2 + RADIUS*2, 'left');
+			curvePoints['focus'] = {
+				id: 'focus',
+				p1: offs,
+				p2: offs + RADIUS*2,
+				p3: offs + RADIUS*4,
+				x: wh*2
+			}
 		}
 
 		sec = document.getElementById('result');
-		offs = utils.offset(sec).top - magic*2;
 
-		l = intermediateResult.l;
-		t = offs;
-		intermediateResult = this.curveTo(points, l, t, sec.clientHeight*2 - RADIUS*2, 'right');
-		curvePoints['result'] = {
-			id: 'result',
-			p1: offs,
-			p2: offs + RADIUS*2,
-			p3: offs + RADIUS*4,
-			x: 0
+		if (sec) {
+			offs = utils.offset(sec).top - magic*2;
+
+			l = intermediateResult.l;
+			t = offs;
+			intermediateResult = this.curveTo(points, l, t, sec.clientHeight*2 - RADIUS*2, 'right');
+			curvePoints['result'] = {
+				id: 'result',
+				p1: offs,
+				p2: offs + RADIUS*2,
+				p3: offs + RADIUS*4,
+				x: 0
+			}
 		}
 
 		sec = document.getElementsByClassName('page-wrapper')[0];
@@ -186,7 +195,7 @@ define([
 
 		t = wh/2 + fromCenter;
 
-		l2 = LEFT_SHIFT + RADIUS*2;
+		l2 = ww - LEFT_SHIFT - RADIUS*2;
 		l1 = LEFT_SHIFT;
 		t1 = t + RADIUS;
 		t2 = t1 + RADIUS;
@@ -194,39 +203,60 @@ define([
 		points.push('M' + l + ' ' + t);
 		points.push('L' + l2 + ' ' + t);
 
-		l = LEFT_SHIFT;
+		l = ww - LEFT_SHIFT;
 		l1 = l + RADIUS;
 		l2 = l1 + RADIUS;
 		points.push('C' + l + ' ' + t + ', ' + l +  ' ' + t1 + ', ' + l + ' ' + t2);
 
+		sec = document.getElementById('question-point');
+
+		if (sec) {
+			offs = utils.offset(sec).top;
+			t = offs - RADIUS*2 - 100;
+			l = ww - LEFT_SHIFT;
+
+			intermediateResult = this.curveTo(points, l, t, - ww + 2*LEFT_SHIFT + 2*RADIUS, 'left');
+		}
+
 		sec = document.getElementById('analisys');
-		offs = utils.offset(sec).top;
-		l = LEFT_SHIFT;
 
-		t = offs - wh/2 + fromCenter;
+		if (sec) {
+			offs = utils.offset(sec).top;
+			l = LEFT_SHIFT;
+			t = offs - wh/2 + fromCenter;
 
-		intermediateResult = this.curveTo(points, l, t, sec.clientHeight*2 - RADIUS*2, 'right');
+			intermediateResult = this.curveTo(points, l, t, sec.clientHeight*2 - RADIUS*2, 'right');
+		}
 
 		sec = document.getElementById('gain-point');
-		offs = utils.offset(sec).top - magic - 100;
-		t = offs - RADIUS*2;
-		l = intermediateResult.l;
 
-		intermediateResult = this.curveTo(points, l, t, ww - 2*LEFT_SHIFT - 2*RADIUS, 'right');
+		if (sec) {
+			offs = utils.offset(sec).top - magic - 100;
+			t = offs - RADIUS*2;
+			l = intermediateResult.l;
+
+			intermediateResult = this.curveTo(points, l, t, ww - 2*LEFT_SHIFT - 2*RADIUS, 'right');
+		}
 
 		sec = document.getElementById('focus');
-		offs = utils.offset(sec).top - magic - wh/2 + fromCenter;
-		l = intermediateResult.l;
-		t = offs;
 
-		intermediateResult = this.curveTo(points, l, t, - (sec.clientHeight*2 + RADIUS*2) - (ww - (LEFT_SHIFT + 2*RADIUS)*2), 'left');
+		if (sec) {
+			offs = utils.offset(sec).top - magic - wh/2 + fromCenter;
+			l = intermediateResult.l;
+			t = offs;
+
+			intermediateResult = this.curveTo(points, l, t, - (sec.clientHeight*2 + RADIUS*2) - (ww - (LEFT_SHIFT + 2*RADIUS)*2), 'left');
+		}
 
 		sec = document.getElementById('result');
-		offs = utils.offset(sec).top - magic*2;
-		l = LEFT_SHIFT;
-		t = offs - 100;
 
-		intermediateResult = this.curveTo(points, l, t, sec.clientHeight*2 - RADIUS*2, 'right');
+		if (sec) {
+			offs = utils.offset(sec).top - magic*2;
+			l = LEFT_SHIFT;
+			t = offs - 100;
+
+			intermediateResult = this.curveTo(points, l, t, sec.clientHeight*2 - RADIUS*2, 'right');
+		}
 
 		sec = document.getElementsByTagName('footer')[0];
 		offs = utils.offset(sec).top - magic*3;
@@ -300,7 +330,6 @@ define([
 		resizeStore.unsubscribe(this.handleResize);
 	}
 
-	Object.setPrototypeOf(elementProto, HTMLElement.prototype);
 	document.registerElement('curve-container', {
 		prototype: elementProto
 	});

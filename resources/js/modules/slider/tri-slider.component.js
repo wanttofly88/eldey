@@ -74,7 +74,6 @@ define(['dispatcher', 'resize/resize.store'], function(dispatcher, resizeStore) 
 		this._nextArrow.removeEventListener('click', this.next);
 	}
 
-	Object.setPrototypeOf(elementProto, HTMLElement.prototype);
 	document.registerElement('tri-slider', {
 		prototype: elementProto
 	});

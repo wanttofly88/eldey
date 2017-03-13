@@ -53,7 +53,6 @@ define([
 		resizeStore.eventEmitter.unsubscribe(this.handleResize);
 	}
 
-	Object.setPrototypeOf(elementProto, HTMLElement.prototype);
 	document.registerElement('proportional-height', {
 		prototype: elementProto
 	});
