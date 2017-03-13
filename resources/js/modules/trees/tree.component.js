@@ -189,7 +189,6 @@ define(['dispatcher', 'snap'], function(dispatcher, Snap) {
 	elementProto.detachedCallback = function() {
 	}
 
-	Object.setPrototypeOf(elementProto, HTMLElement.prototype);
 	document.registerElement('tree-component', {
 		prototype: elementProto
 	});

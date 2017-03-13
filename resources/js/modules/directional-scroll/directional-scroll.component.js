@@ -29,9 +29,12 @@ define([
 		this._sections.forEach(function(section) {
 			if (section.pivot) {
 				section.wrapper.style.width = ww + 'px';
-				section.wrapper.style.height = wh + 'px';
+				
 				if (self._active) {
+					section.wrapper.style.height = wh + 'px';
 					section.fake.style.height = section.element.clientHeight + 'px';
+				} else {
+					section.wrapper.style.height = 'auto';
 				}
 			}
 		});
@@ -42,6 +45,9 @@ define([
 
 		if (this._active) {
 			this.handleScroll();
+			setTimeout(function() {
+				self.handleScroll();
+			}, 60);
 		}
 	}
 
@@ -103,6 +109,23 @@ define([
 					c = -c;
 				}
 
+				if (direction !== self._prevDirection) {
+					self._prevDirection = direction;
+
+					if (direction === 'horizontal') {
+						dispatcher.dispatch({
+							type: 'trigger-element',
+							id: section.element.getAttribute('data-trigger-id')
+						});
+					} else {
+						dispatcher.dispatch({
+							type: 'untrigger-element',
+							id: section.element.getAttribute('data-trigger-id')
+						});
+					}
+				}
+
+
 				if (Math.abs(c) < 1) {
 					if (section.mode !== 'fixed') {
 						section.mode = 'fixed';
@@ -110,9 +133,9 @@ define([
 					}
 					section.wrapper.style.transform = 'translateX(' + offs*c + 'px) translateY(' + ((p1 - y)/(p3 - p1) + 0.5)*RADIUS*5 + 'px)';
 				} else {
-					if (section.mode !== 'static') {
-						section.mode = 'static';
-						section.wrapper.style.position = 'static';
+					if (section.mode !== 'relative') {
+						section.mode = 'relative';
+						section.wrapper.style.position = 'relative';
 						section.wrapper.style.transform = 'translateX(' + offs*c + 'px) translateY(0px)';
 					}
 				}
@@ -147,7 +170,7 @@ define([
 				section.fake.style.height = '0px';
 			}
 			if (section.pivot) {
-				section.wrapper.style.position = 'static';
+				section.wrapper.style.position = 'relative';
 				section.wrapper.style.transform = 'translateX(0px) translateY(0px)';
 			} else {
 				section.element.style.transform = 'translateX(0px) translateY(0px)';
@@ -163,6 +186,7 @@ define([
 		this.activate = this.activate.bind(this);
 		this.deactivate = this.deactivate.bind(this);
 		this._active = false;
+		this._prevDirection = false;
 	}
 	elementProto.attachedCallback = function() {
 		var elements = this.getElementsByTagName('section');
@@ -198,7 +222,6 @@ define([
 		resizeStore.unsubscribe(this.handleResize);
 	}
 
-	Object.setPrototypeOf(elementProto, HTMLElement.prototype);
 	document.registerElement('directional-scroll', {
 		prototype: elementProto,
 		extends: 'main'

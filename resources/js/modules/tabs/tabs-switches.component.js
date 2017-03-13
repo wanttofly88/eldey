@@ -59,7 +59,6 @@ define(['dispatcher', 'tabs/tabs.store'], function(dispatcher, tabsStore) {
 		tabsStore.unsubscribe(this.handleStore);
 	}
 
-	Object.setPrototypeOf(elementProto, HTMLElement.prototype);
 	document.registerElement('tabs-switches', {
 		prototype: elementProto
 	});

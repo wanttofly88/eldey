@@ -4,6 +4,138 @@
 		"selected_items":
 		[
 			[
+				"tra",
+				"transition-delay"
+			],
+			[
+				"h",
+				"horizontal"
+			],
+			[
+				"ha",
+				"handleInput"
+			],
+			[
+				"hand",
+				"handleInput"
+			],
+			[
+				"_",
+				"_input"
+			],
+			[
+				"_f",
+				"_formId"
+			],
+			[
+				"di",
+				"dispatch"
+			],
+			[
+				"sto",
+				"store"
+			],
+			[
+				"for",
+				"form"
+			],
+			[
+				"ap",
+				"appear-up"
+			],
+			[
+				"app",
+				"appear-up-2"
+			],
+			[
+				"sc",
+				"scroll-trigger"
+			],
+			[
+				"appea",
+				"appear-up"
+			],
+			[
+				"co",
+				"complete"
+			],
+			[
+				"prel",
+				"preloaderStore"
+			],
+			[
+				"re",
+				"return"
+			],
+			[
+				"id",
+				"idNum"
+			],
+			[
+				"it",
+				"item"
+			],
+			[
+				"appe",
+				"appear-up"
+			],
+			[
+				"tri",
+				"triggered"
+			],
+			[
+				"st",
+				"storeData"
+			],
+			[
+				"trigger",
+				"trigger"
+			],
+			[
+				"ele",
+				"element"
+			],
+			[
+				"cr",
+				"createdCallback"
+			],
+			[
+				"scr",
+				"scroll"
+			],
+			[
+				"scroll",
+				"scrollTop"
+			],
+			[
+				"ite",
+				"items"
+			],
+			[
+				"im",
+				"imgProptotype"
+			],
+			[
+				"cre",
+				"createElement"
+			],
+			[
+				"se",
+				"sec"
+			],
+			[
+				"box-",
+				"box-sizing"
+			],
+			[
+				"c",
+				"center"
+			],
+			[
+				"bo",
+				"border-radius"
+			],
+			[
 				"b",
 				"bold"
 			],
@@ -12,28 +144,8 @@
 				"left"
 			],
 			[
-				"_",
-				"_hd"
-			],
-			[
 				"mouse",
 				"handleMouseEnter"
-			],
-			[
-				"ha",
-				"handleMouseEnter"
-			],
-			[
-				"cre",
-				"createdCallback"
-			],
-			[
-				"di",
-				"direction"
-			],
-			[
-				"tra",
-				"translateZ()"
 			],
 			[
 				"tran",
@@ -64,20 +176,8 @@
 				"scrollStore"
 			],
 			[
-				"scr",
-				"scrollStore"
-			],
-			[
 				"u",
 				"url()"
-			],
-			[
-				"for",
-				"for\tfor (…) {…}"
-			],
-			[
-				"re",
-				"return"
 			],
 			[
 				"si",
@@ -96,16 +196,8 @@
 				"background"
 			],
 			[
-				"se",
-				"self"
-			],
-			[
 				"fa",
 				"fake"
-			],
-			[
-				"ele",
-				"element"
 			],
 			[
 				"ac",
@@ -156,10 +248,6 @@
 				"wh"
 			],
 			[
-				"st",
-				"style"
-			],
-			[
 				"L",
 				"LEFT_SHIFT"
 			],
@@ -170,10 +258,6 @@
 			[
 				"sce",
 				"scrollStore"
-			],
-			[
-				"sc",
-				"scrolled"
 			],
 			[
 				"get",
@@ -196,10 +280,6 @@
 				"_id"
 			],
 			[
-				"sto",
-				"storeData"
-			],
-			[
 				"tab",
 				"tabsStore"
 			],
@@ -210,10 +290,6 @@
 			[
 				"ro",
 				"rotate()"
-			],
-			[
-				"co",
-				"component"
 			],
 			[
 				"cli",
@@ -392,10 +468,6 @@
 				"uniforms"
 			],
 			[
-				"c",
-				"color"
-			],
-			[
 				"ce",
 				"cellSize"
 			],
@@ -442,124 +514,52 @@
 			[
 				"trn",
 				"transform"
-			],
-			[
-				"o",
-				"other"
-			],
-			[
-				"de",
-				"delay"
-			],
-			[
-				"li",
-				"line"
-			],
-			[
-				"def",
-				"defaultText"
-			],
-			[
-				"lin",
-				"line"
-			],
-			[
-				"letter",
-				"letter-hidden"
-			],
-			[
-				"a",
-				"auto"
-			],
-			[
-				"tea",
-				"text-align"
-			],
-			[
-				"ov",
-				"overflow"
-			],
-			[
-				"text-a",
-				"text-align"
-			],
-			[
-				"fak",
-				"fakeInner"
-			],
-			[
-				"can",
-				"canvasInverted"
-			],
-			[
-				"_ca",
-				"_canvasInverted"
-			],
-			[
-				"inv",
-				"_canvasInverted"
-			],
-			[
-				"lt",
-				"ltHeight"
-			],
-			[
-				"inner",
-				"innerHTML"
-			],
-			[
-				"ca",
-				"canvasInverted"
-			],
-			[
-				"cle",
-				"clientWidth"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
+			"file": "resources/js/app.js",
+			"settings":
+			{
+				"buffer_size": 1008,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 13049,
+				"buffer_size": 15089,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "compare.html",
+			"file": "resources/css/styles.css",
 			"settings":
 			{
-				"buffer_size": 6116,
+				"buffer_size": 41101,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "approach.html",
+			"file": "resources/js/modules/directional-scroll/directional-scroll.component.js",
 			"settings":
 			{
-				"buffer_size": 6389,
+				"buffer_size": 5875,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "resources/css/defs",
+			"file": "resources/js/modules/trigger/simple-trigger.component.js",
 			"settings":
 			{
-				"buffer_size": 483,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "post.html",
-			"settings":
-			{
-				"buffer_size": 12128,
+				"buffer_size": 562,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -655,47 +655,87 @@
 		"/D/sites/eldey/resources",
 		"/D/sites/eldey/resources/css",
 		"/D/sites/eldey/resources/images",
-		"/D/sites/eldey/resources/images/splats",
 		"/D/sites/eldey/resources/js",
 		"/D/sites/eldey/resources/js/modules",
+		"/D/sites/eldey/resources/js/modules/blog",
 		"/D/sites/eldey/resources/js/modules/directional-scroll",
-		"/D/sites/eldey/resources/js/modules/router",
-		"/D/sites/eldey/resources/js/modules/scroll",
-		"/D/sites/eldey/resources/js/modules/tabs",
+		"/D/sites/eldey/resources/js/modules/form",
+		"/D/sites/eldey/resources/js/modules/img",
+		"/D/sites/eldey/resources/js/modules/preloader",
+		"/D/sites/eldey/resources/js/modules/resize",
 		"/D/sites/eldey/resources/js/modules/trees",
+		"/D/sites/eldey/resources/js/modules/trigger",
 		"/D/sites/eldey/tmp"
 	],
 	"file_history":
 	[
-		"/D/sites/eldey/contacts.html",
-		"/D/sites/eldey/post.html",
-		"/D/sites/eldey/blog.html",
+		"/D/sites/eldey/resources/css/styles.css",
+		"/D/sites/for redcollar/Myau/resources/js/modules/form/form.view.js",
+		"/D/sites/eldey/resources/js/modules/form/form.component.js",
+		"/D/sites/eldey/resources/js/modules/form/input-wrapper.component.js",
+		"/D/sites/for redcollar/redcollar/resources/js/modules/utils.js",
+		"/D/sites/eldey/resources/js/modules/form/form.store.js",
+		"/D/sites/for redcollar/redcollar/resources/js/modules/form/form.view.js",
+		"/D/sites/eldey/resources/js/modules/trigger/timer-trigger.component.js",
+		"/D/sites/eldey/resources/js/modules/trigger/scroll-trigger.component.js",
+		"/D/sites/for redcollar/redcollar/resources/js/modules/form/form-responce.view.js",
+		"/D/sites/eldey/resources/js/modules/form/response.component.js",
+		"/D/sites/eldey/resources/js/modules/form/responce.component.js",
+		"/D/sites/for redcollar/Myau/resources/js/modules/form/form.store.js",
+		"/D/sites/eldey/resources/js/modules/trigger/trigger.store.js",
+		"/D/sites/for redcollar/redcollar/resources/js/modules/trigger/timer-trigger.view.js",
+		"/C/Users/Kernel/Downloads/QQ Beats Exclusive Contract (1).txt",
+		"/C/Users/Kernel/Downloads/QQ Beats Exclusive Contract.pages",
+		"/D/sites/eldey/resources/js/modules/trigger/trigger.prototype.js",
+		"/D/sites/eldey/resources/js/modules/img/img.store.js",
+		"/D/sites/eldey/resources/js/modules/img/img.prototype.js",
+		"/D/sites/eldey/resources/js/modules/directional-scroll/curve.component.js",
+		"/D/sites/eldey/resources/js/modules/directional-scroll/bird.component.js",
+		"/D/sites/eldey/resources/js/modules/directional-scroll/directional-scroll.component.js",
 		"/D/sites/eldey/resources/js/app.js",
+		"/D/sites/eldey/resources/js/modules/scroll/virtual-scroll.store.js",
+		"/D/sites/for redcollar/redcollar/resources/js/modules/trigger/trigger.store.js",
+		"/D/sites/for redcollar/redcollar/resources/js/modules/trigger/scroll-trigger.view.js",
+		"/D/sites/eldey/resources/js/modules/img/div.component.js",
+		"/D/sites/eldey/resources/js/modules/img/img.component.js",
+		"/D/sites/eldey/resources/js/modules/component.dummy.js",
+		"/D/sites/eldey/resources/js/modules/trees/tree.component.js",
+		"/D/sites/eldey/resources/js/modules/tabs/tabs.component.js",
+		"/D/sites/eldey/resources/js/modules/tabs/tabs-switches.component.js",
+		"/D/sites/eldey/resources/js/modules/slider/tri-slider.component.js",
+		"/D/sites/eldey/resources/js/modules/resize/proportional-height.component.js",
+		"/D/sites/eldey/resources/js/modules/preloader/preloader-helper.component.js",
+		"/D/sites/eldey/resources/js/modules/blog/post-preview.component.js",
+		"/D/sites/eldey/resources/js/modules/decor/arc-text.component.js",
+		"/D/sites/qqb/resources/js/modules/router/router.component.js",
+		"/D/sites/qqb/resources/js/modules/router/router.store.js",
+		"/D/sites/for redcollar/redcollar/resources/js/modules/trigger/trigger.view.js",
+		"/D/sites/for redcollar/redcollar/resources/js/modules/preload/preload.store.js",
+		"/D/sites/eldey/resources/js/modules/preloader/preloader.store.js",
+		"/D/sites/for redcollar/redcollar/resources/js/modules/images/images.store.js",
+		"/D/sites/for redcollar/redcollar/resources/js/modules/preload/preload.view.js",
+		"/D/sites/eldey/resources/js/modules/store.dummy.js",
+		"/D/sites/eldey/post.html",
+		"/D/sites/for redcollar/redcollar/resources/js/modules/images/images.view.js",
+		"/D/sites/eldey/resources/js/modules/resize/breakpoint.store.js",
+		"/D/sites/eldey/resources/js/modules/images/img.component.js",
+		"/D/sites/eldey/resources/js/modules/resize/resize.store.js",
+		"/D/sites/eldey/approach.html",
+		"/D/sites/eldey/contacts.html",
+		"/D/sites/eldey/compare.html",
+		"/D/sites/eldey/resources/css/defs",
+		"/D/sites/eldey/blog.html",
 		"/D/sites/eldey/todo.md",
 		"/C/Users/Kernel/AppData/Local/Temp/Rar$DRa0.772/fontie-package/Geometria.css",
-		"/D/sites/eldey/resources/js/modules/blog/post-preview.component.js",
-		"/D/sites/eldey/resources/js/modules/trees/tree.component.js",
-		"/D/sites/eldey/resources/js/modules/directional-scroll/bird.component.js",
-		"/D/sites/eldey/resources/js/modules/directional-scroll/curve.component.js",
-		"/D/sites/eldey/resources/js/modules/directional-scroll/directional-scroll.component.js",
-		"/D/sites/eldey/resources/css/styles.css",
 		"/D/sites/eldey/resources/js/modules/directional-scroll/directional-scroll.store.js",
 		"/D/sites/eldey/index.html",
-		"/D/sites/eldey/resources/js/modules/component.dummy.js",
 		"/D/sites/eldey/resources/images/arrow-right.svg",
 		"/D/sites/eldey/resources/js/modules/scroll/scroll.store.js",
 		"/D/sites/eldey/resources/js/libs/snap.js",
 		"/D/sites/for redcollar/redcollar/resources/js/modules/scroll/scroll.store.js",
-		"/D/sites/eldey/resources/js/modules/tabs/tabs-switches.component.js",
-		"/D/sites/eldey/resources/js/modules/resize/resize.store.js",
 		"/D/sites/eldey/resources/js/modules/tabs/tabs.store.js",
 		"/D/sites/qqb/resources/js/modules/slide-scroll/slide-scroll.component.js",
-		"/D/sites/eldey/resources/js/modules/tabs/tabs.component.js",
-		"/D/sites/eldey/resources/js/modules/store.dummy.js",
 		"/D/sites/eldey/resources/images/logo.svg",
-		"/D/sites/eldey/resources/js/modules/decor/arc-text.component.js",
-		"/D/sites/eldey/resources/js/modules/slider/tri-slider.component.js",
-		"/D/sites/eldey/resources/css/defs",
 		"/D/sites/qqb/album.html",
 		"/D/sites/qqb/resources/css/styles.css",
 		"/D/sites/qqb/index.html",
@@ -724,7 +764,6 @@
 		"/D/sites/qqb/resources/js/modules/glsl/dot-fragment.glsl",
 		"/D/sites/qqb/resources/js/modules/audio/audio-player.component.js",
 		"/D/sites/qqb/resources/js/modules/router/page-transition.component.js",
-		"/D/sites/qqb/resources/js/modules/router/router.component.js",
 		"/D/sites/qqb/resources/js/modules/glsl/loading-fragment.glsl",
 		"/D/sites/qqb/resources/js/modules/utils.js",
 		"/D/sites/qqb/resources/js/modules/component.dummy.js",
@@ -757,48 +796,11 @@
 		"/D/sites/qqb/resources/js/modules/glsl/ba",
 		"/D/sites/for redcollar/redcollar/resources/js/modules/webgl/webgl-video.view.js",
 		"/D/sites/qqb/resources/js/modules/glsl/simple-fragment.glsl",
-		"/D/sites/qqb/resources/js/modules/webgl-component.dummy.js",
-		"/D/sites/qqb/resources/js/modules/glsl/simple-vertex.glsl",
-		"/D/sites/qqb/resources/js/modules/stage/stage-old.component.js",
-		"/D/sites/qqb/resources/js/modules/glsl/simple-fragment.glsl.html",
-		"/D/sites/qqb/resources/js/libs/text.js",
-		"/D/sites/qqb/resources/js/modules/audio/audio-data.store.js",
-		"/D/sites/qqb/resources/js/modules/menu/menu-item.component.js",
-		"/D/sites/qqb/resources/js/modules/slider/beat-bg-slider.component.js",
-		"/D/sites/qqb/resources/js/modules/slide-scroll/slide-scroll.store.js",
-		"/D/sites/qqb/resources/js/modules/print/print.view.js",
-		"/D/sites/for redcollar/redcollar/resources/js/modules/router/history.view.js",
-		"/D/sites/qqb/resources/js/modules/slide-scroll/slide-scroll-old.component.js",
-		"/D/sites/qqb/resources/js/modules/decor/header-appear.component.js",
-		"/D/sites/qqb/resources/js/modules/preloader/preloader.store.js",
-		"/D/sites/qqb/resources/js/modules/header-appear/header-appear.component.js",
-		"/D/sites/qqb/resources/js/modules/page-preview/page-preview.store.js",
-		"/D/sites/qqb/resources/js/modules/page-preview/page-preview.component.js",
-		"/D/sites/qqb/resources/js/modules/scheme/scheme.store.js",
-		"/D/sites/qqb/resources/js/modules/text-glitch/text-glitch2.component.js",
-		"/D/sites/for redcollar/baskov/templates/baskov/js/modules/audio/player.js",
-		"/D/sites/qqb/resources/css/defs.css",
-		"/D/sites/qqb/resources/js/modules/text-glitch/text-glitch.component.js",
-		"/D/sites/valerka2/resources/js/modules/stage/stage.component.js",
-		"/D/sites/qqb/resources/js/libs/TweenMax.js",
-		"/D/sites/qqb/resources/js/modules/beat-slider/beat-bg-slider.component.js",
-		"/D/sites/for redcollar/redcollar/resources/js/modules/webgl/webgl-text.view.js",
-		"/D/sites/qqb/resources/js/libs/THREE.js",
-		"/D/sites/qqb/resources/js/libs/THREE-Shaders.js",
-		"/C/Users/Kernel/AppData/Local/Temp/Rar$DRa0.345/three.js-master/build/three.min.js",
-		"/D/sites/for redcollar/redcollar/resources/js/libs/three-with-composer.js",
-		"/D/sites/for redcollar/redcollar/index.html",
-		"/D/sites/valerka2/resources/js/app.js",
-		"/D/sites/valerka2/index.html",
-		"/C/Users/Kernel/AppData/Local/Temp/Rar$DRa0.904/three.js-master/src/Three.js",
-		"/D/sites/for redcollar/redcollar/resources/js/modules/webgl-gradient/webgl-gradient.view.js",
-		"/D/sites/qqb/resources/js/modules/store.dummy.js",
-		"/D/sites/for redcollar/redcollar/resources/js/app.js",
-		"/D/sites/qqb/resources/js/modules/scheme/scheme.view.js"
+		"/D/sites/qqb/resources/js/modules/webgl-component.dummy.js"
 	],
 	"find":
 	{
-		"height": 36.0
+		"height": 53.0
 	},
 	"find_in_files":
 	{
@@ -813,6 +815,52 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"nameInput",
+			"add",
+			"responce",
+			"items[e.id].element",
+			"reset",
+			"{\n",
+			"item.element",
+			"вы по",
+			"ajax-",
+			"curve-container",
+			"tri-s",
+			"ceil",
+			"floor",
+			"item.element",
+			"item",
+			"loaded",
+			"scrollTop",
+			"item",
+			"forEach = ",
+			"forEach",
+			"forE",
+			"currTime",
+			"element",
+			"bird-c",
+			"home",
+			"s-ho",
+			"result",
+			"-an",
+			"static",
+			"home",
+			"section {",
+			"min-h",
+			"gain-",
+			"25px",
+			"gain",
+			"пол",
+			"получа",
+			"arc-t",
+			".arc-t",
+			".fs-d",
+			"text-c",
+			"span",
+			".wrapper",
+			"30px",
+			".row ",
+			"nm",
 			"font-size: 30",
 			"30px;",
 			"r.col-3",
@@ -894,53 +942,7 @@
 			"min-h",
 			"min-height: 600px",
 			"consult",
-			"result",
-			"this",
-			"Вы пол",
-			"r",
-			"t",
-			"')\n",
-			"index",
-			"activeIndex",
-			"analisys",
-			"points.",
-			"curvePoints",
-			"outli",
-			"pivot-s",
-			"fixed",
-			"var",
-			"transform-wra",
-			"transfor",
-			"transform-v",
-			"var ",
-			"lineShift",
-			"LEFT_SHIFT",
-			"lineShift",
-			"globalLShift",
-			"component",
-			"scrollHandler",
-			"switch",
-			"wwitch",
-			"component",
-			"switches",
-			"logo",
-			"tri-s",
-			"find",
-			"аштв",
-			"arc-te",
-			"arc-sl",
-			"text-b",
-			"tetx-b",
-			"this",
-			"item",
-			"0.4s",
-			"0.6s",
-			"25",
-			"0.3s",
-			"50px",
-			"0px",
-			"sup",
-			"find"
+			"result"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -964,77 +966,48 @@
 			[
 				{
 					"buffer": 0,
-					"file": "index.html",
+					"file": "resources/js/app.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 13049,
+						"buffer_size": 1008,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2340,
-								2035
+								900,
+								900
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 870.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "compare.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 6116,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								6116
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 2750.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "approach.html",
+					"buffer": 1,
+					"file": "index.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6389,
+						"buffer_size": 15089,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4511,
-								4511
+								9728,
+								9732
 							]
 						],
 						"settings":
@@ -1043,7 +1016,36 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 2010.0,
+						"translation.y": 5007.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "resources/css/styles.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 41101,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								40560,
+								40560
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 47170.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -1051,59 +1053,60 @@
 				},
 				{
 					"buffer": 3,
-					"file": "resources/css/defs",
+					"file": "resources/js/modules/directional-scroll/directional-scroll.component.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 483,
+						"buffer_size": 5875,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								392,
-								344
+								2980,
+								2980
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1980.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "resources/js/modules/trigger/simple-trigger.component.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 562,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								552,
+								552
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "post.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 12128,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								7700,
-								7701
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 3660.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -1186,7 +1189,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 212.0,
+	"side_bar_width": 274.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

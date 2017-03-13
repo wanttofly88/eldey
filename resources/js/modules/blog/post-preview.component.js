@@ -30,7 +30,6 @@ define(['dispatcher'], function(dispatcher) {
 	elementProto.detachedCallback = function() {
 	}
 
-	Object.setPrototypeOf(elementProto, HTMLElement.prototype);
 	document.registerElement('post-preview', {
 		prototype: elementProto
 	});

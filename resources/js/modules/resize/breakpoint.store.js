@@ -64,7 +64,8 @@ define(['dispatcher', 'utils'], function(dispatcher, utils) {
 	_init();
 
 	return {
-		eventEmitter: eventEmitter,
+		subscribe: eventEmitter.subscribe.bind(eventEmitter),
+		unsubscribe: eventEmitter.unsubscribe.bind(eventEmitter),
 		getData: getData
 	}
 });
