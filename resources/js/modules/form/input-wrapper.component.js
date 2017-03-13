@@ -4,20 +4,51 @@ define(['dispatcher', 'utils'], function(dispatcher, utils) {
 	var elementProto = Object.create(HTMLLabelElement.prototype);
 
 	elementProto.handleDispatcher = function(e) {
-		if (e.type === 'form-send') {
+		if (e.type === 'form-validate') {
 			if (e.id !== this._formId) return;
+		
+			if (this._input.type === 'checkbox') {
+				if (this._input.getAttribute('required') !== null) {
+					if (!this._input.checked) {
+						this._input.value === 'off';
+						this._form.invalidate();
+						this.classList.add('error');
+					} else {
+						this._input.value === 'on';
+					}
+				}
+			} else {
+				if (this._input.getAttribute('required') !== null) {
+					if (!this._input.value) {
+						this._form.invalidate();
+						this.classList.add('error');
+					}
+				}
 
-			console.log(this._input);
+				if (this._input.getAttribute('pattern') !== null) {
+
+				}
+			}
+
 		}
 	}
 
 	elementProto.handleInput = function() {
+		this.classList.remove('error');
+	}
+
+	elementProto.handleChange = function() {
 		console.log(111);
-		var self = this;
-		this._input.setCustomValidity('');
-		setTimeout(function() {
-			self._input.setCustomValidity('');
-		}, 20);
+		this.classList.remove('error');
+	}
+
+	elementProto.handleFocus = function() {
+		this.classList.remove('error');
+		this.classList.add('focus');
+	}
+
+	elementProto.handleBlur = function() {
+		this.classList.remove('focus');
 	}
 
 	elementProto.handleInvalid = function() {
@@ -32,6 +63,9 @@ define(['dispatcher', 'utils'], function(dispatcher, utils) {
 		this.handleDispatcher = this.handleDispatcher.bind(this);
 		this.handleInvalid = this.handleInvalid.bind(this);
 		this.handleInput = this.handleInput.bind(this);
+		this.handleFocus = this.handleFocus.bind(this);
+		this.handleBlur = this.handleBlur.bind(this);
+		this.handleChange = this.handleChange.bind(this);
 	}
 	elementProto.attachedCallback = function() {
 		this._input = this.getElementsByTagName('input')[0];
@@ -51,12 +85,25 @@ define(['dispatcher', 'utils'], function(dispatcher, utils) {
 		this._invalidError = this._input.getAttribute('data-invalid-error');
 
 		this._input.addEventListener('invalid', this.handleInvalid);
-		this._input.addEventListener('input', this.handleInput);
+
+		if (this._input.type === 'checkbox') {
+			this._input.addEventListener('change', this.handleChange);
+		} else {
+			this._input.addEventListener('input', this.handleInput);
+			this._input.addEventListener('focus', this.handleFocus);
+			this._input.addEventListener('blur', this.handleBlur);
+		}
+
 		dispatcher.subscribe(this.handleDispatcher);
 	}
 	elementProto.detachedCallback = function() {
-		this._input.removeEventListener('invalid', this.handleInvalid);
-		this._input.removeEventListener('input', this.handleInput);
+		if (this._input.type === 'checkbox') {
+			this._input.removeEventListener('change', this.handleChange);
+		} else {
+			this._input.removeEventListener('input', this.handleInput);
+			this._input.removeEventListener('focus', this.handleFocus);
+			this._input.removeEventListener('blur', this.handleBlur);
+		}
 		dispatcher.unsubscribe(this.handleDispatcher);
 	}
 
