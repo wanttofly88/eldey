@@ -403,35 +403,6 @@ header nav .item .splats {
 	top: 0;
 	z-index: -1;
 }
-header nav .item:hover .btn {
-	box-shadow: none;
-	background: none;
-}
-header nav .item .splats .s {
-	position: absolute;
-	opacity: 0.5;
-}
-header nav .item .splats .s1 {
-	top: -10px;
-	left: 30px;
-	width: 87px;
-	height: 76px;
-	background: url(../images/splats/s1.jpg);
-}
-header nav .item .splats .s2 {
-	top: -10px;
-	left: 30px;
-	width: 12px;
-	height: 13px;
-	background: url(../images/splats/small-1.jpg);
-}
-header nav .item .splats .s3 {
-	top: -10px;
-	right: -40px;
-	width: 35px;
-	height: 32px;
-	background: url(../images/splats/small-2.jpg);
-}
 
 
 header .logo {
@@ -641,6 +612,13 @@ main {
 	position: relative;
 	z-index: 1;
 }
+main .transform-wrapper {
+	position: relative;
+	width: 100%;
+	top: 0;
+	left: 0;
+}
+
 @media screen and (min-width: 1000px) {
 	.cssvhunit  .fs-dt {
 		height: 100vh;
@@ -883,13 +861,13 @@ p {
 .question .col-box {
 	padding-top: 145px;
 	margin-top: -125px;
-	margin-bottom: 100px;
+	margin-bottom: 300px;
 }
-@media screen and (min-width: 1200px) and (min-height: 500px) {
+/*@media screen and (min-width: 1200px) and (min-height: 500px) {
 	.question .col-box {
 		margin-bottom: 300px;
 	}
-}
+}*/
 .question h2 {
 	margin-bottom: 60px;
 }
@@ -897,11 +875,17 @@ p {
 	text-align: center;
 	padding-bottom: 60px;
 }
-@media screen and (min-width: 1000px) {
+/*@media screen and (min-width: 1000px) {
 	.question .cta {
 		padding-bottom: 135px;
 	}
+}*/
+@media screen and (min-width: 1000px) {
+	.question .cta {
+		padding-bottom: 35px;
+	}
 }
+
 
 .find .s-fn {
 	position: absolute;
@@ -928,9 +912,9 @@ p {
 		right: auto;
 		top: -52px;
 	}
-	.find {
+/*	.find {
 		margin-bottom: 400px;
-	}
+	}*/
 	.find .text-box {
 		margin-bottom: 70px;
 	}
@@ -1089,9 +1073,9 @@ p {
 		left: -52px;
 		top: -52px;
 	}
-	.consult {
+/*	.consult {
 		margin-bottom: 400px;
-	}
+	}*/
 	.consult .text-box {
 		margin-bottom: 95px;
 	}
@@ -1472,7 +1456,7 @@ main {
 	position: relative;
 }
 .pivot-section .transform-wrapper {
-	width: 100vh;
+	width: 100%;
 	height: 100vh;
 	top: 0;
 	left: 0;
@@ -2353,18 +2337,192 @@ footer nav .item:last-child {
 		margin-right: 35px;
 	}
 }
+.btn.paint-hover {
+	transition: all 0.5s;
+}
+.btn.paint-hover:hover {
+	transition: all 0.1s;
+	background: #fff;
+	box-shadow: 0 0px 0px rgba(51, 102, 153, 0.15);
+	color: #336699;
+}
+.btn.paint-hover {
+	position: relative;
+}
+.btn.paint-hover .splats {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0.15;
+	pointer-events: none;
+}
+.btn.paint-hover .d {
+	position: absolute;
+	opacity: 0;
+	transition: opacity 0.3s ease-out;
+	transition-delay: 0s;
+}
+.btn.paint-hover:hover .d {
+	transition: opacity 0.8s ease-out;
+	opacity: 1;
+}
+.btn.paint-hover .d1 {
+	top: -120px;
+	left: -30px;
+	transform: scale(0.6) rotate(-45deg);
+}
+.btn.paint-hover .d2 {
+	top: -70px;
+	left: 40px;
+	transform: scale(0.8);
+}
+.btn.paint-hover .d3 {
+	left: -25px;
+	top: -20px;
+}
+.btn.paint-hover .d4 {
+	left: -5px;
+	top: -30px;
+	transform: rotate(45deg);
+}
+.btn.paint-hover .d5 {
+	left: -14px;
+	top: 0px;
+	transform: scale(0.7);
+}
+.btn.paint-hover .d6 {
+	left: 15px;
+	top: -70px;
+	transform: scale(0.8);
+}
+.btn.paint-hover .d7 {
+	right: -15px;
+	top: -10px;
+	transform: scale(0.8);
+}
+.btn.paint-hover .d8 {
+	right: -30px;
+	top: -6px;
+	transform: scale(0.8);
+}
+.btn.paint-hover .d9 {
+	right: -50px;
+	top: 75px;
+	transform: scale(0.5);
+}
+.btn.paint-hover .d10 {
+	right: -50px;
+	top: -80px;
+	transform: scale(0.5);
+}
+.btn.paint-hover:hover .d2 {
+	transition-delay: 1.3s;
+	opacity: 0.5;
+	transition-duration: 0.3s;
+}
+.btn.paint-hover:hover .d3  {
+	transition-delay: 0.1s;
+}
+.btn.paint-hover:hover .d4  {
+	transition-delay: 0.5s;
+	transition-duration: 0.1s;
+}
+.btn.paint-hover:hover .d5  {
+	transition-delay: 0.3s;
+	transition-duration: 0.1s;
+}
+.btn.paint-hover:hover .d6  {
+	transition-delay: 0.8s;
+}
+.btn.paint-hover:hover .d7  {
+	transition-duration: 0.1s;
+	transition-delay: 1.5s;
+}
+.btn.paint-hover:hover .d8  {
+	transition-duration: 0.1s;
+	transition-delay: 1.7s;
+}
+.btn.paint-hover:hover .d9  {
+	transition-duration: 0.1s;
+	transition-delay: 1.8s;
+}
+.btn.paint-hover:hover .d10 {
+	transition-duration: 0.5s;
+	transition-delay: 0.5s;
+	opacity: 0.7;
+}
+.btn.paint-hover .d11 {
+	left: -30px;
+	top: -120px;
+}
+.btn.paint-hover .d12 {
+	left: -10px;
+	top: -70px;
+	transform: scale(0.8) rotate(45deg);
+}
+.btn.paint-hover .d13 {
+	left: -40px;
+	top: 30px;
+	transform: rotate(30deg);
+}
+.btn.paint-hover .d14 {
+	left: -20px;
+	top: 70px;
+	transform: scale(0.7) rotate(-25deg);
+}
+.btn.paint-hover .d15 {
+	left: 160px;
+	top: 20px;
+	transform: scale(0.9) rotate(75deg);
+}
+.btn.paint-hover:hover .d11 {
+	transition-delay: 0.1s;
+	transition-duration: 0.3s;
+}
+.btn.paint-hover:hover .d12  {
+	transition-delay: 0.6s;
+}
+.btn.paint-hover:hover .d13  {
+	transition-delay: 0.5s;
+	transition-duration: 0.3s;
+}
+.btn.paint-hover:hover .d14  {
+	transition-delay: 0.3s;
+	transition-duration: 0.3s;
+}
+.btn.paint-hover:hover .d15  {
+	transition-delay: 0.8s;
+}
+.btn.paint-hover:hover .d16  {
+	transition-delay: 0.4s;
+	transition-duration: 0.3s;
+}
+.btn.paint-hover:hover .d17  {
+	transition-delay: 0.6s;
+	transition-duration: 0.3s;
+}
+.btn.paint-hover:hover .d18  {
+	transition-delay: 0.7s;
+	transition-duration: 0.4s;
+}
+.btn.paint-hover:hover .d19 {
+	transition-delay: 0.5s;
+	transition-duration: 0.5s;
+}
 
 .csstransitions .appear-fade {
 	transition: all 0.5s;
 	opacity: 0;
 }
 .csstransitions .appear-up {
-	transition: all 0.9s;
+	transition: all 0.6s;
 	transform: translateY(20px);
 	opacity: 0;
 }
 .csstransitions .appear-up-2 {
-	transition: all 0.8s;
+	transition: all 0.5s;
 	transform: translateY(30px);
 	opacity: 0;
 }
@@ -2377,7 +2535,7 @@ footer nav .item:last-child {
 
 
 .csstransitions .appear-textbox {
-	transition: all 0.8s;
+	transition: all 0.5s;
 	transform: translateY(10px);
 	opacity: 0;
 	box-shadow: 0px 5px 10px rgba(158, 174, 180, 0.5);
@@ -2404,7 +2562,7 @@ footer nav .item:last-child {
 
 .csstransitions .result .s-rs {
 	opacity: 0;
-	transition: all 0.9s;
+	transition: all 0.6s;
 }
 .csstransitions .result .triggered-once .s-rs {
 	opacity: 1;
@@ -2422,19 +2580,19 @@ footer nav .item:last-child {
 	transform: translateY(-6px);
 }
 .csstransitions .result .p-l {
-	transition-delay: 0.15s;
+	transition-delay: 0.6s;
 	transform: translateX(-10px);
 }
 .csstransitions .result .p-r {
-	transition-delay: 0.6s;
+	transition-delay: 0.15s;
 	transform: translateX(10px);
 }
 .csstransitions .result .p-b-l {
-	transition-delay: 0.3s;
+	transition-delay: 0.45s;
 	transform: translateX(-6px) translateY(8px);
 }
 .csstransitions .result .p-b-r {
-	transition-delay: 0.45s;
+	transition-delay: 0.3s;
 	transform: translateX(6px) translateY(8px);
 }
 .csstransitions .result .triggered-once .p-t,
