@@ -22,9 +22,10 @@ define([
 		var angle;
 		var w = this._w;
 		var h = this._h;
-		var total = this._total;
 		var length;
 		var coef;
+		var wh = resizeStore.getData().height;
+		var total = this._pw.clientHeight - wh;
 
 		if (!path) return;
 
@@ -57,6 +58,8 @@ define([
 	elementProto.handleResize = function() {
 		var pw = document.getElementsByClassName('page-wrapper')[0];
 		var wh = resizeStore.getData().height;
+		this._w = this.clientWidth;
+		this._h = this.clientHeight;
 		this._total = pw.clientHeight - wh;
 		this.handleScroll();
 	}
@@ -69,6 +72,7 @@ define([
 	elementProto.attachedCallback = function() {
 		this._w = this.clientWidth;
 		this._h = this.clientHeight;
+		this._pw = document.getElementsByClassName('page-wrapper')[0];
 
 		this.handleResize();
 		resizeStore.subscribe(this.handleResize);
