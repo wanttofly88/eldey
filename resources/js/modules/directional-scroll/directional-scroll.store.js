@@ -42,7 +42,8 @@ define([
 
 		if (!path) return;
 
-		point = path.getPointAtLength(scrolled + wh);
+		// point = path.getPointAtLength(scrolled + wh);
+		point = path.getPointAtLength(scrolled);
 		x = point.x;
 		y = point.y;
 		x = Math.round(x*100)/100;
