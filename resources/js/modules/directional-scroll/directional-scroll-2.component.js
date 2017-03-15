@@ -2,12 +2,14 @@ define([
 	'dispatcher',
 	'resize/resize.store',
 	'scroll/scroll.store',
-	'directional-scroll/directional-scroll.store'
+	'directional-scroll/directional-scroll.store',
+	'utils'
 ], function(
 	dispatcher,
 	resizeStore,
 	scrollStore,
-	dScrollStore
+	dScrollStore,
+	utils
 ) {
 	"use strict";
 
@@ -20,6 +22,8 @@ define([
 		var coefX = 0;
 		var coefY = 0;
 		var self = this;
+		var height;
+		var offset;
 
 		if (ww > 1200 && wh > 500) {
 			this.activate();
@@ -55,8 +59,6 @@ define([
 				}
 				section.style.transform = 'translateX(' + Math.floor(coefX*100) + '%) translateY(' + -Math.floor(coefY*wh) + 'px)';
 			});
-
-			//this._fake.style.height = this._transformWrapper.clientHeight*2 + 'px';
 		}
 	}
 
@@ -67,8 +69,12 @@ define([
 		if (e.type === 'dScroll:path-change') {
 			path = e.path;
 
-			curveContainer.style.height = path.getTotalLength() + 0 + 'px';
-			this._fake.style.height = path.getTotalLength() + 0 + 'px';
+			curveContainer.style.height = path.getTotalLength() - 150 + 'px';
+			this._fake.style.height = path.getTotalLength() - 150 + 'px';
+
+			dispatcher.dispatch({
+				type: 'dScroll:container-changed'
+			});
 		}
 	}
 
@@ -87,6 +93,7 @@ define([
 		this._active = true;
 
 		this._transformWrapper.style.position = 'fixed';
+		this._fake.style.height = resizeStore.getData().height*2 + 'px';
 
 		this.handleResize();
 		this.handleScroll();
@@ -104,6 +111,7 @@ define([
 
 		this._fake.style.height = '0px';
 		this._transformWrapper.style.position = 'relative';
+		this._transformWrapper.style.transform = 'translateX(0px) translateY(0px)';
 
 		scrollStore.unsubscribe(this.handleScroll);
 		dispatcher.unsubscribe(this.handleDispatcher);
