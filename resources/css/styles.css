@@ -2516,27 +2516,55 @@ footer nav .item:last-child {
 	transition: all 0.5s;
 	opacity: 0;
 }
-.csstransitions .appear-up {
+.csstransitions .appear-up,
+.csstransitions .appear-left,
+.csstransitions .appear-right {
 	transition: all 0.6s;
 	transform: translateY(20px);
 	opacity: 0;
 }
-.csstransitions .appear-up-2 {
+.csstransitions .appear-up-2,
+.csstransitions .appear-left-2,
+.csstransitions .appear-right-2 {
 	transition: all 0.5s;
 	transform: translateY(30px);
 	opacity: 0;
 }
+@media screen and (min-width: 1200px) and (min-height: 500px) {
+	.csstransitions .appear-left {
+		transform: translateX(20px);
+	}
+	.csstransitions .appear-right {
+		transform: translateX(-20px);
+	}
+	.csstransitions .appear-left-2 {
+		transform: translateX(30px);
+	}
+	.csstransitions .appear-right-2 {
+		transform: translateX(30px);
+	}
+}
 .csstransitions .appear-fade.triggered-once,
 .csstransitions .appear-up.triggered-once,
-.csstransitions .appear-up-2.triggered-once {
+.csstransitions .appear-up-2.triggered-once,
+.csstransitions .appear-left.triggered-once,
+.csstransitions .appear-left-2.triggered-once,
+.csstransitions .appear-right.triggered-once,
+.csstransitions .appear-right-2.triggered-once {
 	transform: translateY(0px);
 	opacity: 1;
 }
-
+@media screen and (min-width: 1200px) and (min-height: 500px) {
+	.csstransitions .appear-left.triggered-once,
+	.csstransitions .appear-right.triggered-once,
+	.csstransitions .appear-left-2.triggered-once, 
+	.csstransitions .appear-right-2.triggered-once {
+		transform: translateX(0px);
+	}
+}
 
 .csstransitions .appear-textbox {
 	transition: all 0.5s;
-	transform: translateY(10px);
 	opacity: 0;
 	box-shadow: 0px 5px 10px rgba(158, 174, 180, 0.5);
 }
@@ -2560,7 +2588,7 @@ footer nav .item:last-child {
 }
 
 
-.csstransitions .result .s-rs {
+/*.csstransitions .result .s-rs {
 	opacity: 0;
 	transition: all 0.6s;
 }
@@ -2602,4 +2630,4 @@ footer nav .item:last-child {
 .csstransitions .result .triggered-once .p-b-r {
 	opacity: 1;
 	transform: translateX(0px) translateY(0px);
-}
+}*/

@@ -13,23 +13,38 @@ define([
 ) {
 	"use strict";
 
+	function isElementVisible(el) {
+	 	var rect     = el.getBoundingClientRect(),
+			vWidth   = window.innerWidth || doc.documentElement.clientWidth,
+			vHeight  = window.innerHeight || doc.documentElement.clientHeight,
+			efp      = function (x, y) { return document.elementFromPoint(x, y) };     
+
+		if (rect.right < 0 || rect.bottom < 0 || rect.left > vWidth || rect.top > vHeight) return false;
+		return (
+			el.contains(efp(rect.left,  rect.top))
+			||  el.contains(efp(rect.right, rect.top))
+			||  el.contains(efp(rect.right, rect.bottom))
+			||  el.contains(efp(rect.left,  rect.bottom))
+		);
+	}
+
 	var elementProto = Object.create(triggerPrototype);
 
 	elementProto.handleScroll = function() {
-		var scrollPos = vScrollStore.getData().top;
-		var self = this;
-
-		if (scrollPos >= this._offset && !this._triggered) {
-			dispatcher.dispatch({
-				type: 'trigger-element',
-				id: this._id
-			});
-		}
-		if (scrollPos < this._offset && this._triggered) {
-			dispatcher.dispatch({
-				type: 'untrigger-element',
-				id: this._id
-			});
+		if (isElementVisible(this)) {
+			if (!this._triggered) {
+				dispatcher.dispatch({
+					type: 'trigger-element',
+					id: this._id
+				});
+			}
+		} else {
+			if (this._triggered) {
+				dispatcher.dispatch({
+					type: 'untrigger-element',
+					id: this._id
+				});
+			}
 		}
 	}
 
