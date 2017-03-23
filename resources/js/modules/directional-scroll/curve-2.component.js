@@ -160,7 +160,7 @@ define([
 
 		sec = document.getElementById('feedback');
 
-		offs = sec.offsetTop - RADIUS*4 - wh*5 + sec.clientHeight + wh + 300;
+		offs = sec.offsetTop - RADIUS*4 - wh*5 + sec.clientHeight + wh + 100;
 		l = l = intermediateResult.l;
 		points.push('L' + l + ' ' + offs);
 
@@ -247,14 +247,14 @@ define([
 			intermediateResult = this.curveTo(points, l, t, ww*2 - RADIUS*2, 'right');
 		}
 
-		offs = sec.offsetTop - 5*wh + sec.clientHeight + RADIUS*3/2;
+		offs = sec.offsetTop - 5*wh + sec.clientHeight + RADIUS*3/2 + 50;
 		l = intermediateResult.l;
 		t = offs;
 		l1 = l + RADIUS/2;
 		// l2 = l1 + RADIUS/2;
 		l2 = l1 + ww/20;
 		t1 = t + RADIUS;
-		t2 = t1 + RADIUS/2;
+		t2 = t1 + RADIUS;
 		// t2 = t1 + ww/10;
 		points.push('L' + l + ' ' + t);
 		points.push('C' + l + ' ' + t1 + ', ' + l +  ' ' + t2 + ', ' + l2 + ' ' + t2);
