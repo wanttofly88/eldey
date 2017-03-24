@@ -218,7 +218,7 @@ define([
 		}
 
 		sec = document.getElementById('gain-point');
-		console.log(sec.parentNode.parentNode.offsetTop);
+
 		if (sec) {
 			offs = (sec.offsetTop + sec.parentNode.parentNode.offsetTop) - wh*3 - RADIUS*2;
 			t = offs - 100;
@@ -247,14 +247,14 @@ define([
 			intermediateResult = this.curveTo(points, l, t, ww*2 - RADIUS*2, 'right');
 		}
 
-		offs = sec.offsetTop - 5*wh + sec.clientHeight + RADIUS*3/2 + 50;
+		offs = sec.offsetTop - 5*wh + sec.clientHeight + RADIUS*3/2 - 20;
 		l = intermediateResult.l;
 		t = offs;
 		l1 = l + RADIUS/2;
 		// l2 = l1 + RADIUS/2;
 		l2 = l1 + ww/20;
 		t1 = t + RADIUS;
-		t2 = t1 + RADIUS;
+		t2 = t1 + RADIUS/2;
 		// t2 = t1 + ww/10;
 		points.push('L' + l + ' ' + t);
 		points.push('C' + l + ' ' + t1 + ', ' + l +  ' ' + t2 + ', ' + l2 + ' ' + t2);

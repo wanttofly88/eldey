@@ -4,6 +4,34 @@
 		"selected_items":
 		[
 			[
+				"pos",
+				"pos-r\tposition: relative;"
+			],
+			[
+				"r",
+				"right"
+			],
+			[
+				"sca",
+				"scaleX"
+			],
+			[
+				"tran",
+				"transform"
+			],
+			[
+				"to",
+				"top"
+			],
+			[
+				"po",
+				"pointer-events"
+			],
+			[
+				"te",
+				"text-align"
+			],
+			[
 				"a",
 				"auto"
 			],
@@ -90,10 +118,6 @@
 			[
 				"co",
 				"coefY"
-			],
-			[
-				"tran",
-				"translateY"
 			],
 			[
 				"h",
@@ -280,10 +304,6 @@
 				"RADIUS"
 			],
 			[
-				"po",
-				"points"
-			],
-			[
 				"cu",
 				"curvePoints"
 			],
@@ -392,10 +412,6 @@
 				"width"
 			],
 			[
-				"pos",
-				"position"
-			],
-			[
 				"pr",
 				"preloadComplete"
 			],
@@ -498,22 +514,6 @@
 			[
 				"ce",
 				"cellSize"
-			],
-			[
-				"_p",
-				"_plane"
-			],
-			[
-				"_s",
-				"_sizes"
-			],
-			[
-				"_han",
-				"_handleResize"
-			],
-			[
-				"fre",
-				"frequencyFilter"
 			]
 		]
 	},
@@ -523,34 +523,16 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 16969,
+				"buffer_size": 17117,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "compare.html",
+			"file": "mission.html",
 			"settings":
 			{
-				"buffer_size": 7407,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "approach.html",
-			"settings":
-			{
-				"buffer_size": 7429,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "post.html",
-			"settings":
-			{
-				"buffer_size": 12196,
+				"buffer_size": 3912,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -559,7 +541,34 @@
 			"file": "resources/css/styles.css",
 			"settings":
 			{
-				"buffer_size": 47877,
+				"buffer_size": 53470,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "resources/js/modules/directional-scroll/curve-2.component.js",
+			"settings":
+			{
+				"buffer_size": 7886,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "resources/js/modules/directional-scroll/directional-scroll-2.component.js",
+			"settings":
+			{
+				"buffer_size": 3991,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "todo.md",
+			"settings":
+			{
+				"buffer_size": 109,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -651,7 +660,7 @@
 	"expanded_folders":
 	[
 		"/D/sites/eldey",
-		"/D/sites/eldey/design",
+		"/D/sites/eldey/eldey-stab",
 		"/D/sites/eldey/resources",
 		"/D/sites/eldey/resources/css",
 		"/D/sites/eldey/resources/images",
@@ -669,13 +678,18 @@
 	],
 	"file_history":
 	[
-		"/C/Windows/System32/drivers/etc/hosts",
-		"/D/sites/eldey/contacts.html",
-		"/D/sites/eldey/blog.html",
 		"/D/sites/eldey/resources/js/modules/trigger/scroll-trigger.component.js",
+		"/D/sites/eldey/eldey-stab/index.html",
+		"/D/sites/eldey/eldey-stab/styles.css",
+		"/D/sites/eldey/contacts.html",
+		"/D/sites/eldey/compare.html",
+		"/D/sites/eldey/todo.md",
+		"/D/sites/eldey/approach.html",
+		"/D/sites/eldey/post.html",
+		"/C/Windows/System32/drivers/etc/hosts",
+		"/D/sites/eldey/blog.html",
 		"/D/sites/eldey/resources/js/modules/directional-scroll/bird.component.js",
 		"/D/sites/eldey/resources/js/app.js",
-		"/D/sites/eldey/approach.html",
 		"/D/sites/eldey/resources/js/modules/directional-scroll/curve-2.component.js",
 		"/D/sites/eldey/resources/js/modules/resize/resize.store.js",
 		"/D/sites/eldey/resources/js/modules/directional-scroll/directional-scroll.store.js",
@@ -724,13 +738,10 @@
 		"/D/sites/for redcollar/redcollar/resources/js/modules/images/images.store.js",
 		"/D/sites/for redcollar/redcollar/resources/js/modules/preload/preload.view.js",
 		"/D/sites/eldey/resources/js/modules/store.dummy.js",
-		"/D/sites/eldey/post.html",
 		"/D/sites/for redcollar/redcollar/resources/js/modules/images/images.view.js",
 		"/D/sites/eldey/resources/js/modules/resize/breakpoint.store.js",
 		"/D/sites/eldey/resources/js/modules/images/img.component.js",
-		"/D/sites/eldey/compare.html",
 		"/D/sites/eldey/resources/css/defs",
-		"/D/sites/eldey/todo.md",
 		"/C/Users/Kernel/AppData/Local/Temp/Rar$DRa0.772/fontie-package/Geometria.css",
 		"/D/sites/eldey/index.html",
 		"/D/sites/eldey/resources/images/arrow-right.svg",
@@ -794,9 +805,7 @@
 		"/D/sites/qqb/resources/js/modules/scheme/scheme.component.js",
 		"/D/sites/qqb/resources/js/modules/resize/vh-fix.component.js",
 		"/D/sites/qqb/resources/js/modules/full-img/full-img.component.js",
-		"/D/sites/qqb/resources/js/libs/setPrototypeOf.polyfill.js",
-		"/D/sites/qqb/resources/js/modules/audio/audio-player.store.js",
-		"/D/sites/qqb/resources/js/libs/webcomponents-lite.js"
+		"/D/sites/qqb/resources/js/libs/setPrototypeOf.polyfill.js"
 	],
 	"find":
 	{
@@ -815,6 +824,54 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"400px;",
+			"margin",
+			"section",
+			"margin",
+			"margin-top",
+			"padding",
+			"feedback",
+			"main",
+			"feedba",
+			"find",
+			"question",
+			"find",
+			"question",
+			"find",
+			"focus .bg",
+			"focus",
+			"result",
+			"simple-t",
+			"b5",
+			"paint",
+			"png",
+			"b5",
+			"b4",
+			"b5",
+			"anali",
+			"analisys",
+			"anali",
+			"1200",
+			"1400",
+			"s-qu",
+			"bird.sv",
+			"absolute",
+			"relative",
+			"static",
+			"../fonts/",
+			"cssvhunit",
+			"text-c-outer",
+			"page-wra",
+			"5",
+			"mission",
+			"h1",
+			"24px",
+			"0",
+			"100px",
+			".contacts-f",
+			".btn",
+			"btn",
+			"contacts-f",
 			".wrapper",
 			"wrapper",
 			"header",
@@ -894,55 +951,7 @@
 			"home",
 			"section {",
 			"min-h",
-			"gain-",
-			"25px",
-			"gain",
-			"пол",
-			"получа",
-			"arc-t",
-			".arc-t",
-			".fs-d",
-			"text-c",
-			"span",
-			".wrapper",
-			"30px",
-			".row ",
-			"nm",
-			"font-size: 30",
-			"30px;",
-			"r.col-3",
-			".col-3",
-			".col-e",
-			"menu-b",
-			"70px",
-			"Студенты или выпускники российских ВУЗов",
-			"form-wrapper {",
-			"form {",
-			"form",
-			"btn",
-			"\"#\"",
-			".col-3",
-			"Geometria",
-			".popula",
-			".btn",
-			"hover",
-			"font-weight: bold;",
-			"bold",
-			"add",
-			"'mouseenter'",
-			"mouseenter",
-			"href",
-			"post",
-			" class=\"\"",
-			"item ",
-			"class=",
-			"post",
-			"article",
-			"arrow",
-			".btn",
-			"round-btn",
-			"tp",
-			"1"
+			"gain-"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -961,7 +970,7 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 3,
 			"sheets":
 			[
 				{
@@ -970,102 +979,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 16969,
+						"buffer_size": 17117,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								16507,
-								16256
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 9531.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "compare.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 7407,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								5072,
-								5072
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 3365.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "approach.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 7429,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1046,
-								749
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 295.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "post.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 12196,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								904,
-								904
+								15837,
+								15803
 							]
 						],
 						"settings":
@@ -1077,24 +999,53 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "resources/css/styles.css",
+					"buffer": 1,
+					"file": "mission.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 47877,
+						"buffer_size": 3912,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								34896,
-								34896
+								881,
+								881
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 60.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "resources/css/styles.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 53470,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								12843,
+								12843
 							]
 						],
 						"settings":
@@ -1103,10 +1054,96 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 40045.0,
+						"translation.y": 12745.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "resources/js/modules/directional-scroll/curve-2.component.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7886,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6065,
+								6065
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 4753.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "resources/js/modules/directional-scroll/directional-scroll-2.component.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3991,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2201,
+								2265
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2333.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "todo.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 109,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								109,
+								109
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown/Markdown.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
 					"type": "text"
 				}
 			]
@@ -1189,7 +1226,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 274.0,
+	"side_bar_width": 275.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

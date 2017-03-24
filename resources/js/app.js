@@ -38,5 +38,11 @@ require([
 	'trigger/simple-trigger.component',
 	'form/form.component',
 	'form/response.component',
-	'form/input-wrapper.component'
+	'form/input-wrapper.component',
+	'popup/popup-toggle.component',
+	'popup/popup.component',
+	'popup/popup.helper',
+	'tooltip/tooltip-helper.component',
+	'tooltip/tooltip.component',
+	'tooltip/tooltip-hover.component'
 ]);
