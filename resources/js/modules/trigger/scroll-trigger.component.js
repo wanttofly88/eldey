@@ -13,25 +13,17 @@ define([
 ) {
 	"use strict";
 
-	function isElementVisible(el) {
-	 	var rect     = el.getBoundingClientRect(),
-			vWidth   = window.innerWidth || doc.documentElement.clientWidth,
-			vHeight  = window.innerHeight || doc.documentElement.clientHeight,
-			efp      = function (x, y) { return document.elementFromPoint(x, y) };     
-
-		if (rect.right < 0 || rect.bottom < 0 || rect.left > vWidth || rect.top > vHeight) return false;
-		return (
-			el.contains(efp(rect.left,  rect.top))
-			||  el.contains(efp(rect.right, rect.top))
-			||  el.contains(efp(rect.right, rect.bottom))
-			||  el.contains(efp(rect.left,  rect.bottom))
-		);
+	var checkVisible = function(elm, shift) {
+		var rect = elm.getBoundingClientRect();
+		var viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
+		var viewWidth = Math.max(document.documentElement.clientWidth, window.innerWidth);
+		return !(rect.bottom - shift < 0 || rect.top - viewHeight + shift >= 0) && !(rect.right - shift < 0 || rect.left - viewWidth + shift>= 0);
 	}
 
 	var elementProto = Object.create(triggerPrototype);
 
 	elementProto.handleScroll = function() {
-		if (isElementVisible(this)) {
+		if (checkVisible(this, 200)) {
 			if (!this._triggered) {
 				dispatcher.dispatch({
 					type: 'trigger-element',
