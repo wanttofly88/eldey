@@ -29,22 +29,59 @@
 					<div class="item">
 						<a href="contacts.html" class="btn white">Контакты</a>
 					</div>
-				</nav>
-				<div class="menu-btn round-btn">
-					<div class="cn">
-						<div class="fr">
-							<div class="b b1"></div>
-							<div class="b b2"></div>
-							<div class="b b3"></div>
+					<button is="popup-toggle" class="menu-btn round-btn" data-id="menu-popup">
+						<div class="cn">
+							<div class="fr">
+								<div class="b b1"></div>
+								<div class="b b2"></div>
+								<div class="b b3"></div>
+							</div>
+							<div class="bc">
+								<div class="b b4"></div>
+								<div class="b b5"></div>
+							</div>
 						</div>
-						<div class="bc">
-							<div class="b b4"></div>
-							<div class="b b5"></div>
+					</button>
+			</div>
+		</header>
+
+		<popup-component class="menu-popup fixed" data-id="menu-popup">
+			<div class="popup-outer">
+				<div class="popup-inner">
+					<div class="popup-cell">
+						<div class="wrapper">
+							<nav class="mob-menu">
+								<div class="item">
+									<a href="compare.html" class="btn white">Отличия</a>
+								</div>
+								<div class="item">
+									<a href="approach.html" class="btn white">Наш подход</a>
+								</div>
+								<div class="item">
+									<a href="contacts.html" class="btn white">Контакты</a>
+								</div>
+								<div class="item">
+									<a href="contacts.html" class="btn wide blue">Получить отчет</a>
+								</div>
+							</nav>
 						</div>
 					</div>
 				</div>
 			</div>
-		</header>
+			<div class="popup-footer">
+				<div class="wrapper">
+					<div class="cnt">
+						<a class="tel" href="tel:+79804509087">+7 980 450-90-87</a>
+					</div>
+					<div class="sub">
+						<a href="mission.html">Миссия</a>
+						<a href="blog.html">Блог</a>
+						<a href="ideas.html">Идеи в хорошие руки</a>
+					</div>
+				</div>
+			</div>
+		</popup-component>
+
 		<main>
 			<section class="home fs-dt">
 				<div class="wrapper text-c-wrapper">
@@ -70,7 +107,10 @@
 							</div>
 							<div class="nfo">
 								<div class="step-inner wide">
-									<div class="hd">Первый этап (широкий поиск)</div>
+									<div class="hd">
+										<div class="sp-1"></div>
+										<span>Первый этап (широкий поиск)</span>
+									</div>
 									<div class="tb">
 										<div class="row">
 											<div class="col">
@@ -111,7 +151,10 @@
 									</div>
 								</div>
 								<div class="step-inner deep">
-									<div class="hd">Второй этап (глубокий поиск)</div>
+									<div class="hd">
+										<div class="sp-2"></div>
+										<span>Второй этап (глубокий поиск)</span>
+									</div>
 									<div class="row">
 										<div class="tx">Уточнение полученной информации и поиск причин </div>
 									</div>

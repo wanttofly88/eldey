@@ -12,8 +12,12 @@
     <script data-main="resources/js/app" src="resources/js/require.js"></script>
 </head>
 <body>
-	<div class="page-wrapper">
-		<header>
+	<div class="page-wrapper fixed">
+		<tooltip-helper>
+			<div class="data" data-id="consult-tooltip">Обычно значительная часть работы консультантов вызвана желанием заработать больше с одного клиента, а не потребностями самой компаниию</div>
+		</tooltip-helper>
+
+		<header class="fixed">
 			<div class="wrapper">
 				<a href="index.html" class="logo">
 					<div class="i"></div>
@@ -23,36 +27,19 @@
 					<div class="item paint-hover">
 						<a href="compare.html" class="btn white paint-hover">
 							<span class="t">Отличия</span>
-							<span class="splats">
-								<img class="d d1" src="resources/images/paint/d6.png" alt="">
-								<img class="d d3" src="resources/images/paint/d4.png" alt="">
-								<img class="d d4" src="resources/images/paint/d4.png" alt="">
-								<img class="d d5" src="resources/images/paint/d4.png" alt="">
-								<img class="d d6" src="resources/images/paint/d4.png" alt="">
-								<img class="d d7" src="resources/images/paint/d4.png" alt="">
-								<img class="d d8" src="resources/images/paint/d4.png" alt="">
-								<img class="d d9" src="resources/images/paint/d4.png" alt="">
-								<img class="d d10" src="resources/images/paint/d7.png" alt="">
-							</span>
 						</a>
 
 					</div>
 					<div class="item">
 						<a href="approach.html" class="btn white  paint-hover">
 							<span class="t">Наш подход</span>
-							<span class="splats">
-								<img class="d d11" src="resources/images/paint/d8.png" alt="">
-								<img class="d d12" src="resources/images/paint/d10.png" alt="">
-								<img class="d d13" src="resources/images/paint/d11.png" alt="">
-								<img class="d d14" src="resources/images/paint/d11.png" alt="">
-							</span>
 						</a>
 					</div>
 					<div class="item">
 						<a href="contacts.html" class="btn white">Контакты</a>
 					</div>
 				</nav>
-				<div class="menu-btn round-btn">
+				<button is="popup-toggle" class="menu-btn round-btn" data-id="menu-popup">
 					<div class="cn">
 						<div class="fr">
 							<div class="b b1"></div>
@@ -64,9 +51,47 @@
 							<div class="b b5"></div>
 						</div>
 					</div>
-				</div>
+				</button>
 			</div>
 		</header>
+
+		<popup-component class="menu-popup fixed" data-id="menu-popup">
+			<div class="popup-outer">
+				<div class="popup-inner">
+					<div class="popup-cell">
+						<div class="wrapper">
+							<nav class="mob-menu">
+								<div class="item">
+									<a href="compare.html" class="btn white">Отличия</a>
+								</div>
+								<div class="item">
+									<a href="approach.html" class="btn white">Наш подход</a>
+								</div>
+								<div class="item">
+									<a href="contacts.html" class="btn white">Контакты</a>
+								</div>
+								<div class="item">
+									<a href="contacts.html" class="btn wide blue">Получить отчет</a>
+								</div>
+							</nav>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="popup-footer">
+				<div class="wrapper">
+					<div class="cnt">
+						<a class="tel" href="tel:+79804509087">+7 980 450-90-87</a>
+					</div>
+					<div class="sub">
+						<a href="mission.html">Миссия</a>
+						<a href="blog.html">Блог</a>
+						<a href="ideas.html">Идеи в хорошие руки</a>
+					</div>
+				</div>
+			</div>
+		</popup-component>
+
 		<main is="directional-scroll">
 			<div class="transform-wrapper">
 				<curve-container>
@@ -82,7 +107,7 @@
 					</div>
 					<div class="wrapper text-c-wrapper">
 						<div class="text-c-outer">
-							<div is="timer-trigger" class="text-c appear-up" data-delay="300">
+							<div is="scroll-trigger" class="text-c appear-up">
 								<h1>Мы <strong>снимаем беспокойство</strong> генеральных директоров и собственников бизнеса, отвечая на самый важный вопрос:</h1>
 							</div>
 						</div>
@@ -131,12 +156,10 @@
 					<div class="bg">
 						<div class="s-an"></div>
 					</div>
-					<div class="transform-wrapper">
-						<div class="wrapper text-c-wrapper">
-							<div class="text-c-outer">
-								<div is="scroll-trigger" class="text-c appear-left">
-									<h1>Для этого мы анализируем <em>более</em> <strong>1300</strong> видов потенциальных проблем и возможностей Вашей компании</h1>
-								</div>
+					<div class="wrapper text-c-wrapper">
+						<div class="text-c-outer">
+							<div is="scroll-trigger" class="text-c appear-left">
+								<h1>Для этого мы анализируем <em>более</em> <strong>1300</strong> видов потенциальных проблем и возможностей Вашей компании</h1>
 							</div>
 						</div>
 					</div>
@@ -221,13 +244,11 @@
 					<div class="bg">
 						<div class="s-fc"></div>
 					</div>
-					<div class="transform-wrapper">
-						<div class="wrapper text-c-wrapper">
-							<div class="text-c-outer">
-								<div is="scroll-trigger" class="text-c appear-right">
-									<h1>Фокус только на ключевых проблемах / возможностях позволяет <strong>резко сократить сроки работы</strong></h1>
-									<div class="header-note show320 show640">2-3 недели</div>
-								</div>
+					<div class="wrapper text-c-wrapper">
+						<div class="text-c-outer">
+							<div is="scroll-trigger" class="text-c appear-right">
+								<h1>Фокус только на ключевых проблемах / возможностях позволяет <strong>резко сократить сроки работы</strong></h1>
+								<div class="header-note show320 show640">2-3 недели</div>
 							</div>
 						</div>
 					</div>
@@ -239,7 +260,7 @@
 							<arc-text>Плюсы</arc-text>
 							<h1>За счет чего <strong>снизить стоимость</strong> проекта</h1>
 						</div>
-						<div class="header-note show320 show640">≈870 тыс.руб</div>
+						<div is="scroll-trigger" class="header-note show320 show640 appear-up-2">≈870 тыс.руб</div>
 						
 						<div is="scroll-trigger" class="appear-up-2">
 							<h2>и предложить качество талантливых консультантов широкому кругу компаний</h2>
@@ -252,7 +273,7 @@
 							<div class="col col-3">
 								<div class="item">
 									<h3>Быстро</h3>
-									<p>Обычно значительная часть работы консультантов вызвана желанием заработать больше с одного клиента, а не потребностями самой компании*.</p>
+									<p>Обычно значительная часть работы консультантов вызвана желанием заработать больше с одного клиента, а не потребностями самой компании<tooltip-hover data-id="consult-tooltip"></tooltip-hover>.</p>
 									<p>Eldey Consulting Group исключает всю лишнюю информацию, что позволяет Вам получить ответы уже в течение ближайших 2-3 недель.</p>
 								</div>
 								<div class="item">
@@ -271,37 +292,35 @@
 					</div>
 				</section>
 				<section class="result fs-dt pivot-section" id="result" data-trigger-id="result">
-					<div class="transform-wrapper" data-trigger-id="result">
-						<div is="scroll-trigger" class="bg appear-fade">
-							<div class="wrapper">
-								<img class="s-rs" src="resources/images/paint/b5.png" alt="">
-							</div>
+					<div is="scroll-trigger" class="bg appear-fade">
+						<div class="wrapper">
+							<img class="s-rs" src="resources/images/paint/b5.png" alt="">
 						</div>
-						<div class="wrapper text-c-wrapper">
-							<div is="scroll-trigger" class="p p-t appear-left">
-								<h2>Выполнимый</h2>
-								<p>Понимаем, что то, что компания может сделать в теории, отличается от того, что она может сделать в реальной жизни</p>
-							</div>
-							<div is="scroll-trigger" class="p p-l appear-left">
-								<h2>Важный</h2>
-								<p>Фокусируемся только на значимых угрозах/возможностях для роста стоимости компании -уровень СЕО и владельцев</p>
-							</div>
-							<div is="scroll-trigger" class="p p-r appear-left">
-								<h2>Конкретный</h2>
-								<p>Говорим только то, что компания действительно может сделать собственными силами</p>
-							</div>
-							<div is="scroll-trigger" class="p p-b-l appear-left">
-								<h2>Быстрый</h2>
-								<p>Избегаем давать сложные и долгие к внедрениюрекомендации</p>
-							</div>
-							<div is="scroll-trigger" class="p p-b-r appear-left">
-								<h2>Эффективный</h2>
-								<p>Выбираем изменения, реализация которых даст наибольший результат с наименьшими затратами </p>
-							</div>
-							<div class="text-c-outer">
-								<div class="text-c">
-									<h1>Eldey Consulting Group дает <strong>нужный</strong> вам результат</h1>
-								</div>
+					</div>
+					<div class="wrapper text-c-wrapper">
+						<div is="scroll-trigger" class="p p-t appear-left">
+							<h2>Выполнимый</h2>
+							<p>Понимаем, что то, что компания может сделать в теории, отличается от того, что она может сделать в реальной жизни</p>
+						</div>
+						<div is="scroll-trigger" class="p p-l appear-left">
+							<h2>Важный</h2>
+							<p>Фокусируемся только на значимых угрозах/возможностях для роста стоимости компании -уровень СЕО и владельцев</p>
+						</div>
+						<div is="scroll-trigger" class="p p-r appear-left">
+							<h2>Конкретный</h2>
+							<p>Говорим только то, что компания действительно может сделать собственными силами</p>
+						</div>
+						<div is="scroll-trigger" class="p p-b-l appear-left">
+							<h2>Быстрый</h2>
+							<p>Избегаем давать сложные и долгие к внедрениюрекомендации</p>
+						</div>
+						<div is="scroll-trigger" class="p p-b-r appear-left">
+							<h2>Эффективный</h2>
+							<p>Выбираем изменения, реализация которых даст наибольший результат с наименьшими затратами </p>
+						</div>
+						<div class="text-c-outer">
+							<div class="text-c">
+								<h1>Eldey Consulting Group дает <strong>нужный</strong> вам результат</h1>
 							</div>
 						</div>
 					</div>
@@ -361,7 +380,7 @@
 													</span>
 												</label>
 											</div>
-											<div class="ln">
+											<div class="ln checkbox-line">
 												<input type="checkbox" name="accept" id="ch-b-1" required="" data-default-error="Требуется принять условия пользовательского соглашения">
 												<label is="input-wrapper" for="ch-b-1" class="checkbox-wrapper">
 													<span class="i"></span>
