@@ -3,14 +3,18 @@ define(['dispatcher'], function(dispatcher) {
 
 	var elementProto = Object.create(HTMLElement.prototype);
 
-	elementProto.showTooltip = function(id, coordinates, parent) {
+	elementProto.showTooltip = function(id, coordinates, parent, text) {
 		var tooltip = document.createElement('tooltip-component');
 		var dataElement = this.querySelector('.data[data-id="' + id + '"]');
 		var pw = document.getElementsByClassName('page-wrapper')[0];
 
 		parent = parent || pw;
 
-		tooltip.innerHTML = dataElement.innerHTML;
+		if (!text) {
+			tooltip.innerHTML = dataElement.innerHTML;
+		} else {
+			tooltip.innerHTML = text;
+		}
 
 		parent.appendChild(tooltip);
 
@@ -38,14 +42,21 @@ define(['dispatcher'], function(dispatcher) {
 	}
 	elementProto.handleDispatcher = function(e) {
 		if (e.type === 'show-tooltip') {
+			console.log(e);
 			if (this._tooltips.hasOwnProperty(e.id)) {
 				this.hideTooltip(e.id);
 			}
-			this.showTooltip(e.id, e.coordinates, e.parent);
+			this.showTooltip(e.id, e.coordinates, e.parent, e.text);
 		}
 		if (e.type === 'hide-tooltip') {
 			if (!this._tooltips.hasOwnProperty(e.id)) return;
 			this.hideTooltip(e.id);
+		}
+		if (e.type === 'hide-tooltips-all') {
+			for (var id in this._tooltips) {
+				if (!this._tooltips.hasOwnProperty(id)) return;
+				this.hideTooltip(id);
+			}
 		}
 	}
 

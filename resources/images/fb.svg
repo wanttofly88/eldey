@@ -1,1 +1,11 @@
-<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 19.62 37.78"><defs><style>.cls-1{fill:none;}.cls-2{clip-path:url(#clip-path);}</style><clipPath id="clip-path" transform="translate(0 0)"><rect class="cls-1" width="19.62" height="37.78"/></clipPath></defs><title>fb</title><g class="cls-2"><path d="M12.73,37.78V20.55h5.78l0.87-6.72H12.73V9.54c0-1.94.54-3.27,3.33-3.27h3.56v-6A47.51,47.51,0,0,0,14.44,0C9.31,0,5.8,3.13,5.8,8.88v5H0v6.72H5.8V37.78h6.93Z" transform="translate(0 0)"/></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="40" height="40" viewBox="0 0 40 40">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #9a9a9a;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path d="M7.996,0.118 L7.996,2.655 L6.543,2.655 C6.013,2.655 5.655,2.771 5.470,3.001 C5.285,3.232 5.193,3.578 5.193,4.039 L5.193,5.856 L7.903,5.856 L7.543,8.701 L5.193,8.701 L5.193,15.996 L2.362,15.996 L2.362,8.701 L0.003,8.701 L0.003,5.856 L2.362,5.856 L2.362,3.760 C2.362,2.569 2.683,1.644 3.324,0.988 C3.965,0.331 4.820,0.002 5.887,0.002 C6.793,0.002 7.497,0.041 7.996,0.118 Z" transform="translate(16 12)" class="cls-1"/>
+</svg>

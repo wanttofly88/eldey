@@ -30,7 +30,7 @@
 						<a href="contacts.html" class="btn white">Контакты</a>
 					</div>
 				</nav>
-				<div class="menu-btn round-btn">
+				<button is="popup-toggle" class="menu-btn round-btn" data-id="menu-popup">
 					<div class="cn">
 						<div class="fr">
 							<div class="b b1"></div>
@@ -42,9 +42,49 @@
 							<div class="b b5"></div>
 						</div>
 					</div>
-				</div>
+				</button>
 			</div>
 		</header>
+
+		<popup-component class="menu-popup fixed" data-id="menu-popup">
+			<div class="popup-outer">
+				<div class="popup-inner">
+					<div class="popup-cell">
+						<div class="wrapper">
+							<nav class="mob-menu">
+								<div class="item">
+									<a href="compare.html" class="btn white">Отличия</a>
+								</div>
+								<div class="item">
+									<a href="approach.html" class="btn white">Наш подход</a>
+								</div>
+								<div class="item">
+									<a href="contacts.html" class="btn white">Контакты</a>
+								</div>
+								<div class="item">
+									<a href="contacts.html" class="btn wide blue">Получить отчет</a>
+								</div>
+							</nav>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="popup-footer">
+				<div class="wrapper">
+					<div class="cnt">
+						<a class="tel" href="tel:+79804509087">+7 980 450-90-87</a>
+					</div>
+					<div class="sub">
+						<a href="mission.html">Миссия</a>
+						<a href="blog.html">Блог</a>
+						<a href="ideas.html">Идеи в хорошие руки</a>
+					</div>
+				</div>
+			</div>
+		</popup-component>
+
+		<a href="tel:+79804509087" class="side-phone show1000">+7 980 450-90-87</a>
+
 		<main>
 			<section class="post">
 				<div class="wrapper">
@@ -96,7 +136,9 @@
 								</div>
 							</post-preview>
 
-							<div class="popular">
+							<div class="clear"></div>
+
+							<div class="popular show1000">
 								<h3>Популярные темы</h3>
 								<div class="tag-list">
 									<a href="#" class="btn deep small">Ruby on Rails</a>
