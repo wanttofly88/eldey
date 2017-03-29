@@ -13,7 +13,8 @@ if (__path.slice(-1) !== '/') __path += '/';
 require.config({
 	baseUrl: __path + 'js/modules',
 	paths: {
-		snap: '../libs/snap'
+		snap: '../libs/snap',
+		d3: '../libs/d3'
 	},
 	shim: {
 	}
@@ -22,6 +23,7 @@ require.config({
 
 require([
 	'slider/tri-slider.component',
+	'slider/compare-slider.component',
 	'decor/arc-text.component',
 	'tabs/tabs-switches.component',
 	'tabs/tabs.component',
@@ -44,5 +46,6 @@ require([
 	'popup/popup.helper',
 	'tooltip/tooltip-helper.component',
 	'tooltip/tooltip.component',
-	'tooltip/tooltip-hover.component'
+	'tooltip/tooltip-hover.component',
+	'map/map.component'
 ]);

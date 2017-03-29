@@ -13,7 +13,8 @@ define(['dispatcher', 'utils'], function(dispatcher, utils) {
 			coordinates: {
 				left: coordinates.left + self.clientWidth/2,
 				top : coordinates.top
-			}
+			},
+			text: self._text
 		});
 	}
 	elementProto.handleMouseleave = function() {
@@ -30,6 +31,7 @@ define(['dispatcher', 'utils'], function(dispatcher, utils) {
 	}
 	elementProto.attachedCallback = function() {
 		this._id = this.getAttribute('data-id');
+		this._text = this.getAttribute('data-text');
 		this.addEventListener('mouseenter', this.handleMouseenter);
 		this.addEventListener('mouseleave', this.handleMouseleave);
 	}

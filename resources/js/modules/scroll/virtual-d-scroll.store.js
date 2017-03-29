@@ -26,18 +26,19 @@ define([
 	}
 
 	var _loop = function() {
-		var scrolledWHeight = scrolled.top + wh;
-		var scrolledWWidth = scrolled.left + ww;
+		var scrolledWHeight = scrolled.y + wh;
+		var scrolledWWidth = scrolled.x + ww;
 
-		if (Math.round(virtualScroll.top) !== scrolled.top 
+
+		if (Math.round(virtualScroll.top) !== scrolled.y 
 				|| Math.round(virtualScroll.bottom) !== scrolledWHeight
-				|| Math.round(virtualScroll.left) !== scrolled.left
+				|| Math.round(virtualScroll.left) !== scrolled.x
 				|| Math.round(virtualScroll.right) !== scrolledWWidth) {
 
 
-			virtualScroll.top = virtualScroll.top + (scrolled.top - virtualScroll.top)/20;
+			virtualScroll.top = virtualScroll.top + (scrolled.y - virtualScroll.top)/20;
 			virtualScroll.bottom = virtualScroll.bottom + (scrolledWHeight - virtualScroll.bottom)/20;
-			virtualScroll.left = virtualScroll.left + (scrolled.left - virtualScroll.left)/20;
+			virtualScroll.left = virtualScroll.left + (scrolled.x - virtualScroll.left)/20;
 			virtualScroll.right = virtualScroll.right + (scrolledWWidth - virtualScroll.right)/20;
 
 			eventEmitter.dispatch();
@@ -56,7 +57,7 @@ define([
 	}
 
 	var _handleScroll = function() {
-		scrolled = scrollStore.getData();
+		scrolled = dScrollStore.getData();
 	}
 
 	var getData = function() {
@@ -72,7 +73,7 @@ define([
 		dispatcher.subscribe(_handleEvent);
 		_handleScroll();
 		_handleResize();
-		scrollStore.subscribe(_handleScroll);
+		dScrollStore.subscribe(_handleScroll);
 		resizeStore.subscribe(_handleResize);
 		_loop();
 	}

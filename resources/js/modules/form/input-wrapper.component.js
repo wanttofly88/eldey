@@ -2,8 +2,36 @@ define(['dispatcher', 'utils'], function(dispatcher, utils) {
 	"use strict";
 
 	var elementProto = Object.create(HTMLLabelElement.prototype);
+	var idNum = 1;
+	var idName = 'input-wrapper-';
+
+	elementProto.showError = function(type) {
+		var text;
+		var self = this;
+
+		var coordinates = {
+			left: this.clientWidth/2,
+			top: this.parentNode.offsetTop - 10
+		}
+
+		if (type === 'required') {
+			text = this._requiredError;
+		} else if (type === 'invalid') {
+			text = this._invalidError;
+		}
+
+		dispatcher.dispatch({
+			type: 'show-tooltip',
+			id: self._id,
+			coordinates: coordinates,
+			text: text,
+			parent: this.parentNode.parentNode.getElementsByClassName('tooltips')[0]
+		});
+	}
 
 	elementProto.handleDispatcher = function(e) {
+		var errorType = null;
+
 		if (e.type === 'form-validate') {
 			if (e.id !== this._formId) return;
 		
@@ -13,6 +41,8 @@ define(['dispatcher', 'utils'], function(dispatcher, utils) {
 						this._input.value === 'off';
 						this._form.invalidate();
 						this.classList.add('error');
+
+						errorType = 'required';
 					} else {
 						this._input.value === 'on';
 					}
@@ -22,6 +52,8 @@ define(['dispatcher', 'utils'], function(dispatcher, utils) {
 					if (!this._input.value) {
 						this._form.invalidate();
 						this.classList.add('error');
+
+						errorType = 'required';
 					}
 				}
 
@@ -30,42 +62,48 @@ define(['dispatcher', 'utils'], function(dispatcher, utils) {
 				}
 			}
 
+			if (errorType) {
+				this.showError(errorType);
+			}
 		}
 	}
 
 	elementProto.handleInput = function() {
+		var self = this;
 		this.classList.remove('error');
+		dispatcher.dispatch({
+			type: 'hide-tooltips-all'
+		});
 	}
 
 	elementProto.handleChange = function() {
-		console.log(111);
+		var self = this;
 		this.classList.remove('error');
+		dispatcher.dispatch({
+			type: 'hide-tooltips-all'
+		});
 	}
 
 	elementProto.handleFocus = function() {
+		var self = this;
 		this.classList.remove('error');
 		this.classList.add('focus');
+		dispatcher.dispatch({
+			type: 'hide-tooltips-all'
+		});
 	}
 
 	elementProto.handleBlur = function() {
 		this.classList.remove('focus');
 	}
 
-	elementProto.handleInvalid = function() {
-		if (this._input.value === '') {
-			this._input.setCustomValidity(this._defaultError);
-		} else {
-			this._input.setCustomValidity(this._invalidError || this._defaultError);
-		}
-	}
-
 	elementProto.createdCallback = function() {
 		this.handleDispatcher = this.handleDispatcher.bind(this);
-		this.handleInvalid = this.handleInvalid.bind(this);
 		this.handleInput = this.handleInput.bind(this);
 		this.handleFocus = this.handleFocus.bind(this);
 		this.handleBlur = this.handleBlur.bind(this);
 		this.handleChange = this.handleChange.bind(this);
+		this.showError = this.showError.bind(this);
 	}
 	elementProto.attachedCallback = function() {
 		this._input = this.getElementsByTagName('input')[0];
@@ -79,12 +117,19 @@ define(['dispatcher', 'utils'], function(dispatcher, utils) {
 			return;
 		}
 
-		this._form = this.closest('form');
-		this._formId = this._form.getAttribute('data-id');
-		this._defaultError = this._input.getAttribute('data-default-error');
+		this._id = this.getAttribute('data-id');
+		if (!this._id) {
+			this._id = idName + idNum;
+			idNum++;
+		}
+
+		this._requiredError = this._input.getAttribute('data-required-error');
 		this._invalidError = this._input.getAttribute('data-invalid-error');
 
-		this._input.addEventListener('invalid', this.handleInvalid);
+		console.log(this._requiredError);
+
+		this._form = this.closest('form');
+		this._formId = this._form.getAttribute('data-id');
 
 		if (this._input.type === 'checkbox') {
 			this._input.addEventListener('change', this.handleChange);

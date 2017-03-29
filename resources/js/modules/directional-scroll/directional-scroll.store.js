@@ -30,9 +30,6 @@ define([
 			_handleScroll();
 			eventEmitter.dispatch();
 		}
-		if (e.type === 'dScroll:direction-change') {
-			direction = e.direction;
-		}
 	}
 
 	var _handleScroll = function() {

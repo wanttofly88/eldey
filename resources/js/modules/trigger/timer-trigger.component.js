@@ -38,7 +38,10 @@ define([
 	}
 	elementProto.attachedCallback = function() {
 		triggerPrototype.attachedCallback.apply(this);
-		this._delay = this.getAttribute('data-delay') || 500;
+		this._delay = this.getAttribute('data-delay') || 300;
+		this._delay = parseInt(this._delay);
+
+		console.log(this._delay);
 
 		preloaderStore.subscribe(this.handlePreloader);
 		this.handlePreloader();
