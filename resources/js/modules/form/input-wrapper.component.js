@@ -5,6 +5,20 @@ define(['dispatcher', 'utils'], function(dispatcher, utils) {
 	var idNum = 1;
 	var idName = 'input-wrapper-';
 
+	if (!String.prototype.endsWith) {
+		Object.defineProperty(String.prototype, 'endsWith', {
+			value: function(searchString, position) {
+				var subjectString = this.toString();
+				if (position === undefined || position > subjectString.length) {
+					position = subjectString.length;
+				}
+				position -= searchString.length;
+				var lastIndex = subjectString.indexOf(searchString, position);
+				return lastIndex !== -1 && lastIndex === position;
+			}
+		});
+	}
+
 	elementProto.showError = function(type) {
 		var text;
 		var self = this;
@@ -31,6 +45,7 @@ define(['dispatcher', 'utils'], function(dispatcher, utils) {
 
 	elementProto.handleDispatcher = function(e) {
 		var errorType = null;
+		var val1, val2;
 
 		if (e.type === 'form-validate') {
 			if (e.id !== this._formId) return;
@@ -56,9 +71,19 @@ define(['dispatcher', 'utils'], function(dispatcher, utils) {
 						errorType = 'required';
 					}
 				}
+http://stackoverflow.com
 
-				if (this._input.getAttribute('pattern') !== null) {
 
+				if (this.classList.contains('validate-site') && errorType !== 'required') {
+					val1 = document.getElementById('site-input').value;
+					val1 = val1.replace('http://', '');
+					val1 = val1.replace('www.', '');
+
+					val2 = this._input.value;
+
+					if (!val2.endsWith(val1)) {
+						errorType = 'invalid';
+					}
 				}
 			}
 
@@ -125,8 +150,6 @@ define(['dispatcher', 'utils'], function(dispatcher, utils) {
 
 		this._requiredError = this._input.getAttribute('data-required-error');
 		this._invalidError = this._input.getAttribute('data-invalid-error');
-
-		console.log(this._requiredError);
 
 		this._form = this.closest('form');
 		this._formId = this._form.getAttribute('data-id');

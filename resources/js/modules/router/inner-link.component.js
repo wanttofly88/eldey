@@ -36,6 +36,8 @@ define([
 	elementProto.handleStore = function() {
 		var href = store.getData().page.href;
 
+		if (this._noActive) return;
+
 		if (href === this.href) {
 			this.classList.add('active');
 		} else {
@@ -49,6 +51,7 @@ define([
 	}
 	elementProto.attachedCallback = function() {
 		this.href = this.href;
+		this._noActive = this.getAttribute('data-no-active');
 
 		if (this.href.indexOf('index') !== -1) {
 			this.href = this.href.replace('/index.html', '');

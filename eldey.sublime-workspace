@@ -4,20 +4,108 @@
 		"selected_items":
 		[
 			[
+				"re",
+				"resources"
+			],
+			[
+				"sh",
+				"shiftY"
+			],
+			[
+				"ce",
+				"centerY"
+			],
+			[
+				"off",
+				"offsetCenterX"
+			],
+			[
+				"co",
+				"component"
+			],
+			[
+				"ofs",
+				"offset"
+			],
+			[
+				"tra",
+				"translateX"
+			],
+			[
+				"cle",
+				"clientHeight"
+			],
+			[
+				"ha",
+				"handleScroll"
+			],
+			[
+				"scr",
+				"scrolled"
+			],
+			[
+				"cli",
+				"clientWidth"
+			],
+			[
+				"sc",
+				"scrolled"
+			],
+			[
+				"di",
+				"directional-scroll"
+			],
+			[
+				"ap",
+				"appear-fade"
+			],
+			[
+				"pa",
+				"parent"
+			],
+			[
+				"de",
+				"descendants"
+			],
+			[
+				"no",
+				"nodes"
+			],
+			[
+				"linke",
+				"linkExit"
+			],
+			[
+				"node",
+				"nodeEnter"
+			],
+			[
+				"for",
+				"forEach"
+			],
+			[
+				"tran",
+				"transform"
+			],
+			[
+				"va",
+				"val1"
+			],
+			[
+				"_i",
+				"_input"
+			],
+			[
+				"res",
+				"resizeStore"
+			],
+			[
 				"h",
 				"height"
 			],
 			[
 				"tr",
 				"translateX"
-			],
-			[
-				"re",
-				"resizeStore"
-			],
-			[
-				"pa",
-				"parentNode"
 			],
 			[
 				"id",
@@ -40,20 +128,8 @@
 				"width"
 			],
 			[
-				"ha",
-				"handleResize"
-			],
-			[
-				"res",
-				"resize"
-			],
-			[
 				"tex-",
 				"text-align"
-			],
-			[
-				"tran",
-				"transition"
 			],
 			[
 				"se",
@@ -88,10 +164,6 @@
 				"virtualScrollLeft"
 			],
 			[
-				"co",
-				"complete"
-			],
-			[
 				"show",
 				"show640"
 			],
@@ -118,10 +190,6 @@
 			[
 				"min",
 				"min-width"
-			],
-			[
-				"di",
-				"display"
 			],
 			[
 				"inl",
@@ -184,18 +252,6 @@
 				"appear-left"
 			],
 			[
-				"tra",
-				"transform"
-			],
-			[
-				"sc",
-				"scrolled"
-			],
-			[
-				"cli",
-				"clientHeight"
-			],
-			[
 				"dS",
 				"dScroll"
 			],
@@ -216,14 +272,6 @@
 				"feedback"
 			],
 			[
-				"no",
-				"noStart"
-			],
-			[
-				"off",
-				"offset"
-			],
-			[
 				"box-",
 				"box-shadow"
 			],
@@ -232,24 +280,12 @@
 				"_form"
 			],
 			[
-				"va",
-				"value"
-			],
-			[
 				"hand",
 				"handleInput"
 			],
 			[
 				"sto",
 				"store"
-			],
-			[
-				"for",
-				"form"
-			],
-			[
-				"ap",
-				"appear-up"
 			],
 			[
 				"appea",
@@ -278,10 +314,6 @@
 			[
 				"cr",
 				"createdCallback"
-			],
-			[
-				"scr",
-				"scroll"
 			],
 			[
 				"scroll",
@@ -420,10 +452,6 @@
 				"_scrollPositionTop"
 			],
 			[
-				"_i",
-				"_id"
-			],
-			[
 				"tab",
 				"tabsStore"
 			],
@@ -486,104 +514,79 @@
 			[
 				"pr",
 				"preloadComplete"
-			],
-			[
-				"set",
-				"setTimeout"
-			],
-			[
-				"_m",
-				"_minHeight"
-			],
-			[
-				"table",
-				"table-cell"
-			],
-			[
-				"op",
-				"opacity"
-			],
-			[
-				"data-",
-				"data-product"
-			],
-			[
-				"rou",
-				"routerStore"
-			],
-			[
-				"_c",
-				"_currentScheme"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 21864,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
 			"file": "contacts.html",
 			"settings":
 			{
-				"buffer_size": 13728,
+				"buffer_size": 14850,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "todo.md",
-			"settings":
-			{
-				"buffer_size": 193,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/D/sites/for redcollar/vimotion/site/resources/js/modules/map/map-link.view.js",
-			"settings":
-			{
-				"buffer_size": 1500,
-				"line_ending": "Unix"
 			}
 		},
 		{
 			"file": "resources/js/modules/map/map.component.js",
 			"settings":
 			{
-				"buffer_size": 2808,
+				"buffer_size": 2336,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/D/sites/for redcollar/dino/resources/js/modules/map/map.view.js",
+			"file": "resources/js/modules/parallax/parallax-element.component.js",
 			"settings":
 			{
-				"buffer_size": 3694,
-				"line_ending": "Unix"
+				"buffer_size": 3745,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "resources/js/modules/trigger/scroll-trigger.component.js",
+			"settings":
+			{
+				"buffer_size": 4018,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
 			}
 		},
 		{
 			"file": "resources/js/app.js",
 			"settings":
 			{
-				"buffer_size": 1275,
+				"buffer_size": 1390,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/D/sites/for redcollar/dino/resources/js/modules/map/map-markers.view.js",
-			"settings":
-			{
-				"buffer_size": 1503,
-				"line_ending": "Unix"
 			}
 		},
 		{
 			"file": "resources/css/styles.css",
 			"settings":
 			{
-				"buffer_size": 64086,
+				"buffer_size": 64727,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "resources/js/modules/utils.js",
+			"settings":
+			{
+				"buffer_size": 6270,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -682,30 +685,43 @@
 		"/D/sites/eldey/resources/js",
 		"/D/sites/eldey/resources/js/libs",
 		"/D/sites/eldey/resources/js/modules",
-		"/D/sites/eldey/resources/js/modules/directional-scroll",
-		"/D/sites/eldey/resources/js/modules/form",
-		"/D/sites/eldey/resources/js/modules/map",
-		"/D/sites/eldey/resources/js/modules/slider",
-		"/D/sites/eldey/resources/js/modules/tooltip",
+		"/D/sites/eldey/resources/js/modules/img",
+		"/D/sites/eldey/resources/js/modules/scroll",
+		"/D/sites/eldey/resources/js/modules/trigger",
 		"/D/sites/eldey/tmp"
 	],
 	"file_history":
 	[
+		"/D/sites/eldey/resources/js/modules/img/img.component.js",
+		"/D/sites/eldey/resources/js/modules/directional-scroll/directional-scroll-2.component.js",
+		"/D/sites/eldey/resources/js/modules/directional-scroll/directional-scroll.store.js",
+		"/D/sites/eldey/resources/js/modules/scroll/virtual-d-scroll.store.js",
+		"/D/sites/eldey/resources/js/modules/trigger/timer-trigger.component.js",
+		"/D/sites/eldey/resources/js/modules/directional-scroll/curve-2.component.js",
+		"/D/sites/eldey/todo.md",
+		"/D/sites/eldey/ideas.html",
 		"/D/sites/eldey/compare.html",
-		"/D/sites/eldey/resources/js/modules/form/input-wrapper.component.js",
-		"/D/sites/eldey/resources/js/app.js",
-		"/D/sites/eldey/post.html",
-		"/D/sites/eldey/resources/js/modules/slider/compare-slider.component.js",
-		"/D/sites/eldey/index.html",
-		"/D/sites/qqb/resources/js/modules/slider/video-slider.component.js",
-		"/D/sites/eldey/contacts.html",
-		"/D/sites/eldey/resources/js/modules/tooltip/tooltip-helper.component.js",
+		"/D/sites/eldey/approach.html",
 		"/D/sites/eldey/resources/js/modules/trees/tree.component.js",
-		"/D/sites/eldey/resources/js/modules/tooltip/tooltip-hover.component.js",
-		"/D/sites/eldey/resources/css/styles.css",
 		"/D/sites/eldey/mission.html",
 		"/D/sites/eldey/blog.html",
-		"/D/sites/eldey/ideas.html",
+		"/D/sites/eldey/post.html",
+		"/D/sites/eldey/contacts.html",
+		"/D/sites/eldey/resources/js/modules/presentation/presentation-preview.component.js",
+		"/D/sites/eldey/index.html",
+		"/D/sites/for redcollar/dino/resources/js/modules/map/map-markers.view.js",
+		"/D/sites/qqb/resources/js/modules/cart/cart-item.component.js",
+		"/D/sites/eldey/resources/js/modules/map/map.component.js",
+		"/D/sites/eldey/resources/js/modules/slider/compare-slider.component.js",
+		"/D/sites/eldey/resources/js/modules/form/input-wrapper.component.js",
+		"/D/sites/for redcollar/vimotion/site/resources/js/modules/map/map-link.view.js",
+		"/D/sites/eldey/resources/js/app.js",
+		"/D/sites/eldey/resources/js/modules/map/map-link.component.js",
+		"/D/sites/for redcollar/dino/resources/js/modules/map/map.view.js",
+		"/D/sites/qqb/resources/js/modules/slider/video-slider.component.js",
+		"/D/sites/eldey/resources/js/modules/tooltip/tooltip-helper.component.js",
+		"/D/sites/eldey/resources/js/modules/tooltip/tooltip-hover.component.js",
+		"/D/sites/eldey/resources/css/styles.css",
 		"/D/sites/eldey/resources/css/defs",
 		"/D/sites/social/ig.svg",
 		"/D/sites/eldey/resources/js/libs/d3.js",
@@ -719,22 +735,15 @@
 		"/C/Users/Kernel/Downloads/vk.svg",
 		"/D/sites/eldey/resources/js/modules/trees/tree-old.component.js",
 		"/C/Users/Kernel/AppData/Local/Temp/7zE49590A87/d3.js",
-		"/D/sites/eldey/resources/js/modules/scroll/virtual-d-scroll.store.js",
-		"/D/sites/eldey/resources/js/modules/directional-scroll/directional-scroll.store.js",
 		"/D/sites/eldey/resources/js/modules/scroll/virtual-scroll.store.js",
-		"/D/sites/eldey/resources/js/modules/trigger/timer-trigger.component.js",
 		"/D/sites/eldey/eldey-stab/styles.css",
-		"/D/sites/eldey/approach.html",
 		"/D/sites/eldey/eldey-stab/index.html",
-		"/D/sites/eldey/todo.md",
-		"/D/sites/eldey/resources/js/modules/directional-scroll/curve-2.component.js",
 		"/D/sites/eldey/resources/js/modules/tooltip/tooltip.component.js",
 		"/D/sites/eldey/resources/js/modules/popup/popup.component.js",
 		"/D/sites/eldey/resources/js/modules/popup/popup.helper.js",
 		"/D/sites/eldey/resources/js/modules/popup/popup-toggle.component.js",
 		"/D/sites/qqb/index.html",
 		"/D/sites/qqb/resources/css/styles.css",
-		"/D/sites/eldey/resources/js/modules/directional-scroll/directional-scroll-2.component.js",
 		"/D/sites/eldey/resources/js/modules/trigger/scroll-trigger.component.js",
 		"/C/Windows/System32/drivers/etc/hosts",
 		"/D/sites/eldey/resources/js/modules/directional-scroll/bird.component.js",
@@ -761,7 +770,6 @@
 		"/D/sites/for redcollar/redcollar/resources/js/modules/trigger/trigger.store.js",
 		"/D/sites/for redcollar/redcollar/resources/js/modules/trigger/scroll-trigger.view.js",
 		"/D/sites/eldey/resources/js/modules/img/div.component.js",
-		"/D/sites/eldey/resources/js/modules/img/img.component.js",
 		"/D/sites/eldey/resources/js/modules/component.dummy.js",
 		"/D/sites/eldey/resources/js/modules/tabs/tabs.component.js",
 		"/D/sites/eldey/resources/js/modules/tabs/tabs-switches.component.js",
@@ -811,14 +819,7 @@
 		"/D/sites/qqb/resources/js/modules/attribute-slider/buy-slider.component.js",
 		"/D/sites/qqb/resources/js/modules/router/inner-link.component.js",
 		"/D/sites/qqb/resources/js/modules/router/menu-link.component.js",
-		"/D/sites/qqb/resources/js/modules/stage/stage.component.js",
-		"/D/sites/qqb/resources/js/modules/glsl/dot-fragment.glsl",
-		"/D/sites/qqb/resources/js/modules/audio/audio-player.component.js",
-		"/D/sites/qqb/resources/js/modules/router/page-transition.component.js",
-		"/D/sites/qqb/resources/js/modules/glsl/loading-fragment.glsl",
-		"/D/sites/qqb/resources/js/modules/utils.js",
-		"/D/sites/qqb/resources/js/modules/component.dummy.js",
-		"/D/sites/qqb/resources/js/modules/track-list/track-list.component.js"
+		"/D/sites/qqb/resources/js/modules/stage/stage.component.js"
 	],
 	"find":
 	{
@@ -837,6 +838,58 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"tooltip-hover",
+			"mail-b",
+			"mail-btn",
+			"tooltip-h",
+			"hover-t",
+			"3",
+			"s-an",
+			"s-fc",
+			"20",
+			".btn:h",
+			"&&",
+			"vScrollStore",
+			"tree-c",
+			" - 150",
+			"is=\"scroll-trigger\"",
+			"appear-right-2",
+			"appear-left-2",
+			"appear-l",
+			"_dOffset",
+			"left",
+			"sRight",
+			"top",
+			"sBottom",
+			"_classList",
+			"appear-up-2",
+			"appear-up-w",
+			"bind",
+			"text-b",
+			"box",
+			"text",
+			"text-b",
+			"present",
+			");\n",
+			"d.parent",
+			"project",
+			"d.parent",
+			"d",
+			"target",
+			"source",
+			"depth",
+			" - 50",
+			"val",
+			"1500px",
+			"1300px",
+			"1300",
+			"1200",
+			"1300px",
+			"min-width: 1200px",
+			"component",
+			"self",
+			"element",
+			"container",
 			"div",
 			"call",
 			"_enbled",
@@ -912,59 +965,7 @@
 			"fake",
 			"width",
 			"header",
-			"transform-wr",
-			"transform-vr",
-			"0.3s",
-			"clientWidth",
-			"body",
-			"3s",
-			" paint-hover",
-			"menu-popup",
-			"menu-b",
-			"popup-c",
-			"pagination",
-			"logo",
-			"idea",
-			"col-3",
-			"col-2",
-			"container",
-			"tx",
-			"ideas",
-			"aside",
-			"div",
-			"aside",
-			"400px;",
-			"margin",
-			"section",
-			"margin",
-			"margin-top",
-			"padding",
-			"feedback",
-			"main",
-			"feedba",
-			"find",
-			"question",
-			"find",
-			"question",
-			"find",
-			"focus .bg",
-			"focus",
-			"result",
-			"simple-t",
-			"b5",
-			"paint",
-			"png",
-			"b5",
-			"b4",
-			"b5",
-			"anali",
-			"analisys",
-			"anali",
-			"1200",
-			"1400",
-			"s-qu",
-			"bird.sv",
-			"absolute"
+			"transform-wr"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -983,30 +984,87 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 6,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "contacts.html",
+					"file": "index.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 13728,
+						"buffer_size": 21864,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								30,
-								30
+								4873,
+								4873
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/HTML/HTML.sublime-syntax",
 							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2125.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "contacts.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 14850,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4155,
+								4155
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2380.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "resources/js/modules/map/map.component.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2336,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								45,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1016,77 +1074,20 @@
 					"type": "text"
 				},
 				{
-					"buffer": 1,
-					"file": "todo.md",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 193,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								181,
-								181
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Markdown/Markdown.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/D/sites/for redcollar/vimotion/site/resources/js/modules/map/map-link.view.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1500,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								213,
-								290
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
 					"buffer": 3,
-					"file": "resources/js/modules/map/map.component.js",
+					"file": "resources/js/modules/parallax/parallax-element.component.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2808,
+						"buffer_size": 3745,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1008,
-								1008
+								3640,
+								3640
 							]
 						],
 						"settings":
@@ -1095,7 +1096,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 780.0,
+						"translation.y": 1920.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 3,
@@ -1103,19 +1104,19 @@
 				},
 				{
 					"buffer": 4,
-					"file": "/D/sites/for redcollar/dino/resources/js/modules/map/map.view.js",
+					"file": "resources/js/modules/trigger/scroll-trigger.component.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3694,
+						"buffer_size": 4018,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2829,
-								2781
+								2185,
+								2185
 							]
 						],
 						"settings":
@@ -1124,10 +1125,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 120.0,
+						"translation.y": 1620.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
@@ -1136,44 +1137,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1275,
+						"buffer_size": 1390,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1250,
-								1250
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": -0.0,
-						"translation.y": 240.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "/D/sites/for redcollar/dino/resources/js/modules/map/map-markers.view.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1503,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								907,
-								913
+								1032,
+								1032
 							]
 						],
 						"settings":
@@ -1182,27 +1154,27 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 180.0,
+						"translation.y": 450.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 6,
 					"file": "resources/css/styles.css",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 64086,
+						"buffer_size": 64727,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								48468,
-								48468
+								18712,
+								18712
 							]
 						],
 						"settings":
@@ -1211,10 +1183,39 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 56988.0,
+						"translation.y": 19964.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "resources/js/modules/utils.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6270,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								558,
+								558
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
 					"type": "text"
 				}
 			]

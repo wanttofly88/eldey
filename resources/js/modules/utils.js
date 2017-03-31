@@ -11,6 +11,21 @@ define(function() {
 		return rv;
 	}
 
+	var offsetFrom = function(elem, parent) {
+		function getOffsetSum(elem) {
+			var top = 0, left = 0;
+			while(elem && elem !== parent) {
+				top = top + parseInt(elem.offsetTop);
+				left = left + parseInt(elem.offsetLeft);
+				elem = elem.offsetParent;
+			}
+
+			return {top: top, left: left};
+		}
+
+		return getOffsetSum(elem);
+	}
+
 	var offset = function(elem) {
 		function getOffsetSum(elem) {
 			var top = 0, left = 0;
@@ -255,6 +270,7 @@ define(function() {
 
 	return {
 		offset: offset,
+		offsetFrom: offsetFrom,
 		Tween: Tween,
 		getRequestAnimationFrame: getRequestAnimationFrame,
 		http: http,

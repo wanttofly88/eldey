@@ -22,6 +22,10 @@ define([
 		var pathData = this.buildPath();
 		var self = this;
 
+		var ww = resizeStore.getData().width;
+		var wh = resizeStore.getData().height;
+		if (ww < 1450 || wh < 500) return;
+
 		this.style.width = resizeStore.getData().width * 5 + 'px';
 /*		this.style.height = pw.clientHeight + 'px';
 */
@@ -120,6 +124,7 @@ define([
 
 		var curvePoints = {};
 		var offs;
+		var footer = document.getElementsByTagName('footer')[0];
 
 		t = wh;
 
@@ -131,7 +136,7 @@ define([
 
 
 		if (sec) {
-			offs = sec.offsetTop - wh -  RADIUS*4;
+			offs = sec.offsetTop + sec.clientHeight -  RADIUS*4;
 
 			l = intermediateResult.l;
 			t = offs + RADIUS*2;
@@ -141,7 +146,7 @@ define([
 		sec = document.getElementById('focus');
 
 		if (sec) {
-			offs = sec.offsetTop - 3*wh - RADIUS*4;
+			offs = sec.offsetTop + sec.clientHeight  - RADIUS*4;
 
 			l = intermediateResult.l;
 			t = offs  + RADIUS*2;
@@ -151,7 +156,7 @@ define([
 		sec = document.getElementById('result');
 
 		if (sec) {
-			offs = sec.offsetTop - RADIUS*4 - wh*4;
+			offs = sec.offsetTop - RADIUS*4 + sec.clientHeight;
 
 			l = intermediateResult.l;
 			t = offs + RADIUS*2;
@@ -160,7 +165,7 @@ define([
 
 		sec = document.getElementById('feedback');
 
-		offs = sec.offsetTop - RADIUS*4 - wh*5 + sec.clientHeight + wh + 100;
+		offs = sec.offsetTop - RADIUS*4 + sec.clientHeight + wh + footer.clientHeight + 355;
 		l = l = intermediateResult.l;
 		points.push('L' + l + ' ' + offs);
 
@@ -210,7 +215,7 @@ define([
 
 
 		if (sec) {
-			offs = sec.offsetTop - wh -  RADIUS*4;
+			offs = sec.offsetTop  + sec.clientHeight -  RADIUS*4;
 
 			l = intermediateResult.l;
 			t = offs + RADIUS*2- fromBottom;
@@ -220,7 +225,7 @@ define([
 		sec = document.getElementById('gain-point');
 
 		if (sec) {
-			offs = (sec.offsetTop + sec.parentNode.parentNode.offsetTop) - wh*3 - RADIUS*2;
+			offs = (sec.offsetTop + sec.parentNode.parentNode.offsetTop) - RADIUS*2;
 			t = offs - 100;
 			l = intermediateResult.l;
 
@@ -230,7 +235,7 @@ define([
 		sec = document.getElementById('focus');
 
 		if (sec) {
-			offs = sec.offsetTop - 3*wh - RADIUS*2;
+			offs = sec.offsetTop + sec.clientHeight - RADIUS*2;
 
 			l = intermediateResult.l;
 			t = offs - fromBottom;
@@ -240,14 +245,16 @@ define([
 		sec = document.getElementById('result');
 
 		if (sec) {
-			offs = sec.offsetTop - 4*wh -  RADIUS*2;
+			offs = sec.offsetTop + sec.clientHeight -  RADIUS*2;
 
 			l = intermediateResult.l;
 			t = offs - fromBottom;
 			intermediateResult = this.curveTo(points, l, t, ww*2 - RADIUS*2, 'right');
 		}
 
-		offs = sec.offsetTop - 5*wh + sec.clientHeight + RADIUS*3/2 - 20;
+		sec = document.getElementById('feedback');
+
+		offs = sec.offsetTop + sec.clientHeight - 100;
 		l = intermediateResult.l;
 		t = offs;
 		l1 = l + RADIUS/2;
@@ -256,7 +263,7 @@ define([
 		t1 = t + RADIUS;
 		t2 = t1 + RADIUS/2;
 		// t2 = t1 + ww/10;
-		points.push('L' + l + ' ' + t);
+		// points.push('L' + l + ' ' + t);
 		points.push('C' + l + ' ' + t1 + ', ' + l +  ' ' + t2 + ', ' + l2 + ' ' + t2);
 		l = l2 - ww/20 + RADIUS/2;
 		l1 = l + ww/3 - RADIUS - LEFT_SHIFT;

@@ -24,28 +24,51 @@ require.config({
 require([
 	'slider/tri-slider.component',
 	'slider/compare-slider.component',
+
 	'decor/arc-text.component',
+
 	'tabs/tabs-switches.component',
 	'tabs/tabs.component',
+
 	'directional-scroll/directional-scroll-2.component',
 	'directional-scroll/curve-2.component',
 	'directional-scroll/bird.component',
-	'trees/tree.component',
+
+	// 'trees/tree.component',
+
 	'blog/post-preview.component',
+
 	'img/img.component',
 	'img/div.component',
+
 	'preloader/preloader-helper.component',
+
 	'trigger/scroll-trigger.component',
 	'trigger/timer-trigger.component',
 	'trigger/simple-trigger.component',
+
 	'form/form.component',
 	'form/response.component',
 	'form/input-wrapper.component',
+
 	'popup/popup-toggle.component',
 	'popup/popup.component',
 	'popup/popup.helper',
+
 	'tooltip/tooltip-helper.component',
 	'tooltip/tooltip.component',
 	'tooltip/tooltip-hover.component',
-	'map/map.component'
+
+	'map/map.component',
+	'map/map-link.component',
+
+	'presentation/presentation-preview.component',
+
+	'parallax/parallax-element.component',
+
+	'router/router.view',
+	'router/page-transition.view',
+	'router/inner-link.component',
+
+	'search/search-expendable.component'
 ]);

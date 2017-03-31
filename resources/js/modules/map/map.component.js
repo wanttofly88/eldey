@@ -13,7 +13,10 @@ define(['dispatcher'], function(dispatcher) {
 	}
 
 	window._loaderReady = function() {
-		window.google.load("maps", "3.x", {"callback" : _initMaps, "other_params": "sensor=false&language=" + lang});
+		window.google.load("maps", "3", {
+			"callback": _initMaps,
+			"other_params": "key=AIzaSyCIuYnYUScrpSJwCMtCUKM-9yVn8wT_QoM&language=" + lang
+		});
 	}
 
 	var _initMaps = function() {
@@ -35,54 +38,7 @@ define(['dispatcher'], function(dispatcher) {
 		lng  = this.getAttribute('data-lng')  || 0;
 		zoom = parseInt(this.getAttribute('data-zoom')) || 2;
 
-		styles = [
-    {
-        "featureType": "all",
-        "stylers": [
-            {
-                "saturation": 0
-            },
-            {
-                "hue": "#e7ecf0"
-            }
-        ]
-    },
-    {
-        "featureType": "road",
-        "stylers": [
-            {
-                "saturation": -70
-            }
-        ]
-    },
-    {
-        "featureType": "transit",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "poi",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "water",
-        "stylers": [
-            {
-                "visibility": "simplified"
-            },
-            {
-                "saturation": -60
-            }
-        ]
-    }
-];
+		styles = [{"featureType":"all","stylers":[{"saturation":0},{"hue":"#e7ecf0"}]},{"featureType":"road","stylers":[{"saturation":-70}]},{"featureType":"transit","stylers":[{"visibility":"off"}]},{"featureType":"poi","stylers":[{"visibility":"off"}]},{"featureType":"water","stylers":[{"visibility":"simplified"},{"saturation":-60}]}]
 
 		config = {
 			zoom: zoom,
@@ -92,7 +48,7 @@ define(['dispatcher'], function(dispatcher) {
 
 		this._map = new google.maps.Map(this, config);		
 		this._map.setOptions({styles: styles});
-		this._map.style.background = '#f7f7f7';
+		this.style.background = '#f7f7f7';
 	}
 
 	elementProto.handleDispatcher = function(e) {

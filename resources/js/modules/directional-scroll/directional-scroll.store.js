@@ -21,6 +21,7 @@ define([
 	var curvePoints;
 	var x, y;
 	var direction = 'vertical';
+	var active = false;
 
 	var _handleEvent = function(e) {
 		if (e.type === 'dScroll:path-change') {
@@ -28,6 +29,14 @@ define([
 			visiblePath = e.visiblePath;
 			curvePoints = e.curvePoints;
 			_handleScroll();
+			eventEmitter.dispatch();
+		}
+		if (e.type === 'dScroll:enable') {
+			active = true;
+			eventEmitter.dispatch();
+		}
+		if (e.type === 'dScroll:disable') {
+			active = false;
 			eventEmitter.dispatch();
 		}
 	}
@@ -63,7 +72,8 @@ define([
 			y: y,
 			direction: direction,
 			curvePoints: curvePoints,
-			visiblePath: visiblePath
+			visiblePath: visiblePath,
+			active: active
 		}
 	}
 
