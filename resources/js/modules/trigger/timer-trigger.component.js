@@ -41,8 +41,6 @@ define([
 		this._delay = this.getAttribute('data-delay') || 300;
 		this._delay = parseInt(this._delay);
 
-		console.log(this._delay);
-
 		preloaderStore.subscribe(this.handlePreloader);
 		this.handlePreloader();
 	}

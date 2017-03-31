@@ -29,6 +29,10 @@ define([
 		var scrolledWHeight = scrolled.y + wh;
 		var scrolledWWidth = scrolled.x + ww;
 
+		if (isNaN(scrolled.x) || isNaN(scrolled.y)) {
+			requestAnimationFrame(_loop);
+			return;
+		}
 
 		if (Math.round(virtualScroll.top) !== scrolled.y 
 				|| Math.round(virtualScroll.bottom) !== scrolledWHeight
@@ -57,7 +61,10 @@ define([
 	}
 
 	var _handleScroll = function() {
+		var LEFT_SHIFT = dScrollStore.getData().LEFT_SHIFT;
 		scrolled = dScrollStore.getData();
+		scrolled.x = scrolled.x - LEFT_SHIFT;
+		scrolled.y = scrolled.y - wh;
 	}
 
 	var getData = function() {

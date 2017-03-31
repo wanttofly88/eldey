@@ -13,9 +13,13 @@
 </head>
 <body>
 	<div class="page-wrapper">
+		<tooltip-helper>
+			<div class="data" data-id="mail-tooltip">Отправьте письмо с вашего почтового агента.</div>
+		</tooltip-helper>
+
 		<header>
 			<div class="wrapper">
-				<a href="index.html" class="logo">
+				<a is="inner-link" href="index.html" class="logo">
 					<div class="i"></div>
 					<div class="t">раскрывая потенциал бизнеса</div>
 				</a>
@@ -84,117 +88,131 @@
 		</popup-component>
 
 		<a href="tel:+79804509087" class="side-phone show1000">+7 980 450-90-87</a>
-
-		<main>
-			<section class="contacts">
-				<div class="wrapper">
-					<div class="fg">
-						<img src="resources/images/paint/common.png" alt="">
-					</div>
-					<div class="text-box">
-						<h1>Напишите нам</h1>
-						<div class="contacts-form show320 show640">
-							<form action="#">
-								<p>
-									<label class="input-wrapper">
-										<input type="text" placeholder="Имя">
-									</label>
-								</p>
-								<p>
-									<label class="input-wrapper">
-										<input type="url" placeholder="Ваш сайт">
-									</label>
-								</p>
-								<p>
-									<label class="input-wrapper">
-										<input type="tel" placeholder="Телефон">
-									</label>
-								</p>
-								<p>
-									<label class="input-wrapper">
-										<input type="email" placeholder="Email">
-									</label>
-								</p>
-								<p>
-									<label for="" class="submit-wrapper">
-										<input class="btn wide blue" type="submit" value="Отправить">
-									</label>
-								</p>
-								<p>
-									<a href="#" class="btn white mail-btn">
-										<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="40" height="18" viewBox="0 0 40 18">
-										  <path d="M39.203,18.000 L13.384,18.000 C12.944,18.000 12.587,17.646 12.587,17.209 L12.587,15.717 L8.048,15.717 C7.608,15.717 7.251,15.363 7.251,14.927 C7.251,14.490 7.608,14.136 8.048,14.136 L12.587,14.136 L12.587,3.864 L4.992,3.864 C4.552,3.864 4.196,3.510 4.196,3.073 C4.196,2.636 4.552,2.282 4.992,2.282 L12.587,2.282 L12.587,0.791 C12.587,0.354 12.944,-0.000 13.384,-0.000 L39.203,-0.000 C39.643,-0.000 40.000,0.354 40.000,0.791 L40.000,17.209 C40.000,17.646 39.643,18.000 39.203,18.000 ZM15.401,1.582 L26.295,10.499 L37.238,1.582 L15.401,1.582 ZM38.406,2.676 L26.799,12.134 C26.652,12.254 26.473,12.314 26.293,12.314 C26.114,12.314 25.934,12.253 25.786,12.133 L14.181,2.632 L14.181,16.418 L38.406,16.418 L38.406,2.676 ZM10.146,8.920 C10.146,9.357 9.789,9.711 9.349,9.711 L0.797,9.711 C0.357,9.711 -0.000,9.357 -0.000,8.920 C-0.000,8.483 0.357,8.129 0.797,8.129 L9.349,8.129 C9.789,8.129 10.146,8.483 10.146,8.920 ZM4.992,14.136 L5.418,14.136 C5.858,14.136 6.215,14.490 6.215,14.927 C6.215,15.363 5.858,15.717 5.418,15.717 L4.992,15.717 C4.552,15.717 4.196,15.363 4.196,14.927 C4.196,14.490 4.552,14.136 4.992,14.136 Z" class="cls-1"/>
-										</svg>
-
-									</a>
-								</p>
-								
-							</form>
-						</div>
-						<div class="contacts-form show1000">
-							<form action="#">
-								<div class="tx">
-									<p>Я
-										<label class="input-wrapper">
-											<input type="text" placeholder="акционер">
-										</label>
-										компании
-										<span class="bl">www.</span>
-										<label class="input-wrapper">
-											<input type="url" placeholder="eldey.ru">
-										</label>
-										</br>
-										Знаю, что вы раскрываете потенциал бизнеса и я думаю, нам нужна ваша услуга.
-									</p>
-									<p>Свяжитесь, пожалуйста, со мной по телефону</span>
-										<label class="input-wrapper">
-											<input type="tel"  placeholder="(495) 123-45-67">
-										</label>
-										</br>
-										или e-mail
-										<label class="input-wrapper">
-											<input type="email" placeholder="n.kulagin@eldey.ru">
-										</label>
-									</p>
-									<p>Лучше уже с каким-то конкретным предложением именно для моей компании.</p>
-									<p><strong>Спасибо!</strong></p>
-									<p>
-										<label class="input-wrapper">
-											<input type="text"  placeholder="Николай">
-										</label>
-									</p>
+		
+		<div class="replaceable" data-id="main-replaceable">
+			<main>
+				<div class="inner-transform">
+					<section class="contacts">
+						<div class="wrapper">
+							<div class="fg">
+								<img src="resources/images/paint/common.png" alt="">
+							</div>
+							<div  is="scroll-trigger" class="text-box appear-textbox appear-up">
+								<h1>Напишите нам</h1>
+								<div class="contacts-form show320 show640">
+									<form is="form-component" action="#" novalidate data-id="contacts-form-mobile">
+										<p>
+											<label is="input-wrapper" class="input-wrapper">
+												<input type="text" 
+													placeholder="Имя" required
+													data-required-error="Это поле обязательно к заполнению">
+											</label>
+										</p>
+										<p>
+											<label is="input-wrapper" class="input-wrapper">
+												<input type="url" 
+													placeholder="Ваш сайт" required
+													data-required-error="Это поле обязательно к заполнению">
+											</label>
+										</p>
+										<p>
+											<label is="input-wrapper" class="input-wrapper">
+												<input type="tel" placeholder="Телефон">
+											</label>
+										</p>
+										<p>
+											<label is="input-wrapper" class="input-wrapper">
+												<input type="email" placeholder="Email">
+											</label>
+										</p>
+										<p>
+											<label for="" class="submit-wrapper">
+												<input class="btn wide blue" type="submit" value="Отправить">
+											</label>
+										</p>
+										<p>
+											<div class="mail-btn">
+												<a href="#" class="btn white">
+													<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="40" height="18" viewBox="0 0 40 18">
+												 		 <path d="M39.203,18.000 L13.384,18.000 C12.944,18.000 12.587,17.646 12.587,17.209 L12.587,15.717 L8.048,15.717 C7.608,15.717 7.251,15.363 7.251,14.927 C7.251,14.490 7.608,14.136 8.048,14.136 L12.587,14.136 L12.587,3.864 L4.992,3.864 C4.552,3.864 4.196,3.510 4.196,3.073 C4.196,2.636 4.552,2.282 4.992,2.282 L12.587,2.282 L12.587,0.791 C12.587,0.354 12.944,-0.000 13.384,-0.000 L39.203,-0.000 C39.643,-0.000 40.000,0.354 40.000,0.791 L40.000,17.209 C40.000,17.646 39.643,18.000 39.203,18.000 ZM15.401,1.582 L26.295,10.499 L37.238,1.582 L15.401,1.582 ZM38.406,2.676 L26.799,12.134 C26.652,12.254 26.473,12.314 26.293,12.314 C26.114,12.314 25.934,12.253 25.786,12.133 L14.181,2.632 L14.181,16.418 L38.406,16.418 L38.406,2.676 ZM10.146,8.920 C10.146,9.357 9.789,9.711 9.349,9.711 L0.797,9.711 C0.357,9.711 -0.000,9.357 -0.000,8.920 C-0.000,8.483 0.357,8.129 0.797,8.129 L9.349,8.129 C9.789,8.129 10.146,8.483 10.146,8.920 ZM4.992,14.136 L5.418,14.136 C5.858,14.136 6.215,14.490 6.215,14.927 C6.215,15.363 5.858,15.717 5.418,15.717 L4.992,15.717 C4.552,15.717 4.196,15.363 4.196,14.927 C4.196,14.490 4.552,14.136 4.992,14.136 Z" class="cls-1"/>
+													</svg>
+												</a>
+											</div>
+										</p>
+									</form>
 								</div>
-								<label for="" class="submit-wrapper">
-									<input class="btn wide blue" type="submit" value="Отправить">
-								</label>
-								<a href="#" class="btn white mail-btn">
-									<a href="#" class="btn white mail-btn">
-										<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="40" height="18" viewBox="0 0 40 18">
-										  <path d="M39.203,18.000 L13.384,18.000 C12.944,18.000 12.587,17.646 12.587,17.209 L12.587,15.717 L8.048,15.717 C7.608,15.717 7.251,15.363 7.251,14.927 C7.251,14.490 7.608,14.136 8.048,14.136 L12.587,14.136 L12.587,3.864 L4.992,3.864 C4.552,3.864 4.196,3.510 4.196,3.073 C4.196,2.636 4.552,2.282 4.992,2.282 L12.587,2.282 L12.587,0.791 C12.587,0.354 12.944,-0.000 13.384,-0.000 L39.203,-0.000 C39.643,-0.000 40.000,0.354 40.000,0.791 L40.000,17.209 C40.000,17.646 39.643,18.000 39.203,18.000 ZM15.401,1.582 L26.295,10.499 L37.238,1.582 L15.401,1.582 ZM38.406,2.676 L26.799,12.134 C26.652,12.254 26.473,12.314 26.293,12.314 C26.114,12.314 25.934,12.253 25.786,12.133 L14.181,2.632 L14.181,16.418 L38.406,16.418 L38.406,2.676 ZM10.146,8.920 C10.146,9.357 9.789,9.711 9.349,9.711 L0.797,9.711 C0.357,9.711 -0.000,9.357 -0.000,8.920 C-0.000,8.483 0.357,8.129 0.797,8.129 L9.349,8.129 C9.789,8.129 10.146,8.483 10.146,8.920 ZM4.992,14.136 L5.418,14.136 C5.858,14.136 6.215,14.490 6.215,14.927 C6.215,15.363 5.858,15.717 5.418,15.717 L4.992,15.717 C4.552,15.717 4.196,15.363 4.196,14.927 C4.196,14.490 4.552,14.136 4.992,14.136 Z" class="cls-1"/>
-										</svg>
-
-									</a>
-								</a>
-							</form>
+								<div class="contacts-form show1000">
+									<form is="form-component" action="#" novalidate data-id="contacts-form">
+										<div class="tx">
+											<p>Я
+												<label is="input-wrapper" class="input-wrapper">
+													<input type="text" 
+														placeholder="акционер" required
+														data-required-error="Это поле обязательно к заполнению">
+												</label>
+												компании
+												<span class="bl">www.</span>
+												<label is="input-wrapper" class="input-wrapper">
+													<input type="url" 
+														placeholder="eldey.ru" required
+														data-required-error="Это поле обязательно к заполнению">
+												</label>
+												</br>
+												Знаю, что вы раскрываете потенциал бизнеса и я думаю, нам нужна ваша услуга.
+											</p>
+											<p>Свяжитесь, пожалуйста, со мной по телефону</span>
+												<label is="input-wrapper" class="input-wrapper">
+													<input type="tel"  placeholder="(495) 123-45-67">
+												</label>
+												</br>
+												или e-mail
+												<label is="input-wrapper" class="input-wrapper">
+													<input type="email" placeholder="n.kulagin@eldey.ru">
+												</label>
+											</p>
+											<p>Лучше уже с каким-то конкретным предложением именно для моей компании.</p>
+											<p><strong>Спасибо!</strong></p>
+											<p>
+												<label is="input-wrapper" class="input-wrapper">
+													<input type="text"  
+														placeholder="Николай" required
+														data-required-error="Это поле обязательно к заполнению">
+												</label>
+											</p>
+										</div>
+										<label for="" class="submit-wrapper">
+											<input class="btn wide blue" type="submit" value="Отправить">
+										</label>
+										<tooltip-hover data-id="mail-tooltip" class="mail-btn">
+											<a href="#" class="btn white ">
+												<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="40" height="18" viewBox="0 0 40 18">
+												  <path d="M39.203,18.000 L13.384,18.000 C12.944,18.000 12.587,17.646 12.587,17.209 L12.587,15.717 L8.048,15.717 C7.608,15.717 7.251,15.363 7.251,14.927 C7.251,14.490 7.608,14.136 8.048,14.136 L12.587,14.136 L12.587,3.864 L4.992,3.864 C4.552,3.864 4.196,3.510 4.196,3.073 C4.196,2.636 4.552,2.282 4.992,2.282 L12.587,2.282 L12.587,0.791 C12.587,0.354 12.944,-0.000 13.384,-0.000 L39.203,-0.000 C39.643,-0.000 40.000,0.354 40.000,0.791 L40.000,17.209 C40.000,17.646 39.643,18.000 39.203,18.000 ZM15.401,1.582 L26.295,10.499 L37.238,1.582 L15.401,1.582 ZM38.406,2.676 L26.799,12.134 C26.652,12.254 26.473,12.314 26.293,12.314 C26.114,12.314 25.934,12.253 25.786,12.133 L14.181,2.632 L14.181,16.418 L38.406,16.418 L38.406,2.676 ZM10.146,8.920 C10.146,9.357 9.789,9.711 9.349,9.711 L0.797,9.711 C0.357,9.711 -0.000,9.357 -0.000,8.920 C-0.000,8.483 0.357,8.129 0.797,8.129 L9.349,8.129 C9.789,8.129 10.146,8.483 10.146,8.920 ZM4.992,14.136 L5.418,14.136 C5.858,14.136 6.215,14.490 6.215,14.927 C6.215,15.363 5.858,15.717 5.418,15.717 L4.992,15.717 C4.552,15.717 4.196,15.363 4.196,14.927 C4.196,14.490 4.552,14.136 4.992,14.136 Z" class="cls-1"/>
+												</svg>
+											</a>
+										</tooltip-hover>
+									</form>
+								</div>
+							</div>
 						</div>
-					</div>
-				</div>
-			</section>
-			<section class="contacts-data">
-				<div class="wrapper">
-					<h1>Позвоните нам</h1>
-					<div class="tel">
-						<a href="tel:+74996769000">+7 (499) 676-90-00</a>
-					</div>
-					<h2 class="addr">Адрес: Москва, ул. Маши Порываевой, 34, 107078. БЦ Домников</h2>
-				</div>
+					</section>
+					<section class="contacts-data">
+						<div is="scroll-trigger" class="wrapper appear-up">
+							<h1>Позвоните нам</h1>
+							<div class="tel">
+								<a href="tel:+74996769000">+7 (499) 676-90-00</a>
+							</div>
+							<h2 class="addr">
+								<a is="map-link" href="#" target="_blank" data-lat="12" data-lng="15" >Адрес: Москва, ул. Маши Порываевой, 34, 107078. БЦ Домников</a>
+							</h2>
+						</div>
 
-				<map-component class="map" data-lat="12" data-lng="15" data-zoom="6">
-					
-				</map-component>
-				
-			</section>
-		</main>
+						<map-component class="map" data-lat="12" data-lng="15" data-zoom="6">
+						</map-component>
+					</section>
+				<div>
+			</main>
+		</div>
+
 		<footer id="footer">
 			<arc-text>Свяжитесь</arc-text>
 			<div class="wrapper">
@@ -214,13 +232,13 @@
 					<div class="l">
 						<nav>
 							<div class="item">
-								<a href="mission.html">Миссия</a>
+								<a is="inner-link" href="mission.html">Миссия</a>
 							</div>
 							<div class="item">
-								<a href="blog.html">Блог</a>
+								<a is="inner-link" href="blog.html">Блог</a>
 							</div>
 							<div class="item">
-								<a href="ideas.html">Идеи в хорошие руки</a>
+								<a is="inner-link" href="ideas.html">Идеи в хорошие руки</a>
 							</div>
 						</nav>
 					</div>
@@ -229,11 +247,6 @@
 							<a href="#"  class="item vk">
 								<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="40" height="40" viewBox="0 0 40 40">
 									<path d="M9.775,11.845 L10.970,11.845 C10.970,11.845 11.331,11.804 11.516,11.596 C11.686,11.406 11.680,11.050 11.680,11.050 C11.680,11.050 11.657,9.359 12.401,9.112 C13.135,8.870 14.078,10.728 15.077,11.444 C15.832,11.984 16.406,11.845 16.406,11.845 L19.077,11.847 C19.077,11.847 20.475,11.737 19.812,10.592 C19.758,10.498 19.426,9.745 17.826,8.197 C16.151,6.576 16.375,6.839 18.393,4.036 C19.622,2.328 20.113,1.286 19.959,0.840 C19.813,0.415 18.916,0.488 18.916,0.488 L15.902,0.487 C15.902,0.487 15.679,0.465 15.513,0.567 C15.352,0.668 15.248,0.930 15.248,0.930 C15.248,0.930 14.772,2.275 14.137,3.399 C12.798,5.769 12.262,5.894 12.043,5.747 C11.534,5.404 11.662,4.369 11.662,3.633 C11.662,1.336 11.996,0.379 11.010,0.131 C10.684,0.048 10.443,-0.005 9.607,-0.015 C8.533,-0.026 7.625,-0.011 7.111,0.251 C6.769,0.426 6.505,0.814 6.666,0.837 C6.865,0.865 7.315,0.964 7.553,1.303 C7.862,1.739 7.851,2.722 7.851,2.722 C7.851,2.722 8.028,5.425 7.437,5.760 C7.032,5.991 6.476,5.520 5.282,3.371 C4.670,2.269 4.208,1.028 4.208,1.028 C4.208,1.028 4.119,0.801 3.960,0.679 C3.768,0.531 3.498,0.485 3.498,0.485 L0.640,0.485 C0.640,0.485 0.211,0.498 0.054,0.693 C-0.086,0.866 0.043,1.223 0.043,1.223 C0.043,1.223 2.280,6.722 4.813,9.471 C7.137,11.992 9.775,11.845 9.775,11.845 Z" transform="translate(10 14)" class="cls-1"/>
-								</svg>
-							</a>
-							<a href="#" class="item ig">
-								<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="40" height="40" viewBox="0 0 40 40">
-									<path d="M12.912,-0.003 L3.092,-0.003 C1.386,-0.003 -0.002,1.385 -0.002,3.090 L-0.002,6.358 L-0.002,12.911 C-0.002,14.617 1.386,16.004 3.092,16.004 L12.912,16.004 C14.618,16.004 16.006,14.617 16.006,12.911 L16.006,6.358 L16.006,3.090 C16.006,1.385 14.618,-0.003 12.912,-0.003 ZM13.800,1.842 L14.154,1.841 L14.154,2.193 L14.154,4.554 L11.449,4.563 L11.439,1.849 L13.800,1.842 ZM5.718,6.358 C6.230,5.648 7.062,5.183 8.002,5.183 C8.942,5.183 9.774,5.648 10.286,6.358 C10.620,6.821 10.820,7.387 10.820,8.000 C10.820,9.554 9.555,10.818 8.002,10.818 C6.449,10.818 5.185,9.554 5.185,8.000 C5.185,7.387 5.384,6.821 5.718,6.358 ZM14.446,12.911 C14.446,13.757 13.758,14.444 12.912,14.444 L3.092,14.444 C2.246,14.444 1.558,13.757 1.558,12.911 L1.558,6.358 L3.948,6.358 C3.741,6.866 3.625,7.419 3.625,8.000 C3.625,10.414 5.588,12.378 8.002,12.378 C10.416,12.378 12.379,10.414 12.379,8.000 C12.379,7.419 12.262,6.866 12.056,6.358 L14.446,6.358 L14.446,12.911 Z" transform="translate(12 12)" class="cls-1"/>
 								</svg>
 							</a>
 							<a href="#" class="item fb">
@@ -253,5 +266,8 @@
 			</div>
 		</footer>
 	</div>
+
+	
+	<preloader-helper></preloader-helper>
 </body>
 </html>

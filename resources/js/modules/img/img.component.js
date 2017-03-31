@@ -30,7 +30,7 @@ define(['dispatcher', 'resize/breakpoint.store', 'img/img.prototype'], function(
 	}
 
 	elementProto.createdCallback = function() {
-		togglePrototype
+		togglePrototype.createdCallback.apply(this);
 	}
 	elementProto.attachedCallback = function() {
 		imgProptotype.attachedCallback.apply(this);

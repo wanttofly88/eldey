@@ -9,25 +9,29 @@ define([
 ) {
 	"use strict";
 
-	var elementProto = Object.create(HTMLElement.prototype);
+	var isTransitioning = false;
+	var tmpTransitionData = null;
+	var steps = {}
+	var tmpDocument = null;
+	var routingByHistory = false;
+	var ie = utils.getIEVersion();
 
-	elementProto.check = function(step) {
-		this.steps[step].current++;
-		if (this.steps[step].current >= this.steps[step].total) {
+
+	var _check = function(step) {
+		steps[step].current++;
+		if (steps[step].current >= steps[step].total) {
 			dispatcher.dispatch({
 				type: 'page-transition:step-' + step + '-complete'
 			});
 		}
 	}
 
-	elementProto.fetch = function(href) {
-		var self = this;
-
+	var _fetch = function(href) {
 		utils.http(href).get().then(function(responce) {
 			var newTitle;
 
-			self.tmpDocument = document.createElement('div');
-			self.tmpDocument.innerHTML = responce;
+			tmpDocument = document.createElement('div');
+			tmpDocument.innerHTML = responce;
 			
 			dispatcher.dispatch({
 				type: 'page-transition:check',
@@ -36,8 +40,13 @@ define([
 		});
 	}
 
-	elementProto.route = function(e) {
-		this.tmpTransitionData = e.transitionData;
+	var _route = function(e) {
+		if (ie > -1 && ie < 11) {
+			window.location.href = e.href;
+			return;
+		}
+
+		tmpTransitionData = e.transitionData;
 
 		dispatcher.dispatch({
 			type: 'router-page-change',
@@ -49,11 +58,10 @@ define([
 			transitionData: e.transitionData
 		});
 
-		this.fetch(e.href);
+		_fetch(e.href);
 	}
 
-	elementProto.replace = function() {
-		var self = this;
+	var _replace = function() {
 		var title;
 		var titleValue;
 		var containers;
@@ -68,20 +76,20 @@ define([
 				return;
 			}
 
-			newContainer = self.tmpDocument.querySelector('.replaceable[data-id="' + id + '"]');
+			newContainer = tmpDocument.querySelector('.replaceable[data-id="' + id + '"]');
 			
 			if (!newContainer) {
-				console.warn('unable to find container with data-id ' + id + 'on fetched document');
+				console.warn('unable to find container with data-id ' + id + ' on fetched document');
 				return;
 			}
 
 			container.innerHTML = newContainer.innerHTML;
 		}
 
-		if (!this.tmpDocument) return;
+		if (!tmpDocument) return;
 
 		containers = document.getElementsByClassName('replaceable');
-		title = this.tmpDocument.getElementsByTagName('title')[0];
+		title = tmpDocument.getElementsByTagName('title')[0];
 		titleValue = title.innerHTML;
 
 		Array.prototype.forEach.call(containers, function(container) {
@@ -90,7 +98,7 @@ define([
 
 		document.title = titleValue;
 
-		if (!this.routingByHistory && window.history) {
+		if (!routingByHistory && window.history) {
 			window.history.pushState({url: url}, titleValue, url);
 		}
 
@@ -106,40 +114,40 @@ define([
 		}, 0);
 	}
 
-	elementProto.handleDispatcher = function(e) {
+	var _handleDispatcher = function(e) {
 		if (e.type === 'route') {
-			if (this.isTransitioning) return;
+			if (isTransitioning) return;
 
 			if (e.byHistory) {
-				this.routingByHistory = true;
+				routingByHistory = true;
 			} else {
-				this.routingByHistory = false;
+				routingByHistory = false;
 			}
 
-			this.isTransitioning = true;
-			this.route(e);
+			isTransitioning = true;
+			_route(e);
 		}
 		if (e.type === 'page-transition:check') {
-			this.check(e.step);
+			_check(e.step);
 		}
 		if (e.type === 'page-transition:step-1-complete') {
-			this.replace();
+			_replace();
 		}
 		if (e.type === 'page-transition:step-2-complete') {
 			dispatcher.dispatch({
 				type: 'page-transition:end',
-				transitionData: this.tmpTransitionData
+				transitionData: tmpTransitionData
 			});
 
-			this.isTransitioning = false;
-			this.reset();
+			isTransitioning = false;
+			_reset();
 		}
 		if (e.type === 'page-transition:step-3-complete') {
 
 		}
 	}
 
-	elementProto.handleHistory = function(e) {
+	var _handleHistory = function(e) {
 		var url = e.state.url;
 		e.preventDefault();
 		if (!url) return;
@@ -151,8 +159,8 @@ define([
 		});
 	}
 
-	elementProto.reset = function() {
-		this.steps = {
+	var _reset = function() {
+		steps = {
 			1: {
 				current: 0,
 				total: 2
@@ -168,21 +176,7 @@ define([
 		}
 	}
 
-	elementProto.createdCallback = function() {
-		this.isTransitioning = false;
-		this.tmpTransitionData = null;
-
-		this.check = this.check.bind(this);
-		this.fetch = this.fetch.bind(this);
-		this.route = this.route.bind(this);
-		this.replace = this.replace.bind(this);
-		this.handleDispatcher = this.handleDispatcher.bind(this);
-		this.reset = this.reset.bind(this);
-		this.handleHistory = this.handleHistory.bind(this);
-
-		this.reset();
-	}
-	elementProto.attachedCallback = function() {
+	var _init = function() {
 		var url = location.origin + location.pathname;
 
 		var ie = utils.getIEVersion();
@@ -194,20 +188,17 @@ define([
 		if (window.history) {
 			window.history.replaceState({url: url}, false, url);
 		}
+
 		dispatcher.dispatch({
 			type: 'router-page-change',
 			href: url
 		});
 
-		window.onpopstate = this.handleHistory;
-		dispatcher.subscribe(this.handleDispatcher);
-	}
-	elementProto.detachedCallback = function() {
-		dispatcher.unsubscribe(this.handleDispatcher);
+		window.onpopstate = _handleHistory;
+		dispatcher.subscribe(_handleDispatcher);
+
+		_reset();
 	}
 
-
-	document.registerElement('router-component', {
-		prototype: elementProto
-	});
+	_init()
 });

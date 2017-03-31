@@ -25,7 +25,7 @@ define([
 		var height;
 		var offset;
 
-		if (ww > 1200 && wh > 500) {
+		if (ww >= 1450 && wh >= 500) {
 			this.activate();
 		} else {
 			this.deactivate();
@@ -57,7 +57,9 @@ define([
 					coefX = 4;
 					coefY = 6;
 				}
-				section.style.transform = 'translateX(' + Math.floor(coefX*100) + '%) translateY(' + -Math.floor(coefY*wh) + 'px)';
+				section.style.left = Math.floor(coefX*ww) + 'px';
+				section.style.top = -Math.floor(coefY*wh) + 'px';
+				//section.style.transform = 'translateX(' + Math.floor(coefX*100) + '%) translateY(' + -Math.floor(coefY*wh) + 'px)';
 			});
 		}
 	}
@@ -85,7 +87,7 @@ define([
 		var LEFT_SHIFT = dScrollStore.getData().LEFT_SHIFT;
 		var main = this._mainContainer;
 
-		this._transformWrapper.style.transform = 'translateX(' + -Math.floor(x - LEFT_SHIFT) +'px) translateY(' + -Math.floor(y - wh) + 'px)';
+		this._transformWrapper.style.transform = 'translateX(' + -Math.floor(x - LEFT_SHIFT) +'px) translateY(' + -Math.floor(y - wh) + 'px) translateZ(0px)';
 	}
 
 	elementProto.activate = function() {
@@ -99,6 +101,10 @@ define([
 		this.handleScroll();
 		scrollStore.subscribe(this.handleScroll);
 		dispatcher.subscribe(this.handleDispatcher);
+
+		dispatcher.dispatch({
+			type: 'dScroll:enable'
+		});
 	}
 
 	elementProto.deactivate = function() {
@@ -115,6 +121,10 @@ define([
 
 		scrollStore.unsubscribe(this.handleScroll);
 		dispatcher.unsubscribe(this.handleDispatcher);
+
+		dispatcher.dispatch({
+			type: 'dScroll:disable'
+		});
 	}
 
 	elementProto.createdCallback = function() {
