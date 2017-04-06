@@ -48,7 +48,8 @@ define([
 				type: 'dScroll:path-change',
 				path: self._path,
 				visiblePath: self._visiblePath,
-				curvePoints: pathData.curvePoints
+				curvePoints: pathData.curvePoints,
+				scrollPoints: pathData.scrollPoints
 			});
 
 			self.handleScroll();
@@ -70,9 +71,11 @@ define([
 		var mult = direction === 'right' ? 1 : -1;
 		var t1, t2, l1, l2;
 		var RADIUS = dScrollStore.getData().RADIUS;
+		var startLength = 0;
+		var endLength = 0;
+		var curve;
 
 		t1 = t2 = t;
-
 
 		// top to horisontal
 		if (noStart !== true) {
@@ -82,6 +85,9 @@ define([
 			l2 = l1 + mult*RADIUS;
 			points.push('L' + l + ' ' + t);
 			points.push('C' + l + ' ' + t1 + ' ,' + l + ' ' + t2 + ' ,' + l2 + ' ' + t2);
+			curve = this._svg.path(points.join(' '));
+			startLength = curve.getTotalLength();
+			curve.remove();
 		}
 
 		l = l + w;
@@ -98,10 +104,15 @@ define([
 		// horisontal to bottom
 		points.push('C' + l2 + ' ' + t + ' ,' + l2 + ' ' + t1 + ' ,' + l2 + ' ' +  t2);
 
+		curve = this._svg.path(points.join(' '));
+		endLength = curve.getTotalLength();
+		curve.remove();
 
 		return {
 			l: l2, 
-			t: t2
+			t: t2,
+			startLength: startLength,
+			endLength: endLength
 		}
 	}
 
@@ -116,6 +127,7 @@ define([
 		var intermediateResult;
 		var pw = document.getElementsByClassName('page-wrapper')[0];
 		var ww = pw.clientWidth;
+		var previousLength = 0;
 
 		var l = LEFT_SHIFT;
 		var t;
@@ -125,13 +137,19 @@ define([
 		var curvePoints = {};
 		var offs;
 		var footer = document.getElementsByTagName('footer')[0];
+		var scrollPoints = [];
 
 		t = wh;
 
 		points.push('M' + l + ' ' + wh);
 
 		intermediateResult = this.curveTo(points, l, t, ww - RADIUS*2, 'right', true);
+		scrollPoints.push([
+			intermediateResult.startLength,
+			intermediateResult.endLength
+		]);
 
+ 
 		sec = document.getElementById('analisys');
 
 
@@ -143,6 +161,17 @@ define([
 			intermediateResult = this.curveTo(points, l, t, ww*2 - RADIUS*2, 'right');
 		}
 
+		scrollPoints.push([
+			intermediateResult.startLength,
+			intermediateResult.endLength - ww - 135
+		]);
+
+		scrollPoints.push([
+			intermediateResult.endLength - ww - 125,
+			intermediateResult.endLength
+		]);
+
+
 		sec = document.getElementById('focus');
 
 		if (sec) {
@@ -153,6 +182,16 @@ define([
 			intermediateResult = this.curveTo(points, l, t, - ww + RADIUS*2, 'left');
 		}
 
+		scrollPoints.push([
+			intermediateResult.startLength,
+			intermediateResult.endLength - 505
+		]);
+
+		scrollPoints.push([
+			intermediateResult.endLength - 495,
+			intermediateResult.endLength + wh - 300
+		]);
+
 		sec = document.getElementById('result');
 
 		if (sec) {
@@ -162,6 +201,17 @@ define([
 			t = offs + RADIUS*2;
 			intermediateResult = this.curveTo(points, l, t, ww*2 - RADIUS*2, 'right');
 		}
+
+
+		scrollPoints.push([
+			intermediateResult.startLength,
+			intermediateResult.endLength - ww - 135
+		]);
+
+		scrollPoints.push([
+			intermediateResult.endLength - ww - 125,
+			intermediateResult.endLength
+		]);
 
 		sec = document.getElementById('feedback');
 
@@ -176,7 +226,8 @@ define([
 
 		return {
 			string: points.join(' '),
-			curvePoints: curvePoints
+			curvePoints: curvePoints,
+			scrollPoints: scrollPoints
 		};
 	}
 
@@ -286,15 +337,20 @@ define([
 	elementProto.createdCallback = function() {
 		this.handleScroll = this.handleScroll.bind(this);
 		this.handleResize = this.handleResize.bind(this);
+		this.buildPath = this.buildPath.bind(this);
+		this.buildVisiblePath = this.buildVisiblePath.bind(this);
+		this.curveTo = this.curveTo.bind(this);
 		this.resizeTo;
 	}
 	elementProto.attachedCallback = function() {
 		var svg = Snap("#svg");
-		var pathData = this.buildPath();
+		var pathData;
 		var self = this;
 
 		this._svg = svg;
 		this._lines = [];
+
+		pathData = this.buildPath();
 
 		this.handleResize();
 
@@ -316,7 +372,8 @@ define([
 		dispatcher.dispatch({
 			type: 'dScroll:path-change',
 			path: self._path,
-			curvePoints: pathData.curvePoints
+			curvePoints: pathData.curvePoints,
+			scrollPoints: pathData.scrollPoints
 		});
 
 		dScrollStore.subscribe(this.handleScroll);

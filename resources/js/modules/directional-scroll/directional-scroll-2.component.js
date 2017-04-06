@@ -25,6 +25,8 @@ define([
 		var height;
 		var offset;
 
+		console.log(11);
+
 		if (ww >= 1450 && wh >= 500) {
 			this.activate();
 		} else {
@@ -57,7 +59,13 @@ define([
 					coefX = 4;
 					coefY = 6;
 				}
-				section.style.left = Math.floor(coefX*ww) + 'px';
+
+				if (section.id === 'focus') {
+					section.style.left = Math.floor(coefX*ww + 284) + 'px';
+				} else {
+					section.style.left = Math.floor(coefX*ww) + 'px';
+				}
+				
 				section.style.top = -Math.floor(coefY*wh) + 'px';
 				//section.style.transform = 'translateX(' + Math.floor(coefX*100) + '%) translateY(' + -Math.floor(coefY*wh) + 'px)';
 			});

@@ -856,7 +856,8 @@ arc-text span {
 }
 @media screen and (min-width: 1450px) and (min-height: 500px) {
 	.question {
-		margin-top: 400px;
+		margin-top: 500px;
+		margin-bottom: 400px;
 	}
 	.question .s-qu {
 		display: block;
@@ -1044,8 +1045,8 @@ p {
 }
 @media screen and (min-width: 1450px) and (min-height: 500px) {
 	.find {
-		margin-top: 400px;
-		margin-bottom: 300px;
+		margin-top: 500px;
+		margin-bottom: 400px;
 	}
 }
 .find .s-fn {
@@ -1226,7 +1227,6 @@ p {
 		top: -150px;
 	}
 }
-
 .focus .bg {
 	left: -100%;
 	right: -100%;
@@ -1246,6 +1246,11 @@ p {
 .consult {
 	position: relative;
 	z-index: 1;
+}
+@media screen and (min-width: 1450px) and (min-height: 500px) {
+	.consult {
+		margin-bottom: 400px;
+	}
 }
 .consult .header-note {
 	padding-top: 75px;
@@ -1455,7 +1460,7 @@ tri-slider .next-arrow {
 
 @media screen and (min-width: 1450px) and (min-height: 500px) {
 	.feedback {
-		margin-top: 400px;
+		margin-top: 500px;
 	}
 }
 @media screen and (min-width: 1450px) and (min-height: 700px) {

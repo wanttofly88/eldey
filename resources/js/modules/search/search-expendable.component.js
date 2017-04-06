@@ -5,7 +5,6 @@ define(['dispatcher'], function(dispatcher) {
 
 	elementProto.blur = function() {
 		var value = this._input.value;
-		console.log(11);
 		if (value) return;
 
 		this.parentNode.classList.remove('hover');

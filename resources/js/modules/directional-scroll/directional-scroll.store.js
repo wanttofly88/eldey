@@ -19,6 +19,7 @@ define([
 	var SECTION_PADDING = 600;
 	var path, visiblePath;
 	var curvePoints;
+	var scrollPoints;
 	var x, y;
 	var direction = 'vertical';
 	var active = false;
@@ -28,6 +29,7 @@ define([
 			path = e.path;
 			visiblePath = e.visiblePath;
 			curvePoints = e.curvePoints;
+			scrollPoints = e.scrollPoints;
 			_handleScroll();
 			eventEmitter.dispatch();
 		}
@@ -72,6 +74,7 @@ define([
 			y: y,
 			direction: direction,
 			curvePoints: curvePoints,
+			scrollPoints: scrollPoints,
 			visiblePath: visiblePath,
 			active: active
 		}
