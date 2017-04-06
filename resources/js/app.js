@@ -14,7 +14,8 @@ require.config({
 	baseUrl: __path + 'js/modules',
 	paths: {
 		snap: '../libs/snap',
-		d3: '../libs/d3'
+		d3: '../libs/d3',
+		TweenMax: '../libs/TweenMax'
 	},
 	shim: {
 	}
@@ -33,6 +34,7 @@ require([
 	'directional-scroll/directional-scroll-2.component',
 	'directional-scroll/curve-2.component',
 	'directional-scroll/bird.component',
+	'directional-scroll/autoscroll.component',
 
 	// 'trees/tree.component',
 
@@ -70,5 +72,6 @@ require([
 	'router/page-transition.view',
 	'router/inner-link.component',
 
-	'search/search-expendable.component'
+	'search/search-expendable.component',
+	'scroll/synth-scroll.view'
 ]);
