@@ -146,7 +146,9 @@ define([
 		intermediateResult = this.curveTo(points, l, t, ww - RADIUS*2, 'right', true);
 		scrollPoints.push([
 			intermediateResult.startLength,
-			intermediateResult.endLength
+			intermediateResult.endLength,
+			intermediateResult.startLength,
+			intermediateResult.endLength - 400
 		]);
 
  
@@ -163,12 +165,16 @@ define([
 
 		scrollPoints.push([
 			intermediateResult.startLength,
+			intermediateResult.endLength - ww - 135,
+			intermediateResult.startLength - 400,
 			intermediateResult.endLength - ww - 135
 		]);
 
 		scrollPoints.push([
 			intermediateResult.endLength - ww - 125,
-			intermediateResult.endLength
+			intermediateResult.endLength,
+			intermediateResult.endLength - ww - 125,
+			intermediateResult.endLength - 400,
 		]);
 
 
@@ -184,12 +190,16 @@ define([
 
 		scrollPoints.push([
 			intermediateResult.startLength,
+			intermediateResult.endLength - 505,
+			intermediateResult.startLength - 400,
 			intermediateResult.endLength - 505
 		]);
 
 		scrollPoints.push([
 			intermediateResult.endLength - 495,
-			intermediateResult.endLength + wh - 300
+			intermediateResult.endLength + wh - 300,
+			intermediateResult.endLength - 495,
+			intermediateResult.endLength + wh - 700,
 		]);
 
 		sec = document.getElementById('result');
@@ -205,12 +215,16 @@ define([
 
 		scrollPoints.push([
 			intermediateResult.startLength,
+			intermediateResult.endLength - ww - 135,
+			intermediateResult.startLength - 400,
 			intermediateResult.endLength - ww - 135
 		]);
 
 		scrollPoints.push([
 			intermediateResult.endLength - ww - 125,
-			intermediateResult.endLength
+			intermediateResult.endLength,
+			intermediateResult.endLength - ww - 125,
+			intermediateResult.endLength - 400
 		]);
 
 		sec = document.getElementById('feedback');

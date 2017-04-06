@@ -44,6 +44,29 @@ define([
 		var self = this;
 		var result;
 
+		var testUp = function() {
+			var result = undefined;
+			scrollPoints.forEach(function(point, index) {
+				if (scrolled > point[2] && scrolled < point[3]) {
+					result = (0, scrolled + (point[2] - scrolled)/15);
+				}
+
+			});
+
+			return result;
+		}
+
+		var testDown = function() {
+			var result = undefined;
+			scrollPoints.forEach(function(point, index) {
+				if (scrolled > point[0] && scrolled < point[1]) {
+					result = (0, scrolled + (point[1] - scrolled)/15);
+				}
+			});
+
+			return result;
+		}
+
 		if (!this._active) return;
 
 		if (storeData.active) {
@@ -51,25 +74,43 @@ define([
 			scrolled = scrollStore.getData().top;
 
 			if (scrollPoints) {
-				scrollPoints.forEach(function(point, index) {
-					if (scrolled > point[0] && scrolled < point[1]) {
-						if (self._prevScrolled > scrolled) {
-							self._prevWay = 'up';
-							result = (0, scrolled + (point[0] - scrolled)/15);
-						} else if ((self._prevScrolled < scrolled)) {
-							self._prevWay = 'down';
-							result = (0, scrolled + (point[1] - scrolled)/15);
-						} else {
-							if (self._prevWay === 'up') {
-								result = (0, scrolled + (point[0] - scrolled)/15);
-							} else {
-								result = (0, scrolled + (point[1] - scrolled)/15);
-							}
-						}
+				// scrollPoints.forEach(function(point, index) {
+				// 	if (scrolled > point[0] && scrolled < point[1]) {
+				// 		if (self._prevScrolled > scrolled) {
+				// 			self._prevWay = 'up';
+				// 			result = (0, scrolled + (point[0] - scrolled)/15);
+				// 		} else if ((self._prevScrolled < scrolled)) {
+				// 			self._prevWay = 'down';
+				// 			result = (0, scrolled + (point[1] - scrolled)/15);
+				// 		} else {
+				// 			if (self._prevWay === 'up') {
+				// 				result = (0, scrolled + (point[0] - scrolled)/15);
+				// 			} else {
+				// 				result = (0, scrolled + (point[1] - scrolled)/15);
+				// 			}
+				// 		}
 
-						window.scrollTo(0, result);
+						
+				// 	}
+				// });
+
+				if (self._prevScrolled > scrolled) {
+					self._prevWay = 'up';
+					result = testUp();
+				} else if ((self._prevScrolled < scrolled)) {
+					self._prevWay = 'down';
+					result = testDown();
+				} else {
+					if (self._prevWay === 'up') {
+						result = testUp();
+					} else {
+						result = testDown();
 					}
-				});
+				}
+
+				if (result !== undefined) {
+					window.scrollTo(0, result);
+				}
 			}
 		}
 
